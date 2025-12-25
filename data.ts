@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     architecture: [
       'Real-time monitoring scraping (TikTok/LinkedIn/X)',
       'AI Classification Engine (85% rejection rate)',
-      'Stephen Edison voice profile training',
+      'Custom voice profile training aligned to a defined vocal style',
       'Explorium financial signal detection'
     ],
     tech_stack: ['N8N', 'Airtable', 'GPT-4', 'Claude', 'Perplexity Pro', 'Explorium', 'FireCrawl', 'Apify'],
