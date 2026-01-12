@@ -247,14 +247,17 @@ const Home = () => {
         <div className="relative bg-black text-white p-6 md:p-12 rounded-lg border border-gray-800 shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                  {/* Video Side */}
-                 <div className="relative w-full aspect-video bg-gray-900 rounded-md overflow-hidden border border-gray-800 shadow-xl">
+                 <div className="relative w-full aspect-video bg-black rounded-md overflow-hidden border border-gray-800 shadow-xl flex items-center justify-center">
                       <video 
-                        src={DEPLOYMENTS[currentDeploymentIndex].video}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         controls
                         playsInline
+                        preload="metadata"
                         key={DEPLOYMENTS[currentDeploymentIndex].video} // Force reload on change
-                      />
+                      >
+                         <source src={DEPLOYMENTS[currentDeploymentIndex].video} type="video/mp4" />
+                         <p>Your browser does not support the video tag.</p>
+                      </video>
                  </div>
 
                  {/* Text Side */}
