@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Building2, ShieldCheck, Target, Cpu, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LOGOS = [
@@ -23,16 +23,6 @@ const FEATURES = [
     icon: <ShieldCheck size={24} />,
     title: "GDPR Compliant",
     desc: "Fully compliant solutions ensuring data sovereignty and privacy."
-  },
-  {
-    icon: <Target size={24} />,
-    title: "500+ Leads / Week",
-    desc: "Highly qualified leads generated weekly for B2B systems."
-  },
-  {
-    icon: <Cpu size={24} />,
-    title: "Multi-AI Orchestration",
-    desc: "Powered by GPT-5.2, Claude 4.5 Opus, & Perplexity."
   },
   {
     icon: <Zap size={24} />,
@@ -76,7 +66,45 @@ const FEATURES = [
   }
 ];
 
+const DEPLOYMENTS = [
+  {
+    title: "AI Ad Creative Automation System",
+    description: "An end-to-end AI system that turns any product into ready-to-launch ad creatives. It analyzes the brand’s visual style and audience psychology, generates multiple hooks and messages, and automatically produces platform-specific ad visuals for social channels like Instagram, Facebook, and TikTok. The system removes manual creative work, speeds up testing, and gives brands a continuous flow of high-quality ad assets without relying on agencies or designers.",
+    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQHlDb2MM1cCcQ/mp4-720p-30fp-crf28/B4EZoHunSzGoBk-/0/1761066256866?e=1768863600&v=beta&t=1y5LahMA73ac9ld0QheNyxQ6KlUI4txtNZe9XlAX1VM"
+  },
+  {
+    title: "Viral AI Content Agent",
+    description: "An AI-powered content system that monitors what is working across major social platforms, understands audience emotions and trends, and turns those insights into platform-specific content plans. It identifies high-impact topics, audience intent, and viral angles, then generates ready-to-use scripts, hooks, captions, and posting frameworks for LinkedIn, TikTok, Instagram, YouTube, X, and Facebook—so teams can publish consistently without manual research or creative guesswork.",
+    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQH2eYEJ7A_JEw/mp4-720p-30fp-crf28/B4EZfG0n_5GwBw-/0/1751387403872?e=1768867200&v=beta&t=MOYY8HqSRp5ObN6WcragJRpgxTJW-vF8uF73reW-qUo"
+  },
+  {
+    title: "AI Ad Creative Generation Agent",
+    description: "An AI system that transforms any product into conversion-ready ad creatives. It studies brand visuals, audience psychology, and winning ad patterns, then generates high-impact hooks, messages, and platform-specific visuals for Instagram, Facebook, and TikTok. The agent delivers complete, ready-to-run ad assets without designers, copywriters, or long production cycles.",
+    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQFW-kWVaXcoiA/mp4-720p-30fp-crf28/B4EZeivDYbG4Bk-/0/1750781947419?e=1768867200&v=beta&t=pdbQpMoAWZpmg5Ax-wp8K8VJmyHwZBlJ-1Qw-1VMYYA"
+  },
+  {
+    title: "AI-Powered Audience Intelligence Engine",
+    description: "An AI system that tracks real-time activity in a brand’s niche to find both high-value customers and relevant creators in one workflow. It scans viral content and engagement, analyzes profiles and language to detect intent and fit, ranks people by conversion potential, and automatically generates personalized outreach messages for partnerships, demos, or sales—turning social activity into a continuous lead and influencer pipeline.",
+    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQHPK3tqrhEwQw/mp4-720p-30fp-crf28/B4EZdfZtTVHsBg-/0/1749652277720?e=1768867200&v=beta&t=4ga9XVf5-Ft-4DjsTERxV5_IDrhF-08lyFRuMy-SrmY"
+  },
+  {
+    title: "AI Sales Intelligence Agent",
+    description: "An AI-driven prospect research system that builds a complete intelligence profile for any target company. It analyzes financial signals, technology stack, decision-maker roles, competitive positioning, and buying psychology, then produces a clear engagement and approach strategy. The agent gives sales teams everything they need to run informed, high-confidence conversations without manual research.",
+    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQET1y3yzNnSAQ/mp4-720p-30fp-crf28/B4EZjiAgIfGUBw-/0/1756138458101?e=1768867200&v=beta&t=CCgkwj7DEJSv6hCBxJHhJM3_dOOJJNCW7M8wcXd9JMI"
+  }
+];
+
 const Home = () => {
+  const [currentDeploymentIndex, setCurrentDeploymentIndex] = useState(0);
+
+  const nextDeployment = () => {
+    setCurrentDeploymentIndex((prev) => (prev + 1) % DEPLOYMENTS.length);
+  };
+
+  const prevDeployment = () => {
+    setCurrentDeploymentIndex((prev) => (prev - 1 + DEPLOYMENTS.length) % DEPLOYMENTS.length);
+  };
+
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center">
       
@@ -184,9 +212,15 @@ const Home = () => {
               Core Capabilities
            </h2>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {FEATURES.map((feature, index) => (
-                <div key={index} className="group border border-gray-200 p-8 hover:border-black hover:shadow-xl transition-all duration-300 bg-white flex flex-col items-start gap-6">
+                <div 
+                  key={index} 
+                  className={`group border border-gray-200 p-8 hover:border-black hover:shadow-xl transition-all duration-300 bg-white flex flex-col items-start gap-6 ${
+                    // Variable width logic: Span 2 columns for index 3 and 6 to create visual interest
+                    (index === 3 || index === 6) ? 'md:col-span-2' : 'md:col-span-1'
+                  }`}
+                >
                    <div className="p-3 bg-gray-50 rounded-sm group-hover:bg-black group-hover:text-white transition-all duration-300 text-brand-red shadow-sm">
                       {feature.icon}
                    </div>
@@ -201,6 +235,69 @@ const Home = () => {
                 </div>
               ))}
            </div>
+      </div>
+
+      {/* Few Deployments Creatives (Video Carousel) Section */}
+      <div className="mt-32">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Few Deployments Creatives
+        </h2>
+
+        <div className="relative bg-black text-white p-6 md:p-12 rounded-lg border border-gray-800 shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                 {/* Video Side */}
+                 <div className="relative w-full aspect-video bg-gray-900 rounded-md overflow-hidden border border-gray-800 shadow-xl">
+                      <video 
+                        src={DEPLOYMENTS[currentDeploymentIndex].video}
+                        className="w-full h-full object-cover"
+                        controls
+                        playsInline
+                        key={DEPLOYMENTS[currentDeploymentIndex].video} // Force reload on change
+                      />
+                 </div>
+
+                 {/* Text Side */}
+                 <div className="space-y-8 flex flex-col h-full justify-between">
+                    <div>
+                        <div className="flex items-center gap-2 mb-4">
+                            <span className="text-brand-red font-black text-2xl">
+                                {(currentDeploymentIndex + 1).toString().padStart(2, '0')}
+                            </span>
+                            <span className="text-gray-600 font-bold text-sm uppercase tracking-widest">
+                                / {DEPLOYMENTS.length.toString().padStart(2, '0')}
+                            </span>
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-6">
+                            {DEPLOYMENTS[currentDeploymentIndex].title}
+                        </h3>
+                        
+                        <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium">
+                            {DEPLOYMENTS[currentDeploymentIndex].description}
+                        </p>
+                    </div>
+
+                    {/* Navigation Controls */}
+                    <div className="flex items-center gap-4 pt-4">
+                        <button 
+                            onClick={prevDeployment}
+                            className="group p-4 bg-white text-black hover:bg-brand-red hover:text-white transition-all duration-300 rounded-full"
+                            aria-label="Previous Deployment"
+                        >
+                            <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+                        </button>
+                        <button 
+                            onClick={nextDeployment}
+                            className="group p-4 bg-white text-black hover:bg-brand-red hover:text-white transition-all duration-300 rounded-full"
+                            aria-label="Next Deployment"
+                        >
+                            <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                    </div>
+                 </div>
+            </div>
+        </div>
       </div>
       
     </div>
