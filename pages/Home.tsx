@@ -2,6 +2,19 @@ import React, { useState } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const LOGOS = [
+  "https://assets.channelinsider.com/uploads/2022/08/CI.BCG_.Profile.png",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRmibgA_uvf99-uLSXe8snocWGP52w-k5t7A&s",
+  "https://muddymats.com/cdn/shop/articles/Is_Muddy_Mat_A_Legit_Company_5cd37497-5c40-430d-80ce-ca8c2f79067d.png?v=1742796297",
+  "https://play-lh.googleusercontent.com/O7VJWFkx8kwZ3-Lh9WutnGhvb781o1TBkQ7eTQ9cyCmGF1gsLyqSGTMegcTHHjitVm0",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTosM-lOX92wpdNNSVyCM3QbFI1mLTP_CVIkg&s",
+  "https://static1.squarespace.com/static/646d7fcc041c0a51245304a0/t/6479170b6f690d78f18f3ad2/1685657359922/Zoe-Home-SocialImage.jpg?format=1500w",
+  "https://www.ambrosiabakery.in/cdn/shop/files/ambrosialogozoomed_135x@2x.png?v=1613709932",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF3F2MeY60k4s3x37iAkE1cJUr-0eWLJlEKA&s",
+  "https://assets.cdn.filesafe.space/TOke3l5JIz3qqeafaEbt/media/6448af7d2191d0f2033b2242.webp",
+  "https://instig8.ai/assets/images/image07.png?v=1eb8f38d"
+];
+
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -88,15 +101,9 @@ const Home = () => {
         {/* Text Content */}
         <div className="lg:col-span-8 space-y-10">
           
-          <div className="inline-block border-b-2 border-brand-red pb-1">
-             <span className="text-xs font-bold tracking-[0.3em] uppercase text-black">
-               System_Architecture_v1.0
-             </span>
-          </div>
-
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter leading-[0.9]">
             I BUILD <br/>
-            <span className="text-brand-red">AUTONOMOUS</span> <br/>
+            <span className="text-brand-red">AUTOMATION</span> <br/>
             SYSTEMS.
           </h1>
 
@@ -175,17 +182,57 @@ const Home = () => {
 
       </div>
 
-      {/* Expertise List */}
-      <div className="mt-32 border-t border-gray-200 pt-16">
+      {/* Client Logos Scroll */}
+      <div className="mt-20 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-8 md:py-12 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
+         <div className="relative w-full flex overflow-hidden group">
+            {/* 
+              Fixed Infinite Scroll Logic:
+              1. Removed container padding and flex-gap to avoid math errors in 50% translation.
+              2. Used `w-max` to ensure container fits all children width.
+              3. Used explicit `mr` (margin-right) on items to handle spacing.
+              4. `translateX(-50%)` now moves exactly the width of Set 1 (Items + Margins), aligning Set 2 perfectly.
+            */}
+            <div className="flex w-max animate-marquee pause-on-hover items-center">
+               {/* First Set */}
+               {LOGOS.map((logo, index) => (
+                 <div key={index} className="flex-shrink-0 h-12 md:h-16 w-32 md:w-40 flex items-center justify-center mr-16 md:mr-24">
+                    <img 
+                      src={logo} 
+                      alt="Client Logo" 
+                      className="max-w-full max-h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" 
+                    />
+                 </div>
+               ))}
+               
+               {/* Second Set (Duplicate for Loop) */}
+               {LOGOS.map((logo, index) => (
+                 <div key={`dup-${index}`} className="flex-shrink-0 h-12 md:h-16 w-32 md:w-40 flex items-center justify-center mr-16 md:mr-24">
+                    <img 
+                      src={logo} 
+                      alt="Client Logo" 
+                      className="max-w-full max-h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" 
+                    />
+                 </div>
+               ))}
+            </div>
+         </div>
+      </div>
+
+      {/* Metrics Section */}
+      <div className="mt-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
            {[
-             { title: 'Architecture', desc: 'Designing resilient, self-healing systems that scale.' },
-             { title: 'Automation', desc: 'Replacing manual labor with intelligent agentic workflows.' },
-             { title: 'Optimization', desc: 'Reducing latency and cost while maximizing output.' }
+             { value: '$50k+', label: 'Worth of Systems Delivered' },
+             { value: '100+', label: 'Hours Saved Per Month' },
+             { value: '20+', label: 'Production Ready Systems' }
            ].map(item => (
-             <div key={item.title} className="group">
-                <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 group-hover:text-brand-red transition-colors">{item.title}</h3>
-                <p className="text-gray-500 font-medium">{item.desc}</p>
+             <div key={item.label} className="group">
+                <h3 className="text-6xl md:text-7xl font-black text-black tracking-tighter mb-2 group-hover:text-brand-red transition-colors">
+                  {item.value}
+                </h3>
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
+                  {item.label}
+                </p>
              </div>
            ))}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Linkedin, Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -45,23 +45,13 @@ const Navbar = () => {
           <div className="h-4 w-px bg-gray-200 mx-2"></div>
 
           <a 
-            href="https://linkedin.com/in/ashwanthofficial" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs font-bold tracking-wider text-black hover:text-brand-red transition-colors uppercase"
-          >
-            <Linkedin size={14} />
-            Connect
-          </a>
-
-          <a 
-            href="https://ashwanth.dev/"
+            href="https://cal.com/ashwanthofficial/custom-ai-agent-consultation"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-black text-white px-4 py-2 text-xs font-bold tracking-wider rounded-sm hover:bg-brand-red transition-colors uppercase flex items-center gap-2"
           >
-            <Mail size={12} />
-            Newsletter
+            <Phone size={12} />
+            Schedule Discovery
           </a>
         </div>
 
@@ -105,12 +95,12 @@ const Navbar = () => {
             LinkedIn Profile
           </a>
            <a 
-            href="https://ashwanth.dev/" 
+            href="https://cal.com/ashwanthofficial/custom-ai-agent-consultation" 
             target="_blank"
             className="flex items-center gap-3 text-lg font-bold text-gray-600"
           >
-            <Mail size={20} />
-            Newsletter
+            <Phone size={20} />
+            Schedule Discovery
           </a>
         </div>
       )}
