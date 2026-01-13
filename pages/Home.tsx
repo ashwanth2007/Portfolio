@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LOGOS = [
@@ -98,15 +98,18 @@ const DEPLOYMENTS = [
 const TRUSTED_BY = [
   {
     name: "Aryan Mahajan",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQGsGvu20gys_A/profile-displayphoto-shrink_400_400/B4EZSWEHBeGgAg-/0/1737684447681?e=1769644800&v=beta&t=-FJQ6RWHO1aKYHXgPUuZC-xOjg_3veKogWvNaZ7W9VM"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTbCvYZSzNFB7VQdYM-anMIJZzeqDXVSgKdw&s",
+    link: "https://www.linkedin.com/in/aryanmahajaninstig8/"
   },
   {
     name: "Avinash Mada",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEgNb0A7d6HCp597jNtuuW8UKiGq6P85MBgD7a-M41N5iAugumegaySDTVPd4dYp77-35FMj92XH1ErfkTax-XyMu3Zfha7KYIDx1Kw&s=10"
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEgNb0A7d6HCp597jNtuuW8UKiGq6P85MBgD7a-M41N5iAugumegaySDTVPd4dYp77-35FMj92XH1ErfkTax-XyMu3Zfha7KYIDx1Kw&s=10",
+    link: "https://www.instagram.com/meetavinash"
   },
   {
     name: "Mani Kanasani",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQFXI-BYJwPeHg/profile-displayphoto-scale_400_400/B56ZgWB6oVHcAg-/0/1752716258170?e=1769644800&v=beta&t=AX8hnmRxMFjaIKzYzTmVfjA8S6Smi-CGewCHpPV-SDE"
+    image: "https://yt3.googleusercontent.com/svjKpqITtUTalFEOWBDAOHMo29LAK_p0JVJ09CYxMkzQWzp7J_Q9MgKvt8zhFumthn_T7NIkEw=s900-c-k-c0x00ffffff-no-rj",
+    link: "https://www.youtube.com/@ManiKanasani"
   }
 ];
 
@@ -389,7 +392,13 @@ const Home = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center">
             {TRUSTED_BY.map((person, index) => (
-                <div key={index} className="group flex flex-col items-center">
+                <a 
+                    key={index} 
+                    href={person.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group flex flex-col items-center cursor-pointer"
+                >
                     <div className="relative w-48 h-48 mb-6">
                         {/* Decorative offset border */}
                         <div className="absolute top-2 left-2 w-full h-full border-2 border-black rounded-3xl z-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
@@ -401,10 +410,11 @@ const Home = () => {
                             className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black bg-gray-50 grayscale group-hover:grayscale-0 transition-all duration-300"
                         />
                     </div>
-                    <h3 className="text-lg font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors text-center">
+                    <h3 className="text-lg font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors text-center flex items-center gap-2">
                         {person.name}
+                        <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     </h3>
-                </div>
+                </a>
             ))}
         </div>
       </div>
