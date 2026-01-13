@@ -79,13 +79,13 @@ const Footer = () => {
             <div className="flex flex-col items-start">
                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Insights</h3>
                <a 
-                  href="https://ashwanth.dev/"
+                  href="https://newsletter.ashwanth.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red transition-colors w-full md:w-auto justify-center rounded-sm"
                 >
                   <Mail size={14} />
-                  Join Newsletter
+                  Insights & Updates
               </a>
             </div>
         </div>

@@ -95,6 +95,21 @@ const DEPLOYMENTS = [
   }
 ];
 
+const TRUSTED_BY = [
+  {
+    name: "Aryan Mahajan",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGsGvu20gys_A/profile-displayphoto-shrink_400_400/B4EZSWEHBeGgAg-/0/1737684447681?e=1769644800&v=beta&t=-FJQ6RWHO1aKYHXgPUuZC-xOjg_3veKogWvNaZ7W9VM"
+  },
+  {
+    name: "Avinash Mada",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEgNb0A7d6HCp597jNtuuW8UKiGq6P85MBgD7a-M41N5iAugumegaySDTVPd4dYp77-35FMj92XH1ErfkTax-XyMu3Zfha7KYIDx1Kw&s=10"
+  },
+  {
+    name: "Mani Kanasani",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQFXI-BYJwPeHg/profile-displayphoto-scale_400_400/B56ZgWB6oVHcAg-/0/1752716258170?e=1769644800&v=beta&t=AX8hnmRxMFjaIKzYzTmVfjA8S6Smi-CGewCHpPV-SDE"
+  }
+];
+
 const Home = () => {
   const [currentDeploymentIndex, setCurrentDeploymentIndex] = useState(0);
 
@@ -347,7 +362,7 @@ const Home = () => {
       </div>
 
       {/* Schedule Discovery Section */}
-      <div className="mt-32 mb-20">
+      <div className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Contact
@@ -362,6 +377,35 @@ const Home = () => {
 
         <div className="w-full h-[700px] bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden relative z-10">
             <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
+        </div>
+      </div>
+
+      {/* Trusted By Section */}
+      <div className="mt-32">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Trusted By
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center">
+            {TRUSTED_BY.map((person, index) => (
+                <div key={index} className="group flex flex-col items-center">
+                    <div className="relative w-48 h-48 mb-6">
+                        {/* Decorative offset border */}
+                        <div className="absolute top-2 left-2 w-full h-full border-2 border-black rounded-3xl z-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                        
+                        {/* Image */}
+                        <img 
+                            src={person.image} 
+                            alt={person.name} 
+                            className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black bg-gray-50 grayscale group-hover:grayscale-0 transition-all duration-300"
+                        />
+                    </div>
+                    <h3 className="text-lg font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors text-center">
+                        {person.name}
+                    </h3>
+                </div>
+            ))}
         </div>
       </div>
       
