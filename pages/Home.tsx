@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,8 @@ const LOGOS = [
   "https://static1.squarespace.com/static/646d7fcc041c0a51245304a0/t/6479170b6f690d78f18f3ad2/1685657359922/Zoe-Home-SocialImage.jpg?format=1500w",
   "https://www.ambrosiabakery.in/cdn/shop/files/ambrosialogozoomed_135x@2x.png?v=1613709932",
   "https://assets.cdn.filesafe.space/TOke3l5JIz3qqeafaEbt/media/6448af7d2191d0f2033b2242.webp",
-  "https://instig8.ai/assets/images/image07.png?v=1eb8f38d"
+  "https://instig8.ai/assets/images/image07.png?v=1eb8f38d",
+  "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/nttce5yvbgmcpnfsjena?ik-sanitizeSvg=true"
 ];
 
 const FEATURES = [
@@ -105,6 +106,48 @@ const Home = () => {
     setCurrentDeploymentIndex((prev) => (prev - 1 + DEPLOYMENTS.length) % DEPLOYMENTS.length);
   };
 
+  useEffect(() => {
+    (function (C: any, A: string, L: string) { 
+      let p = function (a: any, ar: any) { a.q.push(ar); }; 
+      let d = C.document; 
+      C.Cal = C.Cal || function () { 
+        let cal = C.Cal; 
+        let ar = arguments; 
+        if (!cal.loaded) { 
+          cal.ns = {}; 
+          cal.q = cal.q || []; 
+          d.head.appendChild(d.createElement("script")).src = A; 
+          cal.loaded = true; 
+        } 
+        if (ar[0] === L) { 
+          const api = function () { p(api, arguments); }; 
+          const namespace = ar[1]; 
+          api.q = api.q || []; 
+          if(typeof namespace === "string"){
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar); 
+          return;
+        } 
+        p(cal, ar); 
+      }; 
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    const Cal = (window as any).Cal;
+    if (Cal) {
+      Cal("init", "custom-ai-agent-consultation", {origin:"https://app.cal.com"});
+
+      Cal.ns["custom-ai-agent-consultation"]("inline", {
+        elementOrSelector:"#my-cal-inline-custom-ai-agent-consultation",
+        config: {"layout":"month_view"},
+        calLink: "ashwanthofficial/custom-ai-agent-consultation",
+      });
+
+      Cal.ns["custom-ai-agent-consultation"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    }
+  }, []);
+
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center">
       
@@ -179,30 +222,6 @@ const Home = () => {
                ))}
             </div>
          </div>
-      </div>
-
-      {/* Achieved Metrics Section */}
-      <div className="mt-32">
-        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
-            <span className="w-8 h-[2px] bg-brand-red"></span>
-            Achieved Metrics
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-           {[
-             { value: '$50k+', label: 'Worth of Systems Delivered' },
-             { value: '100+', label: 'Hours Saved Per Month' },
-             { value: '20+', label: 'Production Ready Systems' }
-           ].map(item => (
-             <div key={item.label} className="group">
-                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
-                  {item.value}
-                </h3>
-                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 border-l-4 border-gray-200 pl-4 group-hover:border-brand-red transition-colors">
-                  {item.label}
-                </p>
-             </div>
-           ))}
-        </div>
       </div>
 
       {/* Core Capabilities Section */}
@@ -300,6 +319,49 @@ const Home = () => {
                     </div>
                  </div>
             </div>
+        </div>
+      </div>
+
+      {/* Achieved Metrics Section */}
+      <div className="mt-32">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Achieved Metrics
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+           {[
+             { value: '$50k+', label: 'Worth of Systems Delivered' },
+             { value: '100+', label: 'Hours Saved Per Month' },
+             { value: '20+', label: 'Production Ready Systems' }
+           ].map(item => (
+             <div key={item.label} className="group">
+                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
+                  {item.value}
+                </h3>
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 border-l-4 border-gray-200 pl-4 group-hover:border-brand-red transition-colors">
+                  {item.label}
+                </p>
+             </div>
+           ))}
+        </div>
+      </div>
+
+      {/* Schedule Discovery Section */}
+      <div className="mt-32 mb-20">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Contact
+        </h2>
+        
+        <div className="mb-12">
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+                SCHEDULE A <br/>
+                <span className="text-brand-red">DISCOVERY CALL</span>
+            </h1>
+        </div>
+
+        <div className="w-full h-[700px] bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden relative z-10">
+            <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
         </div>
       </div>
       
