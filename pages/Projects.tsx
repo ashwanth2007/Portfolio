@@ -3,13 +3,14 @@ import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { PROJECTS } from '../data';
 import { Project } from '../types';
-import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, Maximize2, Minimize2 } from 'lucide-react';
 
 const CATEGORIES = ['ZORO CORP', 'INSTIG8', 'FREEDOM WITH AI', 'PERSONAL'];
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeCategory, setActiveCategory] = useState('ZORO CORP');
+  const [activeCategory, setActiveCategory] = useState('INSTIG8');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const filteredProjects = PROJECTS.filter(p => p.category === activeCategory);
 
@@ -17,6 +18,11 @@ const Projects = () => {
     if (cat === 'ZORO CORP') return 'ZORO CORP';
     if (cat === 'INSTIG8') return 'INSTIG8.AI';
     return cat;
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    setIsExpanded(false);
   };
 
   return (
@@ -130,16 +136,26 @@ const Projects = () => {
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6">
           <div 
             className="absolute inset-0 bg-black/95 backdrop-blur-md"
-            onClick={() => setSelectedProject(null)}
+            onClick={handleCloseModal}
           ></div>
           
-          <div className="relative bg-white w-full max-w-4xl max-h-[85vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-200">
-            <button 
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-20 p-2 bg-black text-white hover:bg-brand-red transition-colors rounded-full md:rounded-none"
-            >
-              <X size={20} />
-            </button>
+          <div className={`relative bg-white w-full ${isExpanded ? 'max-w-[95vw] h-[95vh]' : 'max-w-4xl max-h-[85vh]'} overflow-y-auto shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-200 transition-all ease-in-out`}>
+            
+            <div className="absolute top-4 right-4 z-20 flex gap-2">
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="p-2 bg-white text-black border border-gray-200 hover:bg-black hover:text-white transition-colors rounded-full md:rounded-none shadow-sm"
+                  title={isExpanded ? "Collapse View" : "Expand View"}
+                >
+                  {isExpanded ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
+                </button>
+                <button 
+                  onClick={handleCloseModal}
+                  className="p-2 bg-black text-white hover:bg-brand-red transition-colors rounded-full md:rounded-none shadow-sm"
+                >
+                  <X size={20} />
+                </button>
+            </div>
 
             {/* Left Sidebar (Header) */}
             <div className="md:w-5/12 bg-gray-50 p-6 md:p-8 border-r border-gray-200">

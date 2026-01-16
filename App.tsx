@@ -8,6 +8,7 @@ import Arsenal from './pages/Arsenal';
 import Journey from './pages/Journey';
 import Verification from './pages/Verification';
 import Certifications from './pages/Certifications';
+import Resources from './pages/Resources';
 import Discovery from './pages/Discovery';
 
 const ScrollToTop = () => {
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/journey" element={<Journey />} />
             <Route path="/verification" element={<Verification />} />
             <Route path="/certifications" element={<Certifications />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/discovery" element={<Discovery />} />
           </Routes>
         </main>
