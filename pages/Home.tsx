@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const LOGOS = [
   "https://assets.channelinsider.com/uploads/2022/08/CI.BCG_.Profile.png",
@@ -166,8 +167,28 @@ const Home = () => {
     }
   }, []);
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ashwanth S",
+    "jobTitle": "AI Systems Architect",
+    "url": "https://ashwanth.dev",
+    "sameAs": [
+      "https://www.linkedin.com/in/ashwanthofficial/",
+      "https://x.com/ashwanth_off",
+      "https://www.youtube.com/@ashwanthdotdev"
+    ],
+    "knowsAbout": ["AI Automation", "System Architecture", "Multi-Agent Orchestration", "Enterprise Systems"]
+  };
+
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+      <SEO 
+        title="Home" 
+        description="Ashwanth S - AI Systems Architect specializing in enterprise automation, multi-agent systems, and scalable workflows. Trusted by Fortune 500s."
+        schema={personSchema}
+        keywords={["AI Architect", "Automation", "N8N", "Enterprise AI", "System Architecture"]}
+      />
       
       {/* Hero Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

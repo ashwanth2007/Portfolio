@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink, Linkedin, Phone, Globe, ShieldCheck, Mail } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Verification = () => {
   const verifiers = [
@@ -37,6 +38,12 @@ const Verification = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-5xl mx-auto">
+      <SEO 
+        title="Verification Center" 
+        description="Official verification sources and contact points for the projects and employment history of Ashwanth S."
+        keywords={["Verification", "Reference Check", "Work History", "Project Verification"]}
+      />
+
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-4">
             <ShieldCheck className="text-brand-red" size={32} />

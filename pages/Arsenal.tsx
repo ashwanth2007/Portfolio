@@ -1,6 +1,7 @@
 import React from 'react';
 import { TOOL_ARSENAL } from '../data';
 import { Settings, Zap, Database, Brain } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Arsenal = () => {
   const getIcon = (name: string) => {
@@ -12,6 +13,12 @@ const Arsenal = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 max-w-7xl mx-auto">
+      <SEO 
+        title="The Arsenal" 
+        description="A curated stack of enterprise-grade AI tools including N8N, Claude, GPT-4, and Make.com used for building scalable automation systems."
+        keywords={["AI Tools", "Tech Stack", "N8N", "Make.com", "LLMs"]}
+      />
+
       <div className="mb-20 text-center">
         <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
           The Arsenal

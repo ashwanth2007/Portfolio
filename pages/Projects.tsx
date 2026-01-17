@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { PROJECTS } from '../data';
 import { Project } from '../types';
 import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, Maximize2, Minimize2 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const CATEGORIES = ['ZORO CORP', 'INSTIG8', 'FREEDOM WITH AI', 'PERSONAL'];
 
@@ -25,9 +26,32 @@ const Projects = () => {
     setIsExpanded(false);
   };
 
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies & Projects",
+    "description": "Deployed AI systems and automation projects by Ashwanth S.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": PROJECTS.map((project, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": project.title,
+        "description": project.subtitle,
+        "url": `https://ashwanth.dev/#/projects?id=${project.id}`
+      }))
+    }
+  };
+
   return (
     <div className="min-h-screen pt-32 pb-32 px-6 max-w-7xl mx-auto">
-      
+      <SEO 
+        title="Case Studies" 
+        description="Explore enterprise-grade AI automation projects and deployed systems for clients like BCG, Zoro Corp, and Instig8."
+        schema={projectSchema}
+        keywords={["Case Studies", "AI Projects", "Automation Portfolio", "System Architecture"]}
+      />
+
       {/* Header */}
       <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>

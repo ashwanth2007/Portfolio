@@ -1,6 +1,7 @@
 import React from 'react';
 import { EXPERIENCES } from '../data';
 import { Briefcase, Code, GraduationCap, Flag } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Journey = () => {
   const getIcon = (type: string) => {
@@ -14,6 +15,12 @@ const Journey = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-brand-black text-white">
+       <SEO 
+        title="My Journey" 
+        description="Professional timeline of Ashwanth S, featuring experience at Zoro Corp, Instig8.AI, and Freedom With AI."
+        keywords={["Career Timeline", "Experience", "Resume", "AI Engineer Background"]}
+      />
+
        <div className="max-w-4xl mx-auto text-center mb-24">
         <div className="inline-block border-b-2 border-brand-red pb-1 mb-6">
           <span className="text-xs font-bold tracking-[0.3em] uppercase text-gray-400">Career Timeline</span>

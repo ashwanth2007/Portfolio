@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Phone } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Discovery = () => {
   useEffect(() => {
@@ -47,6 +48,12 @@ const Discovery = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center">
+      <SEO 
+        title="Schedule Discovery Call" 
+        description="Book a consultation to discuss your automation needs and how AI systems can transform your business processes."
+        keywords={["Consultation", "Discovery Call", "AI Strategy", "Automation Meeting"]}
+      />
+
       <div className="mb-10 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="flex items-center justify-center gap-3 mb-4">
             <Phone className="text-brand-red" size={32} />

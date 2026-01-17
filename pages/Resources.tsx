@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const RESOURCES = [
   {
@@ -55,6 +56,11 @@ const RESOURCES = [
 const Resources = () => {
   return (
     <div className="min-h-screen pt-32 pb-32 px-6 max-w-[1600px] mx-auto">
+      <SEO 
+        title="Resources & Insights" 
+        description="Free professional resources, open-access knowledge, and curated insights on AI automation and system architecture."
+        keywords={["AI Resources", "LinkedIn Insights", "Automation Learning", "Free Knowledge"]}
+      />
       
       {/* Header */}
       <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-7xl mx-auto">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Award, FileCheck, ExternalLink, Eye, X, BadgeCheck, FileText, Medal, ShieldAlert } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const CERTIFICATES = [
   {
@@ -124,7 +125,12 @@ const Certifications = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-32 px-6 max-w-7xl mx-auto">
-      
+      <SEO 
+        title="Credentials & Certifications" 
+        description="Official certifications, awards, and letters of recommendation in AI architecture and web development."
+        keywords={["Certifications", "Awards", "AI Credentials", "Web Development", "Credentials"]}
+      />
+
       {/* Header */}
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-4">
