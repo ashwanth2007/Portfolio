@@ -4,6 +4,12 @@ import SEO from '../components/SEO';
 
 const RESOURCES = [
   {
+    src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7418405108117450752?collapsed=1",
+    height: 541,
+    width: 504,
+    title: "Latest Update"
+  },
+  {
     src: "https://www.linkedin.com/embed/feed/update/urn:li:share:7383807742794223617?collapsed=1",
     height: 545,
     width: 504,

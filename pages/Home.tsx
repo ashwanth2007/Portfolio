@@ -215,6 +215,17 @@ const Home = () => {
               <span className="font-bold tracking-widest text-sm uppercase">Discovery Call</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            {/* Secondary Button - Newsletter */}
+            <a 
+              href="https://newsletter.ashwanth.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between bg-transparent border-2 border-black text-black px-8 py-4 min-w-[200px] hover:bg-brand-red hover:border-brand-red hover:text-white transition-all duration-300"
+            >
+              <span className="font-bold tracking-widest text-sm uppercase">Join Newsletter</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 
@@ -357,6 +368,17 @@ const Home = () => {
                         </button>
                     </div>
                  </div>
+            </div>
+
+             {/* Case Study CTA Button */}
+             <div className="mt-12 flex justify-center pt-8 border-t border-gray-800">
+                <Link 
+                    to="/projects"
+                    className="flex items-center gap-3 bg-brand-red text-white px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
+                >
+                    View Case Studies
+                    <ArrowRight size={16} />
+                </Link>
             </div>
         </div>
       </div>
