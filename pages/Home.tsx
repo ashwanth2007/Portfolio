@@ -72,27 +72,27 @@ const DEPLOYMENTS = [
   {
     title: "AI Ad Creative Automation System",
     description: "An end-to-end AI system that turns any product into ready-to-launch ad creatives. It analyzes the brand’s visual style and audience psychology, generates multiple hooks and messages, and automatically produces platform-specific ad visuals for social channels like Instagram, Facebook, and TikTok. The system removes manual creative work, speeds up testing, and gives brands a continuous flow of high-quality ad assets without relying on agencies or designers.",
-    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQHlDb2MM1cCcQ/mp4-720p-30fp-crf28/B4EZoHunSzGoBk-/0/1761066256866?e=1768863600&v=beta&t=1y5LahMA73ac9ld0QheNyxQ6KlUI4txtNZe9XlAX1VM"
+    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/ad_creatives_form.mp4"
   },
   {
     title: "Viral AI Content Agent",
     description: "An AI-powered content system that monitors what is working across major social platforms, understands audience emotions and trends, and turns those insights into platform-specific content plans. It identifies high-impact topics, audience intent, and viral angles, then generates ready-to-use scripts, hooks, captions, and posting frameworks for LinkedIn, TikTok, Instagram, YouTube, X, and Facebook—so teams can publish consistently without manual research or creative guesswork.",
-    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQH2eYEJ7A_JEw/mp4-720p-30fp-crf28/B4EZfG0n_5GwBw-/0/1751387403872?e=1768867200&v=beta&t=MOYY8HqSRp5ObN6WcragJRpgxTJW-vF8uF73reW-qUo"
+    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/viral_playbook.mp4"
   },
   {
     title: "AI Ad Creative Generation Agent",
     description: "An AI system that transforms any product into conversion-ready ad creatives. It studies brand visuals, audience psychology, and winning ad patterns, then generates high-impact hooks, messages, and platform-specific visuals for Instagram, Facebook, and TikTok. The agent delivers complete, ready-to-run ad assets without designers, copywriters, or long production cycles.",
-    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQFW-kWVaXcoiA/mp4-720p-30fp-crf28/B4EZeivDYbG4Bk-/0/1750781947419?e=1768867200&v=beta&t=pdbQpMoAWZpmg5Ax-wp8K8VJmyHwZBlJ-1Qw-1VMYYA"
+    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/ad_creatives_qn_1.mp4"
   },
   {
     title: "AI-Powered Audience Intelligence Engine",
     description: "An AI system that tracks real-time activity in a brand’s niche to find both high-value customers and relevant creators in one workflow. It scans viral content and engagement, analyzes profiles and language to detect intent and fit, ranks people by conversion potential, and automatically generates personalized outreach messages for partnerships, demos, or sales—turning social activity into a continuous lead and influencer pipeline.",
-    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQHPK3tqrhEwQw/mp4-720p-30fp-crf28/B4EZdfZtTVHsBg-/0/1749652277720?e=1768867200&v=beta&t=4ga9XVf5-Ft-4DjsTERxV5_IDrhF-08lyFRuMy-SrmY"
+    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/audience_intelligence.mp4"
   },
   {
     title: "AI Sales Intelligence Agent",
     description: "An AI-driven prospect research system that builds a complete intelligence profile for any target company. It analyzes financial signals, technology stack, decision-maker roles, competitive positioning, and buying psychology, then produces a clear engagement and approach strategy. The agent gives sales teams everything they need to run informed, high-confidence conversations without manual research.",
-    video: "https://dms.licdn.com/playlist/vid/v2/D4E05AQET1y3yzNnSAQ/mp4-720p-30fp-crf28/B4EZjiAgIfGUBw-/0/1756138458101?e=1768867200&v=beta&t=CCgkwj7DEJSv6hCBxJHhJM3_dOOJJNCW7M8wcXd9JMI"
+    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/ai_sdr.mp4"
   }
 ];
 
