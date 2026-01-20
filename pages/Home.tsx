@@ -216,16 +216,14 @@ const Home = () => {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            {/* Secondary Button - Newsletter */}
-            <a 
-              href="https://newsletter.ashwanth.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Secondary Button - Case Studies */}
+            <Link 
+              to="/projects"
               className="group flex items-center justify-between bg-transparent border-2 border-black text-black px-8 py-4 min-w-[200px] hover:bg-brand-red hover:border-brand-red hover:text-white transition-all duration-300"
             >
-              <span className="font-bold tracking-widest text-sm uppercase">Join Newsletter</span>
+              <span className="font-bold tracking-widest text-sm uppercase">Case Studies</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </div>
 

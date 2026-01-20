@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Linkedin, Phone, Home, FolderOpen, Cpu, Map, Award, BookOpen } from 'lucide-react';
+import { Menu, X, Linkedin, Home, FolderOpen, Cpu, Map, Award, BookOpen, Mail } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -59,14 +59,16 @@ const Navbar = () => {
           
           <div className="h-6 w-px bg-gray-200 mx-4"></div>
 
-          <Link 
-            to="/discovery"
+          <a 
+            href="https://newsletter.ashwanth.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group bg-black text-white px-4 py-2 text-xs font-bold tracking-wider rounded-sm hover:bg-brand-red transition-colors uppercase flex items-center gap-2"
           >
-            <Phone size={14} className="group-hover:rotate-12 transition-transform" />
-            <span className="hidden lg:inline">Schedule Discovery</span>
-            <span className="lg:hidden">Book</span>
-          </Link>
+            <Mail size={14} className="group-hover:rotate-12 transition-transform" />
+            <span className="hidden lg:inline">Join Free Newsletter</span>
+            <span className="lg:hidden">Join</span>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -109,14 +111,16 @@ const Navbar = () => {
             <Linkedin size={20} />
             LinkedIn Profile
           </a>
-           <Link 
-            to="/discovery"
+           <a 
+            href="https://newsletter.ashwanth.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 text-lg font-bold text-gray-600"
           >
-            <Phone size={20} />
-            Schedule Discovery
-          </Link>
+            <Mail size={20} />
+            Join Free Newsletter
+          </a>
         </div>
       )}
     </nav>
