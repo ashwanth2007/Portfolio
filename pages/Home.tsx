@@ -235,7 +235,7 @@ const Home = () => {
               
               {/* Main Image */}
               <img 
-                src="https://raw.githubusercontent.com/ashwanth2007/test/refs/heads/main/out-25.webp" 
+                src="https://raw.githubusercontent.com/ashwanth2007/Resources/main/profile-pic.jpg" 
                 alt="Ashwanth S" 
                 className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black shadow-2xl bg-gray-100"
               />
