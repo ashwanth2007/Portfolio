@@ -57,6 +57,33 @@ export const TOOL_ARSENAL: ToolCategory[] = [
 export const PROJECTS: Project[] = [
   // --- ZORO CORP CASE STUDIES ---
   {
+    id: 'zoro-ad-intel',
+    category: 'ZORO CORP',
+    title: 'Ad Creative Intelligence',
+    subtitle: 'Automated Competitive Analysis → Systematic Winner Generation',
+    client: '$2M/MRR D2C Brand',
+    role: 'System Architect',
+    impact_summary: '$150K → $600K Scale',
+    tags: ['Gemini 3 Pro', 'Claude 4.5', 'Airtable', 'Apify', 'Veo'],
+    context: 'A $2M/month D2C brand across health, auto, and digital products was spending $150K/month on ads but struggled to scale due to creative fatigue and saturation.',
+    problem: 'The creative team was a bottleneck, producing only 20-40 concepts/month while competitors tested 200+. Manual research and random AI generation led to budget waste on unproven concepts.',
+    solution: 'Deployed an intelligence infrastructure: Automating competitor monitoring, analyzing winning patterns via Gemini Vision/Claude, and systematically generating 400+ variations using Nano Banana Pro/Veo.',
+    architecture: [
+      'Competitor Radar (Apify + Foreplay)',
+      'Creative Scanner (Frame-by-frame Vision Analysis)',
+      'Mechanistic Prompt Engine (Brand Voice Trained)',
+      'Video Variant Generator (Veo 3.1)',
+      'Performance Feedback Loop (Airtable Intelligence)'
+    ],
+    tech_stack: ['Airtable', 'Foreplay', 'Apify', 'Gemini 3 Pro', 'Claude 4.5', 'Veo 3.1', 'Nano Banana Pro Image Model', 'GPT Imagen'],
+    results: [
+      'Scaled ad spend from $150K to $600K/month',
+      'Increased testing from 20 to 400+ variations/month',
+      'Reduced creative cost from $12k/mo to $600/mo',
+      'Found 20-25 winning concepts/month (vs 2-3 previously)'
+    ]
+  },
+  {
     id: 'zoro-onindus',
     category: 'ZORO CORP',
     title: 'Onindus Construction Intel',
@@ -64,7 +91,7 @@ export const PROJECTS: Project[] = [
     client: 'Onindus (Construction Consulting)',
     role: 'Lead Developer',
     impact_summary: '50+ New Leads/Week',
-    tags: ['N8N', 'HubSpot', 'Clay', 'Jiva AI'],
+    tags: ['N8N', 'HubSpot', 'Clay'],
     context: 'The construction consulting firm was manually tracking construction projects and job changes across healthcare, education, and municipal sectors.',
     problem: 'They could only send 100 emails per day with minimal personalization, limiting their ability to scale outreach and capture opportunities from $50M+ construction projects. Manual research took 2+ hours per company.',
     solution: 'Designed and built N8N workflows for automated signal monitoring across news feeds and LinkedIn. Implemented a lead enrichment pipeline with 90%+ email validity and AI-powered message generation using Claude/GPT.',
@@ -74,11 +101,10 @@ export const PROJECTS: Project[] = [
       'AI-powered message generation (Claude/GPT)',
       'Multi-domain email infrastructure'
     ],
-    tech_stack: ['N8N', 'Airtable', 'Claude', 'GPT-4', 'HubSpot', 'Clay', 'Jiva AI', 'Perplexity API'],
+    tech_stack: ['N8N', 'Airtable', 'Claude', 'GPT-4', 'HubSpot', 'Clay', 'Perplexity API'],
     results: [
       '90%+ email deliverability rate',
-      '10+ qualified meetings per month',
-      'Scaled from 100 emails/day to 500+ emails/month',
+      'Scaled from 100 emails/day to 500+ emails/week',
       'Reduced research time from 2+ hours to 15 mins'
     ]
   },

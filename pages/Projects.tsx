@@ -269,6 +269,9 @@ const Projects = () => {
                   ))}
                 </div>
               </section>
+              
+              {/* Spacer for bottom scrolling comfort */}
+              <div className="h-24 w-full bg-white"></div>
 
             </div>
           </div>

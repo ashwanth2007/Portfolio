@@ -99,17 +99,17 @@ const DEPLOYMENTS = [
 const TRUSTED_BY = [
   {
     name: "Aryan Mahajan",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTbCvYZSzNFB7VQdYM-anMIJZzeqDXVSgKdw&s",
+    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/aryan.jpg",
     link: "https://www.linkedin.com/in/aryanmahajaninstig8/"
   },
   {
     name: "Avinash Mada",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEgNb0A7d6HCp597jNtuuW8UKiGq6P85MBgD7a-M41N5iAugumegaySDTVPd4dYp77-35FMj92XH1ErfkTax-XyMu3Zfha7KYIDx1Kw&s=10",
+    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/avinash_mada.jpg",
     link: "https://www.instagram.com/meetavinash"
   },
   {
     name: "Mani Kanasani",
-    image: "https://yt3.googleusercontent.com/svjKpqITtUTalFEOWBDAOHMo29LAK_p0JVJ09CYxMkzQWzp7J_Q9MgKvt8zhFumthn_T7NIkEw=s900-c-k-c0x00ffffff-no-rj",
+    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/mani_kanasani.jpg",
     link: "https://www.youtube.com/@ManiKanasani"
   }
 ];
@@ -448,7 +448,7 @@ const Home = () => {
                         <img 
                             src={person.image} 
                             alt={person.name} 
-                            className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black bg-gray-50 grayscale group-hover:grayscale-0 transition-all duration-300"
+                            className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black bg-gray-50 transition-all duration-300"
                         />
                     </div>
                     <h3 className="text-lg font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors text-center flex items-center gap-2">
