@@ -182,7 +182,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+    <div className="min-h-screen pt-24 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
       <SEO 
         title="Home" 
         description="Ashwanth S - AI Systems Architect specializing in enterprise automation, multi-agent systems, and scalable workflows. Trusted by Fortune 500s."
@@ -191,22 +191,22 @@ const Home = () => {
       />
       
       {/* Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Text Content */}
-        <div className="lg:col-span-7 space-y-10">
+        <div className="lg:col-span-7 space-y-6">
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter leading-[0.9]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black tracking-tighter leading-[0.9]">
             I BUILD <br/>
             <span className="text-brand-red">AUTOMATION</span> <br/>
             SYSTEMS.
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 font-medium italic leading-relaxed max-w-2xl border-l-4 border-gray-200 pl-6">
+          <p className="text-base md:text-lg text-gray-600 font-medium italic leading-relaxed max-w-2xl border-l-4 border-gray-200 pl-6">
             I build AI automation systems that turn manual work into scalable processes. Working with enterprise clients to deliver measurable results.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
@@ -228,8 +228,8 @@ const Home = () => {
         </div>
 
         {/* Image Content */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end mt-12 lg:mt-0">
-           <div className="relative w-full max-w-[400px] aspect-square group">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
+           <div className="relative w-full max-w-[350px] lg:max-w-[400px] aspect-square group">
               {/* Decorative Offset Border */}
               <div className="absolute top-4 left-4 w-full h-full border-2 border-black rounded-3xl z-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
               
@@ -244,12 +244,12 @@ const Home = () => {
       </div>
 
       {/* Client Logos Scroll */}
-      <div className="mt-20 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-8 md:py-12 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
+      <div className="mt-10 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
          <div className="relative w-full flex overflow-hidden group">
             <div className="flex w-max animate-marquee pause-on-hover items-center">
                {/* First Set */}
                {LOGOS.map((logo, index) => (
-                 <div key={index} className="flex-shrink-0 h-12 md:h-16 w-32 md:w-40 flex items-center justify-center mr-16 md:mr-24">
+                 <div key={index} className="flex-shrink-0 h-10 md:h-12 w-28 md:w-36 flex items-center justify-center mr-16 md:mr-24">
                     <img 
                       src={logo} 
                       alt="Client Logo" 
@@ -260,7 +260,7 @@ const Home = () => {
                
                {/* Second Set (Duplicate for Loop) */}
                {LOGOS.map((logo, index) => (
-                 <div key={`dup-${index}`} className="flex-shrink-0 h-12 md:h-16 w-32 md:w-40 flex items-center justify-center mr-16 md:mr-24">
+                 <div key={`dup-${index}`} className="flex-shrink-0 h-10 md:h-12 w-28 md:w-36 flex items-center justify-center mr-16 md:mr-24">
                     <img 
                       src={logo} 
                       alt="Client Logo" 
@@ -273,7 +273,7 @@ const Home = () => {
       </div>
 
       {/* Core Capabilities Section */}
-      <div className="mt-32">
+      <div className="mt-24">
            <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
               <span className="w-8 h-[2px] bg-brand-red"></span>
               Core Capabilities
