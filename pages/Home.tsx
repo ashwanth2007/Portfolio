@@ -253,7 +253,7 @@ const Home = () => {
                     <img 
                       src={logo} 
                       alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" 
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300" 
                     />
                  </div>
                ))}
@@ -264,7 +264,7 @@ const Home = () => {
                     <img 
                       src={logo} 
                       alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mix-blend-multiply" 
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300" 
                     />
                  </div>
                ))}
