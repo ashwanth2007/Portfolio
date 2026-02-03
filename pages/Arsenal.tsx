@@ -20,9 +20,9 @@ const Arsenal = () => {
       />
 
       <div className="mb-20 text-center">
-        <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
           The Arsenal
-        </h2>
+        </h1>
         <p className="text-gray-500 max-w-2xl mx-auto text-lg">
           A curated stack of enterprise-grade tools. No fluff, just leverage. 
           Selected for reliability, scalability, and integration capabilities.

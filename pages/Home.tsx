@@ -182,7 +182,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen pt-20 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
       <SEO 
         title="Home" 
         description="Ashwanth S - AI Systems Architect specializing in enterprise automation, multi-agent systems, and scalable workflows. Trusted by Fortune 500s."
@@ -196,7 +196,7 @@ const Home = () => {
         {/* Text Content */}
         <div className="lg:col-span-7 space-y-6">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black tracking-tighter leading-[0.9]">
+          <h1 className="text-5xl md:text-6xl lg:text-6xl font-black text-black tracking-tighter leading-[0.9]">
             I BUILD <br/>
             <span className="text-brand-red">AUTOMATION</span> <br/>
             SYSTEMS.
@@ -229,7 +229,7 @@ const Home = () => {
 
         {/* Image Content */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
-           <div className="relative w-full max-w-[350px] lg:max-w-[400px] aspect-square group">
+           <div className="relative w-full max-w-[300px] lg:max-w-[380px] aspect-square group">
               {/* Decorative Offset Border */}
               <div className="absolute top-4 left-4 w-full h-full border-2 border-black rounded-3xl z-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
               
@@ -244,7 +244,7 @@ const Home = () => {
       </div>
 
       {/* Client Logos Scroll */}
-      <div className="mt-10 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
+      <div className="mt-8 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
          <div className="relative w-full flex overflow-hidden group">
             <div className="flex w-max animate-marquee pause-on-hover items-center">
                {/* First Set */}

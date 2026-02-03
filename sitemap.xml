@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ashwanth.dev/</loc>
+    <lastmod>2025-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ashwanth.dev/#/projects</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ashwanth.dev/#/arsenal</loc>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://ashwanth.dev/#/journey</loc>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://ashwanth.dev/#/certifications</loc>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>https://ashwanth.dev/#/resources</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

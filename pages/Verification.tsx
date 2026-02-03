@@ -47,9 +47,9 @@ const Verification = () => {
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-4">
             <ShieldCheck className="text-brand-red" size={32} />
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
             Data Verification Center
-            </h2>
+            </h1>
         </div>
         <div className="w-24 h-2 bg-brand-red mb-6"></div>
         <p className="text-gray-500 text-lg font-medium max-w-2xl border-l-4 border-gray-200 pl-6">

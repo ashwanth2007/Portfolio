@@ -57,9 +57,9 @@ const Discovery = () => {
       <div className="mb-10 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="flex items-center justify-center gap-3 mb-4">
             <Phone className="text-brand-red" size={32} />
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
             Discovery Call
-            </h2>
+            </h1>
         </div>
         <p className="text-gray-500 text-lg font-medium max-w-2xl mx-auto">
           Book a time to discuss your automation needs.

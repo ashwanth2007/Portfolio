@@ -55,9 +55,9 @@ const Projects = () => {
       {/* Header */}
       <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
             Deployed Systems
-            </h2>
+            </h1>
             <div className="w-24 h-2 bg-brand-red mb-6"></div>
             <p className="text-gray-500 max-w-xl text-lg font-medium">
             Select a portfolio sector below to view specific case studies.

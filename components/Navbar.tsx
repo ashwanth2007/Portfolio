@@ -22,9 +22,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="group flex flex-col items-start justify-center">
-          <h1 className="text-xl md:text-2xl font-black tracking-tighter text-black">
+          <div className="text-xl md:text-2xl font-black tracking-tighter text-black">
             ASHWANTH S
-          </h1>
+          </div>
           <div className="flex h-1.5 w-full mt-1">
             <div className="w-2/3 h-full bg-black"></div>
             <div className="w-1/3 h-full bg-brand-red"></div>

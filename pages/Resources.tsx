@@ -72,9 +72,9 @@ const Resources = () => {
       <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
             <BookOpen className="text-black" size={32} />
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
             Resources
-            </h2>
+            </h1>
         </div>
         <div className="w-24 h-2 bg-brand-red mb-6"></div>
         <p className="text-gray-500 text-lg font-medium max-w-2xl">

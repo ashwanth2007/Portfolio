@@ -25,7 +25,7 @@ const Journey = () => {
         <div className="inline-block border-b-2 border-brand-red pb-1 mb-6">
           <span className="text-xs font-bold tracking-[0.3em] uppercase text-gray-400">Career Timeline</span>
         </div>
-        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase">The Path</h2>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase">The Path</h1>
       </div>
 
       <div className="max-w-4xl mx-auto relative">
