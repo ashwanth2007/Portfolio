@@ -4,15 +4,10 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const LOGOS = [
-  "https://assets.channelinsider.com/uploads/2022/08/CI.BCG_.Profile.png",
-  "https://muddymats.com/cdn/shop/articles/Is_Muddy_Mat_A_Legit_Company_5cd37497-5c40-430d-80ce-ca8c2f79067d.png?v=1742796297",
-  "https://play-lh.googleusercontent.com/O7VJWFkx8kwZ3-Lh9WutnGhvb781o1TBkQ7eTQ9cyCmGF1gsLyqSGTMegcTHHjitVm0",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTosM-lOX92wpdNNSVyCM3QbFI1mLTP_CVIkg&s",
   "https://static1.squarespace.com/static/646d7fcc041c0a51245304a0/t/6479170b6f690d78f18f3ad2/1685657359922/Zoe-Home-SocialImage.jpg?format=1500w",
   "https://www.ambrosiabakery.in/cdn/shop/files/ambrosialogozoomed_135x@2x.png?v=1613709932",
-  "https://assets.cdn.filesafe.space/TOke3l5JIz3qqeafaEbt/media/6448af7d2191d0f2033b2242.webp",
-  "https://instig8.ai/assets/images/image07.png?v=1eb8f38d",
-  "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/nttce5yvbgmcpnfsjena?ik-sanitizeSvg=true"
+  "https://assets.cdn.filesafe.space/TOke3l5JIz3qqeafaEbt/media/6448af7d2191d0f2033b2242.webp"
 ];
 
 const FEATURES = [
