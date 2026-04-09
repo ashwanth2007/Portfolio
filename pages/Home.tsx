@@ -136,12 +136,14 @@ const ARSENAL_LOGOS = [
 const TECH_STACK = [
   { name: "Next.js", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVW3qpDKsp9c6aqWdkAsVTiqhOOxNxJbk8dg&s", desc: "Backend / full-stack apps" },
   { name: "FastAPI", logo: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg", desc: "Backend APIs" },
+  { name: "Node.js", logo: "https://cdn.iconscout.com/icon/free/png-256/free-node-js-logo-icon-svg-download-png-3030179.png?f=webp", desc: "Server-side Runtime" },
   { name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", desc: "Frontend" },
   { name: "MongoDB", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s", desc: "Database layer" },
   { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png", desc: "Database layer" },
   { name: "Supabase", logo: "https://logowik.com/content/uploads/images/supabase-icon1721342077.logowik.com.webp", desc: "Backend + DB + Auth" },
   { name: "Flutter", logo: "https://cdn.worldvectorlogo.com/logos/flutter.svg", desc: "Monitor App Development" },
   { name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg", desc: "Enterprise SDK" },
+  { name: "C++", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png", desc: "Performance Systems" },
   { name: "Render", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlZQ5lkKr_NTo29xqy0X5VQSQknoPuhuu3A&s", desc: "Backend Hosting" },
   { name: "Vercel", logo: "https://img.icons8.com/ios_filled/1200/vercel.jpg", desc: "Deployment & Edge" }
 ];
@@ -664,7 +666,7 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="w-full h-[700px] bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden relative z-10">
+        <div className="w-full h-[700px] bg-black border border-white/10 shadow-2xl rounded-xl overflow-hidden relative z-10">
             <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
         </div>
       </div>
