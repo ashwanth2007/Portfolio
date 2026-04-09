@@ -334,111 +334,40 @@ const Home = () => {
               Core Capabilities
            </h2>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-gray-200">
-              {FEATURES.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="group relative p-10 border-r border-b border-gray-200 hover:bg-black transition-all duration-500 overflow-hidden"
-                >
-                   {/* Background Number Accent */}
-                   <span className="absolute -bottom-4 -right-4 text-9xl font-black text-gray-50 group-hover:text-white/5 transition-colors duration-500 pointer-events-none">
-                      {(index + 1).toString().padStart(2, '0')}
-                   </span>
+           <div className="border border-gray-800 rounded-[3rem] overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+                 {FEATURES.map((feature, index) => (
+                   <div 
+                     key={index} 
+                     className="group relative p-10 border-r border-b border-gray-800 bg-black transition-all duration-500 overflow-hidden flex flex-col justify-center min-h-[350px]"
+                   >
+                      {/* Background Number Accent */}
+                      <span className="absolute -bottom-2 -right-2 text-7xl font-black text-white/[0.03] pointer-events-none group-hover:text-brand-red/10 transition-colors duration-500">
+                         {(index + 1).toString().padStart(2, '0')}
+                      </span>
 
-                   <div className="relative z-10 space-y-8">
-                      <div className="w-14 h-14 flex items-center justify-center bg-gray-50 rounded-2xl text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500 shadow-sm">
-                         {feature.icon}
-                      </div>
-                      
-                      <div className="space-y-4">
-                         <h3 className="text-2xl font-black text-black uppercase tracking-tighter group-hover:text-white transition-colors duration-500">
-                           {feature.title}
-                         </h3>
-                         <p className="text-gray-500 font-medium leading-relaxed group-hover:text-gray-400 transition-colors duration-500">
-                           {feature.desc}
-                         </p>
-                      </div>
+                      <div className="relative z-10 space-y-8">
+                         <div className="w-14 h-14 flex items-center justify-center bg-white/5 rounded-2xl text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500 shadow-xl">
+                            {feature.icon}
+                         </div>
+                         
+                         <div className="space-y-4">
+                            <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter group-hover:text-brand-red transition-colors duration-500">
+                              {feature.title}
+                            </h3>
+                            <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
+                              {feature.desc}
+                            </p>
+                         </div>
 
-                      <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                         <div className="h-1 w-12 bg-brand-red"></div>
+                         <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="h-1 w-12 bg-brand-red"></div>
+                         </div>
                       </div>
                    </div>
-                </div>
-              ))}
+                 ))}
+              </div>
            </div>
-      </div>
-
-      {/* Few Deployed Agents Section */}
-      <div className="mt-32">
-        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
-            <span className="w-8 h-[2px] bg-brand-red"></span>
-            Few Deployed Agents
-        </h2>
-
-        <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
-                FEW <br/>
-                <span className="text-brand-red">DEPLOYED AGENTS</span>
-            </h1>
-        </div>
-
-        <div className="space-y-12">
-            {DEPLOYMENTS.map((deployment, index) => (
-              <Link 
-                key={index}
-                to={`/case-studies/${deployment.projectId}`}
-                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] hover:-translate-y-2 transition-all duration-500"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Video Side */}
-                  <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onClick={(e) => e.stopPropagation()}>
-                    <video 
-                      className="w-full h-full object-contain"
-                      controls
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={deployment.video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-
-                  {/* Text Side */}
-                  <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-brand-red font-black text-2xl">
-                        {(index + 1).toString().padStart(2, '0')}
-                      </span>
-                      <div className="h-px w-8 bg-white/10"></div>
-                    </div>
-
-                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none text-white group-hover:text-brand-red transition-colors">
-                      {deployment.title}
-                    </h3>
-                    
-                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
-                      {deployment.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
-                      View Case Study <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-        </div>
-
-        {/* View More Case Studies Button */}
-        <div className="mt-16 flex justify-center">
-          <Link 
-            to="/case-studies"
-            className="group flex items-center gap-4 bg-black text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-brand-red/20"
-          >
-            View More Case Studies
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
-        </div>
       </div>
 
       {/* Arsenal Section */}
@@ -572,6 +501,79 @@ const Home = () => {
                 animation: data-pulse 3s ease-in-out infinite;
             }
         `}} />
+      </div>
+
+      {/* Few Deployed Agents Section */}
+      <div className="mt-32">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Few Deployed Agents
+        </h2>
+
+        <div className="mb-12">
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+                FEW <br/>
+                <span className="text-brand-red">DEPLOYED AGENTS</span>
+            </h1>
+        </div>
+
+        <div className="space-y-12">
+            {DEPLOYMENTS.map((deployment, index) => (
+              <Link 
+                key={index}
+                to={`/case-studies/${deployment.projectId}`}
+                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Video Side */}
+                  <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                    <video 
+                      className="w-full h-full object-contain"
+                      controls
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={deployment.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  {/* Text Side */}
+                  <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
+                    <div className="flex items-center gap-3">
+                      <span className="text-brand-red font-black text-2xl">
+                        {(index + 1).toString().padStart(2, '0')}
+                      </span>
+                      <div className="h-px w-8 bg-white/10"></div>
+                    </div>
+
+                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none text-white group-hover:text-brand-red transition-colors">
+                      {deployment.title}
+                    </h3>
+                    
+                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
+                      {deployment.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
+                      View Case Study <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+
+        {/* View More Case Studies Button */}
+        <div className="mt-16 flex justify-center">
+          <Link 
+            to="/case-studies"
+            className="group flex items-center gap-4 bg-black text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-brand-red/20"
+          >
+            View More Case Studies
+            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+          </Link>
+        </div>
       </div>
 
       {/* Tech Stack Section */}
