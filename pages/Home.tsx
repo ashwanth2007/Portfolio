@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const LOGOS = [
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/BCG_Corporate_Logo.svg/1280px-BCG_Corporate_Logo.svg.png",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTosM-lOX92wpdNNSVyCM3QbFI1mLTP_CVIkg&s",
   "https://static1.squarespace.com/static/646d7fcc041c0a51245304a0/t/6479170b6f690d78f18f3ad2/1685657359922/Zoe-Home-SocialImage.jpg?format=1500w",
   "https://www.ambrosiabakery.in/cdn/shop/files/ambrosialogozoomed_135x@2x.png?v=1613709932",
-  "https://assets.cdn.filesafe.space/TOke3l5JIz3qqeafaEbt/media/6448af7d2191d0f2033b2242.webp"
+  "https://images.ctfassets.net/ktn111j92rjl/QJUGNfyrlW58EgayGLDPZ/7eb8f1578b469c85104643ec883fbba2/Logotype.svg",
+  "https://shop.muddymats.com/product/muddy-mat-csb/app/desktop/images/LogoMuddyMat.png",
+  "https://storage.getlatka.com/images/onindus.com.png"
 ];
 
 const FEATURES = [
@@ -267,6 +270,30 @@ const Home = () => {
          </div>
       </div>
 
+      {/* Achieved Metrics Section */}
+      <div className="mt-24">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Achieved Metrics
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+           {[
+             { value: '$100k+', label: 'Worth of Systems Delivered' },
+             { value: '100+', label: 'Hours Saved Per Month' },
+             { value: '20+', label: 'Production Ready Systems' }
+           ].map(item => (
+             <div key={item.label} className="group">
+                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
+                  {item.value}
+                </h3>
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 border-l-4 border-gray-200 pl-4 group-hover:border-brand-red transition-colors">
+                  {item.label}
+                </p>
+             </div>
+           ))}
+        </div>
+      </div>
+
       {/* Core Capabilities Section */}
       <div className="mt-24">
            <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
@@ -373,30 +400,6 @@ const Home = () => {
                     <ArrowRight size={16} />
                 </Link>
             </div>
-        </div>
-      </div>
-
-      {/* Achieved Metrics Section */}
-      <div className="mt-32">
-        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
-            <span className="w-8 h-[2px] bg-brand-red"></span>
-            Achieved Metrics
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-           {[
-             { value: '$100k+', label: 'Worth of Systems Delivered' },
-             { value: '100+', label: 'Hours Saved Per Month' },
-             { value: '20+', label: 'Production Ready Systems' }
-           ].map(item => (
-             <div key={item.label} className="group">
-                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
-                  {item.value}
-                </h3>
-                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 border-l-4 border-gray-200 pl-4 group-hover:border-brand-red transition-colors">
-                  {item.label}
-                </p>
-             </div>
-           ))}
         </div>
       </div>
 
