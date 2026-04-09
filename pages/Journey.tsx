@@ -17,7 +17,7 @@ const Journey = () => {
     <div className="min-h-screen pt-32 pb-24 px-6 bg-brand-black text-white">
        <SEO 
         title="My Journey" 
-        description="Professional timeline of Ashwanth S, featuring experience at Zoro Corp, Instig8.AI, and Freedom With AI."
+        description="Professional timeline of Ashwanth S, featuring experience at Ashwanth S, Instig8.AI, and Freedom With AI."
         keywords={["Career Timeline", "Experience", "Resume", "AI Engineer Background"]}
       />
 

@@ -6,13 +6,13 @@ import { Project } from '../types';
 import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, Maximize2, Minimize2, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const CATEGORIES = ['ZORO CORP', 'INSTIG8', 'FREEDOM WITH AI', 'PERSONAL'];
+const CATEGORIES = ['CASE STUDIES', 'INSTIG8', 'FREEDOM WITH AI', 'PERSONAL'];
 
 const Projects = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeCategory, setActiveCategory] = useState('ZORO CORP');
+  const [activeCategory, setActiveCategory] = useState('CASE STUDIES');
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Projects = () => {
   };
 
   const getCategoryLabel = (cat: string) => {
-    if (cat === 'ZORO CORP') return 'ZORO CORP';
+    if (cat === 'CASE STUDIES') return 'CASE STUDIES';
     if (cat === 'INSTIG8') return 'INSTIG8.AI';
     return cat;
   };
@@ -79,7 +79,7 @@ const Projects = () => {
     <div className="min-h-screen pt-32 pb-32 px-6 max-w-7xl mx-auto">
       <SEO 
         title="Case Studies" 
-        description="Explore enterprise-grade AI automation projects and deployed systems for clients like BCG, Zoro Corp, and Instig8."
+        description="Explore enterprise-grade AI automation projects and deployed systems for clients like BCG, Ashwanth S, and Instig8."
         schema={projectSchema}
         keywords={["Case Studies", "AI Projects", "Automation Portfolio", "System Architecture"]}
       />
@@ -143,9 +143,6 @@ const Projects = () => {
                     <span className="text-5xl font-black text-gray-100 group-hover:text-brand-red/10 transition-colors">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <div className="bg-black text-white px-2 py-1 text-[10px] font-mono font-bold uppercase tracking-widest">
-                      {project.tags[0]}
-                    </div>
                  </div>
 
                  <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-2 group-hover:text-brand-red transition-colors">

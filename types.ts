@@ -1,6 +1,6 @@
 export interface Project {
   id: string;
-  category: 'ZORO CORP' | 'INSTIG8' | 'FREEDOM WITH AI' | 'PERSONAL' | 'OTHER';
+  category: 'CASE STUDIES' | 'INSTIG8' | 'FREEDOM WITH AI' | 'PERSONAL' | 'OTHER';
   title: string;
   subtitle: string;
   client: string;

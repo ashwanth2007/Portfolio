@@ -118,6 +118,14 @@ const TRUSTED_BY = [
     link: "https://www.youtube.com/@ManiKanasani",
     headline: "Agency Owner & Content Creator",
     stats: ["15,000 YouTube subscribers", "10,000 Skool community members", "Agency owner making $100K+/month"]
+  },
+  {
+    name: "Kanchan Bhatta",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-scale_400_400/B56ZsrA0DAHsAk-/0/1765953192842?e=1777507200&v=beta&t=SqxV5Bc6S2IR14PzUiIZerk0kvMVoJILajzN8RdJrKM",
+    testimonial: "https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP",
+    link: "https://www.linkedin.com/in/growthxkanchan/",
+    headline: "GTM & LinkedIn Expert",
+    stats: ["GTM Expert", "LinkedIn Expert", "Growth Strategy"]
   }
 ];
 
@@ -225,54 +233,39 @@ const Home = () => {
       />
       
       {/* Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="flex flex-col items-center text-center space-y-12 py-16 md:py-24">
         
         {/* Text Content */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="max-w-5xl space-y-10 flex flex-col items-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-6xl font-black text-black tracking-tighter leading-[0.9]">
+          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-black tracking-tighter leading-[0.85] uppercase">
             I BUILD <br/>
             <span className="text-brand-red">AUTONOMOUS</span> <br/>
             AGENTS.
           </h1>
 
-          <p className="text-base md:text-lg text-gray-600 font-medium italic leading-relaxed max-w-2xl border-l-4 border-gray-200 pl-6">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 font-medium italic leading-relaxed max-w-3xl">
             I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row gap-6 pt-6 w-full justify-center">
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
-              className="group flex items-center justify-between bg-black border-2 border-black text-white px-8 py-4 min-w-[200px] hover:bg-brand-red hover:border-brand-red transition-all duration-300 animate-glow shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+              className="group flex items-center justify-between bg-black border-2 border-black text-white px-10 py-5 min-w-[260px] hover:bg-brand-red hover:border-brand-red transition-all duration-300 animate-glow shadow-2xl"
             >
-              <span className="font-bold tracking-widest text-sm uppercase">Discovery Call</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <span className="font-bold tracking-[0.2em] text-sm uppercase">Discovery Call</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Secondary Button - Case Studies */}
             <Link 
               to="/case-studies"
-              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-8 py-4 min-w-[200px] hover:bg-black hover:border-black transition-all duration-300"
+              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-10 py-5 min-w-[260px] hover:bg-black hover:border-black transition-all duration-300"
             >
-              <span className="font-bold tracking-widest text-sm uppercase">Case Studies</span>
+              <span className="font-bold tracking-[0.2em] text-sm uppercase">Case Studies</span>
             </Link>
           </div>
-        </div>
-
-        {/* Image Content */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
-           <div className="relative w-full max-w-[300px] lg:max-w-[380px] aspect-square group">
-              {/* Decorative Offset Border */}
-              <div className="absolute top-4 left-4 w-full h-full border-2 border-black rounded-3xl z-0 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-              
-              {/* Main Image */}
-              <img 
-                src="https://raw.githubusercontent.com/ashwanth2007/Resources/main/profile-pic.jpg" 
-                alt="Ashwanth S" 
-                className="relative z-10 w-full h-full object-cover rounded-3xl border-2 border-black shadow-2xl bg-gray-100"
-              />
-           </div>
         </div>
       </div>
 

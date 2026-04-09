@@ -5,13 +5,12 @@ import SEO from '../components/SEO';
 const Verification = () => {
   const verifiers = [
     {
-      company: "Zoro Corp & Instig8.ai",
+      company: "Instig8.ai",
       poc: "Aryan Mahajan",
       role: "Co-Founder",
       links: [
         { label: "LinkedIn", url: "https://www.linkedin.com/in/aryanmahajaninstig8/", icon: <Linkedin size={14} /> },
         { label: "Instig8.ai", url: "https://www.instig8.ai/", icon: <Globe size={14} /> },
-        { label: "Zoro Corp", url: "https://zorocorp.com/", icon: <Globe size={14} /> },
         { label: "Twitter (X)", url: "https://x.com/aryanXmahajan", icon: <ExternalLink size={14} /> },
       ]
     },

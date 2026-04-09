@@ -10,6 +10,8 @@ import Verification from './pages/Verification';
 import Certifications from './pages/Certifications';
 import Resources from './pages/Resources';
 import Discovery from './pages/Discovery';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,6 +41,8 @@ const App = () => {
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/discovery" element={<Discovery />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
 

@@ -4,7 +4,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: 'zoro',
     period: 'Present',
-    company: 'Zoro Corp',
+    company: 'Ashwanth S',
     role: 'AI Systems Architect',
     type: 'work',
     description: 'The Scale Phase. Architecting autonomous systems for Fortune 500s. Building AI agent systems for capital-intensive B2B firms and expanding capabilities in multi-agent orchestration.'
@@ -55,10 +55,10 @@ export const TOOL_ARSENAL: ToolCategory[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  // --- ZORO CORP CASE STUDIES ---
+  // --- CASE STUDIES ---
   {
     id: 'zoro-ad-intel',
-    category: 'ZORO CORP',
+    category: 'CASE STUDIES',
     title: 'Ad Creative Intelligence',
     subtitle: 'Automated Competitive Analysis → Systematic Winner Generation',
     client: '$2M/MRR D2C Brand',
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'zoro-onindus',
-    category: 'ZORO CORP',
+    category: 'CASE STUDIES',
     title: 'Onindus Construction Intel',
     subtitle: 'Automated signal monitoring & multi-channel outreach system.',
     client: 'Onindus (Construction Consulting)',
@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'zoro-bcg',
-    category: 'ZORO CORP',
+    category: 'CASE STUDIES',
     title: 'BCG Executive System',
     subtitle: 'Fortune 500 intelligence & LinkedIn content automation.',
     client: 'Boston Consulting Group (Partner)',
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'zoro-aliyah',
-    category: 'ZORO CORP',
+    category: 'CASE STUDIES',
     title: 'Aliyah Lead Scraping',
     subtitle: 'Semantic filtering & immigration lead identification.',
     client: 'Aliyah Immigration',
