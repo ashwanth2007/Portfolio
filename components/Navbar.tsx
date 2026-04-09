@@ -11,7 +11,6 @@ const Navbar = () => {
   const navItems = [
     { name: 'HOME', path: '/', icon: <Home size={18} /> },
     { name: 'CASE STUDIES', path: '/case-studies', icon: <FolderOpen size={18} /> },
-    { name: 'ARSENAL', path: '/arsenal', icon: <Cpu size={18} /> },
     { name: 'JOURNEY', path: '/journey', icon: <Map size={18} /> },
     { name: 'CERTIFICATIONS', path: '/certifications', icon: <Award size={18} /> },
     { name: 'RESOURCES', path: '/resources', icon: <BookOpen size={18} /> },

@@ -99,20 +99,51 @@ const TRUSTED_BY = [
     name: "Aryan Mahajan",
     image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/aryan.jpg",
     testimonial: "https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1",
-    link: "https://www.linkedin.com/in/aryanmahajaninstig8/"
+    link: "https://www.linkedin.com/in/aryanmahajaninstig8/",
+    headline: "AI Systems Architect for Fortune 500",
+    stats: ["50,000 LinkedIn followers", "20,000 Twitter followers", "Fortune 500 Growth Consultant"]
   },
   {
     name: "Avinash Mada",
     image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/avinash_mada.jpg",
     testimonial: "https://lh3.googleusercontent.com/d/1xFOlidtCqE6AlnacRmWnw98gnoI0exlO",
-    link: "https://www.instagram.com/meetavinash"
+    link: "https://www.instagram.com/meetavinash",
+    headline: "AI Visionary & Entrepreneur",
+    stats: ["500K Instagram followers", "Top coach in India", "3 Lakh+ inner circle members"]
   },
   {
     name: "Mani Kanasani",
     image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/mani_kanasani.jpg",
     testimonial: "https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1",
-    link: "https://www.youtube.com/@ManiKanasani"
+    link: "https://www.youtube.com/@ManiKanasani",
+    headline: "Agency Owner & Content Creator",
+    stats: ["15,000 YouTube subscribers", "10,000 Skool community members", "Agency owner making $100K+/month"]
   }
+];
+
+const ARSENAL_LOGOS = [
+  { name: "n8n", logo: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/n8n-icon.png" },
+  { name: "Claude Code", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg" },
+  { name: "Code Rabbit", logo: "https://intodot.net/wp-content/uploads/2025/06/coderabbit.png" },
+  { name: "Figma", logo: "https://play-lh.googleusercontent.com/hoVBnPBRehmXsCqESLXRH2E3OTxklkwKZlb1psn7imm0VUSobn2nevS9RRFWb9GM4-o=w240-h480-rw" },
+  { name: "Plane", logo: "https://play-lh.googleusercontent.com/E-K9yYDOC945RtYyht9izs--S7UaboCkoWfqWgROQd3yGTawp5alYmXPFTL3-x20Odhx7cmktUctdUY2QIAo54s=w240-h480-rw" },
+  { name: "Cursor", logo: "https://img.utdstc.com/icon/a2c/de1/a2cde158af82ba714c9c50acfb13b930312e231596805f4a1a9d7ec6d8059dba:200" },
+  { name: "Make.com", logo: "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/1X/694f3217def943314071cd7a9a61f8c14bce26a5_2_500x500.png" },
+  { name: "Obsidian", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/1280px-2023_Obsidian_logo.svg.png" },
+  { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png" }
+];
+
+const TECH_STACK = [
+  { name: "Next.js", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVW3qpDKsp9c6aqWdkAsVTiqhOOxNxJbk8dg&s", desc: "Backend / full-stack apps" },
+  { name: "FastAPI", logo: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg", desc: "Backend APIs" },
+  { name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", desc: "Frontend" },
+  { name: "MongoDB", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s", desc: "Database layer" },
+  { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png", desc: "Database layer" },
+  { name: "Supabase", logo: "https://logowik.com/content/uploads/images/supabase-icon1721342077.logowik.com.webp", desc: "Backend + DB + Auth" },
+  { name: "Flutter", logo: "https://cdn.worldvectorlogo.com/logos/flutter.svg", desc: "Monitor App Development" },
+  { name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg", desc: "Enterprise SDK" },
+  { name: "Render", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlZQ5lkKr_NTo29xqy0X5VQSQknoPuhuu3A&s", desc: "Backend Hosting" },
+  { name: "Vercel", logo: "https://img.icons8.com/ios_filled/1200/vercel.jpg", desc: "Deployment & Edge" }
 ];
 
 const Home = () => {
@@ -199,19 +230,19 @@ const Home = () => {
           
           <h1 className="text-5xl md:text-6xl lg:text-6xl font-black text-black tracking-tighter leading-[0.9]">
             I BUILD <br/>
-            <span className="text-brand-red">AUTOMATION</span> <br/>
-            SYSTEMS.
+            <span className="text-brand-red">AUTONOMOUS</span> <br/>
+            AGENTS.
           </h1>
 
           <p className="text-base md:text-lg text-gray-600 font-medium italic leading-relaxed max-w-2xl border-l-4 border-gray-200 pl-6">
-            I build AI automation systems that turn manual work into scalable processes. Working with enterprise clients to deliver measurable results.
+            I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
-              className="group flex items-center justify-between bg-white border-2 border-black text-black px-8 py-4 min-w-[200px] hover:bg-brand-red hover:border-brand-red hover:text-white transition-all duration-300"
+              className="group flex items-center justify-between bg-black border-2 border-black text-white px-8 py-4 min-w-[200px] hover:bg-brand-red hover:border-brand-red transition-all duration-300 animate-glow shadow-[0_0_20px_rgba(0,0,0,0.1)]"
             >
               <span className="font-bold tracking-widest text-sm uppercase">Discovery Call</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -220,10 +251,9 @@ const Home = () => {
             {/* Secondary Button - Case Studies */}
             <Link 
               to="/case-studies"
-              className="group flex items-center justify-between bg-brand-red border-2 border-brand-red text-white px-8 py-4 min-w-[200px] hover:bg-black hover:border-black transition-all duration-300"
+              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-8 py-4 min-w-[200px] hover:bg-black hover:border-black transition-all duration-300"
             >
               <span className="font-bold tracking-widest text-sm uppercase">Case Studies</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -298,28 +328,40 @@ const Home = () => {
       </div>
 
       {/* Core Capabilities Section */}
-      <div className="mt-24">
+      <div className="mt-32 relative">
            <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
               <span className="w-8 h-[2px] bg-brand-red"></span>
               Core Capabilities
            </h2>
            
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-gray-200">
               {FEATURES.map((feature, index) => (
                 <div 
                   key={index} 
-                  className="group border border-gray-200 p-8 hover:border-black hover:shadow-xl transition-all duration-300 bg-white flex flex-col items-start gap-6"
+                  className="group relative p-10 border-r border-b border-gray-200 hover:bg-black transition-all duration-500 overflow-hidden"
                 >
-                   <div className="p-3 bg-gray-50 rounded-sm group-hover:bg-black group-hover:text-white transition-all duration-300 text-brand-red shadow-sm">
-                      {feature.icon}
-                   </div>
-                   <div>
-                      <h3 className="text-xl font-black text-black uppercase tracking-tight mb-3 group-hover:text-brand-red transition-colors">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 font-medium leading-relaxed">
-                        {feature.desc}
-                      </p>
+                   {/* Background Number Accent */}
+                   <span className="absolute -bottom-4 -right-4 text-9xl font-black text-gray-50 group-hover:text-white/5 transition-colors duration-500 pointer-events-none">
+                      {(index + 1).toString().padStart(2, '0')}
+                   </span>
+
+                   <div className="relative z-10 space-y-8">
+                      <div className="w-14 h-14 flex items-center justify-center bg-gray-50 rounded-2xl text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500 shadow-sm">
+                         {feature.icon}
+                      </div>
+                      
+                      <div className="space-y-4">
+                         <h3 className="text-2xl font-black text-black uppercase tracking-tighter group-hover:text-white transition-colors duration-500">
+                           {feature.title}
+                         </h3>
+                         <p className="text-gray-500 font-medium leading-relaxed group-hover:text-gray-400 transition-colors duration-500">
+                           {feature.desc}
+                         </p>
+                      </div>
+
+                      <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                         <div className="h-1 w-12 bg-brand-red"></div>
+                      </div>
                    </div>
                 </div>
               ))}
@@ -328,17 +370,24 @@ const Home = () => {
 
       {/* Few Deployed Agents Section */}
       <div className="mt-32">
-        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Few Deployed Agents
         </h2>
+
+        <div className="mb-12">
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+                FEW <br/>
+                <span className="text-brand-red">DEPLOYED AGENTS</span>
+            </h1>
+        </div>
 
         <div className="space-y-12">
             {DEPLOYMENTS.map((deployment, index) => (
               <Link 
                 key={index}
                 to={`/case-studies/${deployment.projectId}`}
-                className="block group bg-white border border-gray-200 rounded-3xl overflow-hidden hover:border-black hover:shadow-2xl transition-all duration-500"
+                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] hover:-translate-y-2 transition-all duration-500"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Video Side */}
@@ -360,18 +409,18 @@ const Home = () => {
                       <span className="text-brand-red font-black text-2xl">
                         {(index + 1).toString().padStart(2, '0')}
                       </span>
-                      <div className="h-px w-8 bg-gray-200"></div>
+                      <div className="h-px w-8 bg-white/10"></div>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none group-hover:text-brand-red transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none text-white group-hover:text-brand-red transition-colors">
                       {deployment.title}
                     </h3>
                     
-                    <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
+                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
                       {deployment.description}
                     </p>
 
-                    <div className="flex items-center gap-2 text-black font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
+                    <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
                       View Case Study <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                     </div>
                   </div>
@@ -392,6 +441,206 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Arsenal Section */}
+      <div className="mt-32 relative overflow-hidden">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Arsenal
+        </h2>
+
+        <div className="relative bg-[#050505] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/5 shadow-[0_0_100px_-20px_rgba(235,54,54,0.1)]">
+            {/* Animated Background Gradients */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-red/10 blur-[150px] rounded-full animate-pulse"></div>
+                <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-brand-red/5 blur-[150px] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                
+                {/* Grid Pattern Overlay */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="space-y-10">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 border border-brand-red/20 rounded-full">
+                        <div className="w-2 h-2 bg-brand-red rounded-full animate-ping"></div>
+                        <span className="text-[10px] font-black text-brand-red uppercase tracking-[0.3em]">Tech Stack 2026</span>
+                    </div>
+
+                    <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.85]">
+                        THE TOOLS <br/>
+                        THAT <span className="text-brand-red">POWER</span> <br/>
+                        THE AGENTS
+                    </h3>
+                    
+                    <p className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
+                        A futuristic stack designed for speed, reliability, and autonomous intelligence. We don't just use tools; we orchestrate them.
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4">
+                        {['AUTONOMOUS', 'SCALABLE', 'SECURE', 'INTELLIGENT'].map(tag => (
+                            <span key={tag} className="px-6 py-3 bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] text-gray-300 uppercase hover:bg-white/[0.08] hover:border-brand-red/30 transition-all duration-300 cursor-default">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="relative flex justify-center items-center aspect-square w-full max-w-[550px] mx-auto">
+                    {/* Rotating Logos Container */}
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        {/* Center Logo (Claude) */}
+                        <div className="relative z-30 w-36 h-36 bg-white/[0.03] backdrop-blur-3xl border border-white/20 rounded-[2.5rem] p-8 shadow-[0_0_80px_-10px_rgba(235,54,54,0.3)] flex items-center justify-center group">
+                            <img src={ARSENAL_LOGOS[1].logo} alt="Claude" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-brand-red/5 rounded-[2.5rem] animate-pulse"></div>
+                        </div>
+
+                        {/* Orbiting Logos */}
+                        {ARSENAL_LOGOS.map((item, index) => {
+                            if (index === 1) return null; // Skip Claude as it's in center
+                            const angle = (index * (360 / (ARSENAL_LOGOS.length - 1))) * (Math.PI / 180);
+                            const radius = 220; // Increased radius for better spacing
+                            const x = Math.cos(angle) * radius;
+                            const y = Math.sin(angle) * radius;
+
+                            return (
+                                <div 
+                                    key={item.name}
+                                    className="absolute w-20 h-20 md:w-24 md:h-24 bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl p-5 flex items-center justify-center hover:bg-white/[0.08] hover:border-brand-red/40 transition-all duration-500 group cursor-pointer z-20"
+                                    style={{
+                                        transform: `translate(${x}px, ${y}px)`,
+                                        animation: `orbit ${30 + index * 2}s linear infinite`
+                                    }}
+                                >
+                                    <img src={item.logo} alt={item.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                                    
+                                    {/* Tooltip */}
+                                    <div className="absolute -bottom-12 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-black/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-lg text-[10px] font-black text-white uppercase tracking-widest whitespace-nowrap z-50">
+                                        {item.name}
+                                    </div>
+                                </div>
+                            );
+                        })}
+
+                        {/* Orbit Rings with Glow */}
+                        <div className="absolute w-[360px] h-[360px] border border-white/[0.03] rounded-full shadow-[inset_0_0_50px_rgba(255,255,255,0.01)]"></div>
+                        <div className="absolute w-[500px] h-[500px] border border-white/[0.02] rounded-full"></div>
+                        
+                        {/* Floating Particles */}
+                        <div className="absolute inset-0 pointer-events-none">
+                            {[...Array(6)].map((_, i) => (
+                                <div 
+                                    key={i}
+                                    className="absolute w-1 h-1 bg-brand-red/40 rounded-full animate-ping"
+                                    style={{
+                                        top: `${Math.random() * 100}%`,
+                                        left: `${Math.random() * 100}%`,
+                                        animationDelay: `${i * 0.5}s`,
+                                        animationDuration: '3s'
+                                    }}
+                                ></div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes orbit {
+                from { transform: rotate(0deg) translateX(220px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(220px) rotate(-360deg); }
+            }
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 0 20px rgba(235, 54, 54, 0.2); }
+                50% { box-shadow: 0 0 40px rgba(235, 54, 54, 0.6); }
+            }
+            .animate-glow {
+                animation: glow 2s ease-in-out infinite;
+            }
+            @keyframes float {
+                0%, 100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-10px) rotate(1deg); }
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            @keyframes data-pulse {
+                0% { opacity: 0; transform: scale(0.5); }
+                50% { opacity: 1; transform: scale(1.2); }
+                100% { opacity: 0; transform: scale(0.5); }
+            }
+            .data-node {
+                animation: data-pulse 3s ease-in-out infinite;
+            }
+        `}} />
+      </div>
+
+      {/* Tech Stack Section */}
+      <div className="mt-32 relative overflow-hidden">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Tech Stack
+        </h2>
+
+        <div className="relative bg-[#050505] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/5">
+            {/* Unique Motion Graphics: The "Neural Grid" */}
+            <div className="absolute inset-0 pointer-events-none opacity-20">
+                <div className="absolute inset-0" style={{ 
+                    backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
+                    backgroundSize: '100px 100px'
+                }}></div>
+                
+                {/* Random Glowing Nodes */}
+                {[...Array(12)].map((_, i) => (
+                    <div 
+                        key={i}
+                        className="absolute w-1 h-1 bg-brand-red rounded-full data-node"
+                        style={{
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                            animationDelay: `${i * 0.4}s`
+                        }}
+                    ></div>
+                ))}
+            </div>
+
+            <div className="relative z-10">
+                <div className="max-w-2xl mb-20">
+                    <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.85] mb-8">
+                        THE <span className="text-brand-red">ARCHITECTURE</span> <br/>
+                        OF SCALE
+                    </h3>
+                    <p className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
+                        Tools and frameworks powering our automation systems. We build on the edge of what's possible.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {TECH_STACK.map((tech, index) => (
+                        <div 
+                            key={tech.name}
+                            className="group relative bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.05] hover:border-brand-red/40 hover:shadow-[0_0_40px_-10px_rgba(235,54,54,0.2)] hover:-translate-y-2 transition-all duration-500 animate-float"
+                            style={{ animationDelay: `${index * 0.2}s` }}
+                        >
+                            <div className="mb-6 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl p-2 group-hover:scale-110 transition-transform duration-500">
+                                <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain" />
+                            </div>
+                            
+                            <h4 className="text-xl font-black text-white uppercase tracking-tight mb-2 group-hover:text-brand-red transition-colors">
+                                {tech.name}
+                            </h4>
+                            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">
+                                {tech.desc}
+                            </p>
+
+                            {/* Decorative Corner */}
+                            <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-white/20 group-hover:border-brand-red/50 transition-colors"></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+      </div>
+
       {/* Schedule Discovery Section */}
       <div className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
@@ -399,32 +648,38 @@ const Home = () => {
             Contact
         </h2>
         
-        <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+        <div className="mb-8">
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none mb-6">
                 SCHEDULE A <br/>
                 <span className="text-brand-red">DISCOVERY CALL</span>
             </h1>
+            
+            <div className="flex items-center gap-4">
+                <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
+                    Trusted by <span className="text-brand-red">5,500+</span> operators on LinkedIn
+                </p>
+                <div className="h-px flex-grow bg-gray-200"></div>
+            </div>
         </div>
 
         <div className="w-full h-[700px] bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden relative z-10">
             <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
         </div>
-
-        <div className="mt-8 flex items-center gap-4">
-            <div className="h-px flex-grow bg-gray-200"></div>
-            <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
-                Trusted by <span className="text-brand-red">5,500+</span> operators on LinkedIn
-            </p>
-            <div className="h-px flex-grow bg-gray-200"></div>
-        </div>
       </div>
 
       {/* Recommendations Section */}
       <div className="mt-32">
-        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Recommendations
         </h2>
+        
+        <div className="mb-12">
+            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+                TRUSTED <br/>
+                <span className="text-brand-red">BY</span>
+            </h1>
+        </div>
         
         <div className="flex flex-col gap-16">
             {TRUSTED_BY.map((person, index) => (
@@ -433,21 +688,33 @@ const Home = () => {
                     className="group relative bg-white border-2 border-black rounded-3xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(235,54,54,1)] transition-all duration-500"
                 >
                     {/* Header with Profile Photo and Name */}
-                    <div className="p-6 border-b-2 border-black flex items-center gap-4 bg-gray-50">
-                        <img 
-                            src={person.image} 
-                            alt={person.name} 
-                            className="w-14 h-14 rounded-full border-2 border-black object-cover"
-                            referrerPolicy="no-referrer"
-                        />
-                        <div>
-                            <h3 className="text-xl font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors">
-                                {person.name}
-                            </h3>
-                            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">LinkedIn Recommendation</p>
+                    <div className="p-6 border-b-2 border-black flex flex-col md:flex-row md:items-center gap-6 bg-gray-50">
+                        <div className="flex items-center gap-4">
+                            <img 
+                                src={person.image} 
+                                alt={person.name} 
+                                className="w-16 h-16 rounded-full border-2 border-black object-cover"
+                                referrerPolicy="no-referrer"
+                            />
+                            <div>
+                                <h3 className="text-xl font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors">
+                                    {person.name}
+                                </h3>
+                                <p className="text-xs font-bold text-brand-red uppercase tracking-widest">
+                                    {person.headline}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 md:ml-8">
+                            {person.stats?.map((stat, i) => (
+                                <span key={i} className="px-3 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full">
+                                    {stat}
+                                </span>
+                            ))}
                         </div>
                         
-                        <div className="ml-auto">
+                        <div className="md:ml-auto">
                             <a 
                                 href={person.link} 
                                 target="_blank" 
