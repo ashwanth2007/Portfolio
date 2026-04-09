@@ -57,16 +57,16 @@ const Discovery = () => {
       <div className="mb-10 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="flex items-center justify-center gap-3 mb-4">
             <Phone className="text-brand-red" size={32} />
-            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-black dark:text-white transition-colors">
             Discovery Call
             </h1>
         </div>
-        <p className="text-gray-500 text-lg font-medium max-w-2xl mx-auto">
+        <p className="text-gray-500 dark:text-gray-400 text-lg font-medium max-w-2xl mx-auto transition-colors">
           Book a time to discuss your automation needs.
         </p>
       </div>
       
-      <div className="w-full max-w-6xl h-[700px] bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden animate-in fade-in zoom-in duration-500 delay-100">
+      <div className="w-full max-w-6xl h-[700px] bg-white dark:bg-black border border-gray-200 dark:border-white/10 shadow-2xl rounded-xl overflow-hidden animate-in fade-in zoom-in duration-500 delay-100 transition-colors">
         <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
       </div>
     </div>

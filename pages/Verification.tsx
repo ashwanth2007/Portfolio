@@ -46,37 +46,37 @@ const Verification = () => {
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-4">
             <ShieldCheck className="text-brand-red" size={32} />
-            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-black dark:text-white transition-colors">
             Data Verification Center
             </h1>
         </div>
         <div className="w-24 h-2 bg-brand-red mb-6"></div>
-        <p className="text-gray-500 text-lg font-medium max-w-2xl border-l-4 border-gray-200 pl-6">
+        <p className="text-gray-500 dark:text-gray-400 text-lg font-medium max-w-2xl border-l-4 border-gray-200 dark:border-white/10 pl-6 transition-colors">
           Trust is the currency of the digital age. Below are the direct points of contact and verification sources for the projects and experiences listed in this portfolio.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {verifiers.map((verifier, index) => (
-          <div key={index} className="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
-             <div className="absolute top-0 right-0 p-4 opacity-5">
+          <div key={index} className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+             <div className="absolute top-0 right-0 p-4 opacity-5 dark:opacity-10 text-black dark:text-white transition-colors">
                 <ShieldCheck size={100} />
              </div>
              
-             <h3 className="text-2xl font-black uppercase tracking-tighter mb-1">{verifier.company}</h3>
-             {verifier.sub && <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">{verifier.sub}</p>}
+             <h3 className="text-2xl font-black uppercase tracking-tighter mb-1 text-black dark:text-white transition-colors">{verifier.company}</h3>
+             {verifier.sub && <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4 transition-colors">{verifier.sub}</p>}
              
              <div className="mt-6 space-y-4 relative z-10">
                 <div>
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Point of Contact</p>
-                    <p className="text-lg font-bold text-black">{verifier.poc}</p>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 transition-colors">Point of Contact</p>
+                    <p className="text-lg font-bold text-black dark:text-white transition-colors">{verifier.poc}</p>
                     <p className="text-sm font-medium text-brand-red">{verifier.role}</p>
                 </div>
 
                 {verifier.details && (
                     <div className="space-y-1">
                         {verifier.details.map((detail, i) => (
-                            <p key={i} className="text-sm text-gray-600 font-mono">{detail}</p>
+                            <p key={i} className="text-sm text-gray-600 dark:text-gray-400 font-mono transition-colors">{detail}</p>
                         ))}
                     </div>
                 )}
@@ -88,7 +88,7 @@ const Verification = () => {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-200 text-xs font-bold uppercase tracking-wider hover:bg-black hover:text-white transition-colors"
+                            className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs font-bold uppercase tracking-wider text-black dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-colors"
                         >
                             {link.icon}
                             {link.label}

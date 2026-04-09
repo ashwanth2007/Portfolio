@@ -238,13 +238,13 @@ const Home = () => {
         {/* Text Content */}
         <div className="max-w-5xl space-y-10 flex flex-col items-center">
           
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-black tracking-tighter leading-[0.85] uppercase">
+          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-black dark:text-white tracking-tighter leading-[0.85] uppercase transition-colors">
             I BUILD <br/>
             <span className="text-brand-red">AUTONOMOUS</span> <br/>
-            AGENTS.
+            AI AGENTS.
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 font-medium italic leading-relaxed max-w-3xl">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 font-medium italic leading-relaxed max-w-3xl transition-colors">
             I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
           </p>
 
@@ -252,7 +252,7 @@ const Home = () => {
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
-              className="group flex items-center justify-between bg-black border-2 border-black text-white px-10 py-5 min-w-[260px] hover:bg-brand-red hover:border-brand-red transition-all duration-300 animate-glow shadow-2xl"
+              className="group flex items-center justify-between bg-black dark:bg-white border-2 border-black dark:border-white text-white dark:text-black px-10 py-5 min-w-[260px] hover:bg-brand-red hover:border-brand-red dark:hover:bg-brand-red dark:hover:border-brand-red dark:hover:text-white transition-all duration-300 animate-glow shadow-2xl"
             >
               <span className="font-bold tracking-[0.2em] text-sm uppercase">Discovery Call</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -270,7 +270,7 @@ const Home = () => {
       </div>
 
       {/* Client Logos Scroll */}
-      <div className="mt-8 border-t border-b border-gray-100 bg-white/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0">
+      <div className="mt-8 border-t border-b border-gray-100 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0 transition-colors">
          <div className="relative w-full flex overflow-hidden group">
             <div className="flex w-max animate-marquee pause-on-hover items-center">
                {/* First Set */}
@@ -279,7 +279,7 @@ const Home = () => {
                     <img 
                       src={logo} 
                       alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300" 
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200" 
                     />
                  </div>
                ))}
@@ -290,7 +290,7 @@ const Home = () => {
                     <img 
                       src={logo} 
                       alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300" 
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200" 
                     />
                  </div>
                ))}
@@ -311,10 +311,10 @@ const Home = () => {
              { value: '20+', label: 'Production Ready Systems' }
            ].map(item => (
              <div key={item.label} className="group">
-                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
+                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
                   {item.value}
                 </h3>
-                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 border-l-4 border-gray-200 pl-4 group-hover:border-brand-red transition-colors">
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 border-l-4 border-gray-200 dark:border-white/10 pl-4 group-hover:border-brand-red transition-colors">
                   {item.label}
                 </p>
              </div>
@@ -506,7 +506,7 @@ const Home = () => {
         </h2>
 
         <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+            <h1 className="text-4xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase leading-none transition-colors">
                 FEW <br/>
                 <span className="text-brand-red">DEPLOYED AGENTS</span>
             </h1>
@@ -646,7 +646,7 @@ const Home = () => {
         </h2>
         
         <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none mb-6">
+            <h1 className="text-4xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase leading-none mb-6 transition-colors">
                 SCHEDULE A <br/>
                 <span className="text-brand-red">DISCOVERY CALL</span>
             </h1>
@@ -655,7 +655,7 @@ const Home = () => {
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
                     Trusted by <span className="text-brand-red">5,500+</span> operators on LinkedIn
                 </p>
-                <div className="h-px flex-grow bg-gray-200"></div>
+                <div className="h-px flex-grow bg-gray-200 dark:bg-white/10 transition-colors"></div>
             </div>
         </div>
 
@@ -672,7 +672,7 @@ const Home = () => {
         </h2>
         
         <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+            <h1 className="text-4xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase leading-none transition-colors">
                 TRUSTED <br/>
                 <span className="text-brand-red">BY</span>
             </h1>
@@ -682,19 +682,19 @@ const Home = () => {
             {TRUSTED_BY.map((person, index) => (
                 <div 
                     key={index} 
-                    className="group relative bg-white border-2 border-black rounded-3xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(235,54,54,1)] transition-all duration-500"
+                    className="group relative bg-white dark:bg-black border-2 border-black dark:border-white rounded-3xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[16px_16px_0px_0px_rgba(235,54,54,1)] transition-all duration-500"
                 >
                     {/* Header with Profile Photo and Name */}
-                    <div className="p-6 border-b-2 border-black flex flex-col md:flex-row md:items-center gap-6 bg-gray-50">
+                    <div className="p-6 border-b-2 border-black dark:border-white flex flex-col md:flex-row md:items-center gap-6 bg-gray-50 dark:bg-white/5 transition-colors">
                         <div className="flex items-center gap-4">
                             <img 
                                 src={person.image} 
                                 alt={person.name} 
-                                className="w-16 h-16 rounded-full border-2 border-black object-cover"
+                                className="w-16 h-16 rounded-full border-2 border-black dark:border-white object-cover"
                                 referrerPolicy="no-referrer"
                             />
                             <div>
-                                <h3 className="text-xl font-black text-black uppercase tracking-tight group-hover:text-brand-red transition-colors">
+                                <h3 className="text-xl font-black text-black dark:text-white uppercase tracking-tight group-hover:text-brand-red transition-colors">
                                     {person.name}
                                 </h3>
                                 <p className="text-xs font-bold text-brand-red uppercase tracking-widest">
@@ -705,7 +705,7 @@ const Home = () => {
 
                         <div className="flex flex-wrap gap-2 md:ml-8">
                             {person.stats?.map((stat, i) => (
-                                <span key={i} className="px-3 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full">
+                                <span key={i} className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-widest rounded-full transition-colors">
                                     {stat}
                                 </span>
                             ))}
@@ -716,18 +716,18 @@ const Home = () => {
                                 href={person.link} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="bg-black text-white p-3 rounded-full hover:bg-brand-red transition-colors flex items-center justify-center shadow-lg"
+                                className="bg-black dark:bg-white text-white dark:text-black p-3 rounded-full hover:bg-brand-red dark:hover:bg-brand-red dark:hover:text-white transition-colors flex items-center justify-center shadow-lg"
                             >
                                 <ExternalLink size={20} />
                             </a>
                         </div>
                     </div>
 
-                    <div className="w-full bg-white p-4 md:p-8">
+                    <div className="w-full bg-white dark:bg-black p-4 md:p-8 transition-colors">
                         <img 
                             src={person.testimonial} 
                             alt={`${person.name} Recommendation Screenshot`} 
-                            className="w-full h-auto block rounded-xl border border-gray-100 shadow-sm"
+                            className="w-full h-auto block rounded-xl border border-gray-100 dark:border-white/10 shadow-sm"
                             referrerPolicy="no-referrer"
                         />
                     </div>

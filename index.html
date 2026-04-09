@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -43,6 +44,11 @@
         background-color: #ffffff;
         color: #0a0a0a;
         min-height: 100vh;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .dark body {
+        background-color: #000000;
+        color: #ffffff;
       }
       /* Grid is applied to a fixed background layer, not the body, so it fades independently */
       .grid-layer {
@@ -59,6 +65,11 @@
         mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         pointer-events: none;
+        transition: background-image 0.3s ease;
+      }
+      .dark .grid-layer {
+        background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+                          linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
       }
       .hide-scrollbar::-webkit-scrollbar {
         display: none;

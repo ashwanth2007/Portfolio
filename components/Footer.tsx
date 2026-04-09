@@ -4,7 +4,7 @@ import { Linkedin, Mail, Twitter, Youtube, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black pt-20 pb-12 px-6 mt-20 border-t border-white/5">
+    <footer className="w-full bg-black dark:bg-[#050505] pt-20 pb-12 px-6 mt-20 border-t border-white/5 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20">
@@ -18,7 +18,7 @@ const Footer = () => {
             href="https://newsletter.ashwanth.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-brand-red hover:text-white transition-all duration-300 rounded-sm shadow-2xl"
+            className="inline-flex items-center gap-3 bg-white dark:bg-white text-black dark:text-black px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-brand-red hover:text-white dark:hover:bg-brand-red dark:hover:text-white transition-all duration-300 rounded-sm shadow-2xl"
           >
             <Mail size={16} />
             Subscribe to Newsletter

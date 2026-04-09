@@ -87,18 +87,18 @@ const Projects = () => {
       {/* Header */}
       <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase text-black dark:text-white transition-colors">
             Deployed Systems
             </h1>
             <div className="w-24 h-2 bg-brand-red mb-6"></div>
-            <p className="text-gray-500 max-w-xl text-lg font-medium">
+            <p className="text-gray-500 dark:text-gray-400 max-w-xl text-lg font-medium transition-colors">
             Select a portfolio sector below to view specific case studies.
             </p>
         </div>
         
         <Link 
             to="/verification"
-            className="flex items-center gap-2 px-4 py-2 border border-gray-200 text-xs font-bold uppercase tracking-widest hover:border-brand-red hover:text-brand-red transition-colors"
+            className="flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-white/10 text-xs font-bold uppercase tracking-widest hover:border-brand-red hover:text-brand-red dark:text-white dark:hover:text-brand-red transition-colors"
         >
             <ShieldCheck size={16} />
             Data Verification Center
@@ -106,15 +106,15 @@ const Projects = () => {
       </div>
 
       {/* Category Navigation */}
-      <div className="flex flex-wrap gap-4 md:gap-8 border-b border-gray-200 mb-12">
+      <div className="flex flex-wrap gap-4 md:gap-8 border-b border-gray-200 dark:border-white/10 mb-12 transition-colors">
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
             className={`pb-4 text-xs md:text-sm font-bold tracking-[0.2em] transition-all relative ${
               activeCategory === cat 
-                ? 'text-black' 
-                : 'text-gray-400 hover:text-black'
+                ? 'text-black dark:text-white' 
+                : 'text-gray-400 hover:text-black dark:hover:text-white'
             }`}
           >
             {getCategoryLabel(cat)}
@@ -132,42 +132,42 @@ const Projects = () => {
             <Link 
               key={project.id}
               to={`/case-studies/${project.id}`}
-              className="group cursor-pointer flex flex-col h-full bg-white border border-gray-200 hover:border-black transition-all duration-300 relative overflow-hidden"
+              className="group cursor-pointer flex flex-col h-full bg-white dark:bg-black border border-gray-200 dark:border-white/10 hover:border-black dark:hover:border-white transition-all duration-300 relative overflow-hidden"
             >
               {/* Background Abstract Grid */}
-              <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000),linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] bg-[length:20px_20px]"></div>
+              <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000),linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] dark:bg-[linear-gradient(45deg,#fff_25%,transparent_25%,transparent_75%,#fff_75%,#fff),linear-gradient(45deg,#fff_25%,transparent_25%,transparent_75%,#fff_75%,#fff)] bg-[length:20px_20px]"></div>
 
               {/* Card Header Section */}
               <div className="p-8 pb-4 relative z-10">
                  <div className="flex justify-between items-start mb-6">
-                    <span className="text-5xl font-black text-gray-100 group-hover:text-brand-red/10 transition-colors">
+                    <span className="text-5xl font-black text-gray-100 dark:text-white/5 group-hover:text-brand-red/10 transition-colors">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                  </div>
 
-                 <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-2 group-hover:text-brand-red transition-colors">
+                 <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-2 text-black dark:text-white group-hover:text-brand-red transition-colors">
                    {project.title}
                  </h3>
-                 <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                 <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">
                    {project.client}
                  </p>
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-gray-100 group-hover:bg-brand-red transition-colors"></div>
+              <div className="w-full h-px bg-gray-100 dark:bg-white/10 group-hover:bg-brand-red transition-colors"></div>
 
               {/* Card Footer Section */}
-              <div className="p-8 pt-4 flex-1 flex flex-col justify-between relative z-10 bg-gray-50/50">
-                 <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+              <div className="p-8 pt-4 flex-1 flex flex-col justify-between relative z-10 bg-gray-50/50 dark:bg-white/5 transition-colors">
+                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
                    {project.subtitle}
                  </p>
 
                  <div className="flex items-center justify-between mt-auto">
                     <div>
                       <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Impact</span>
-                      <span className="text-xs font-bold text-black border-b-2 border-brand-red pb-0.5">{project.impact_summary}</span>
+                      <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-0.5 transition-colors">{project.impact_summary}</span>
                     </div>
-                    <div className="bg-white border border-gray-200 p-2 rounded-full group-hover:bg-black group-hover:text-white transition-colors">
+                    <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-2 rounded-full group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-colors">
                        <ArrowUpRight size={16} />
                     </div>
                  </div>
@@ -186,9 +186,9 @@ const Projects = () => {
 
       {/* Detail Modal - Full Screen Dashboard */}
       {selectedProject && createPortal(
-        <div className="fixed inset-0 z-[9999] bg-white overflow-y-auto animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[9999] bg-white dark:bg-black overflow-y-auto animate-in fade-in duration-300 transition-colors">
           {/* Dashboard Header */}
-          <div className="sticky top-0 z-50 bg-black text-white px-6 py-4 flex items-center justify-between shadow-xl">
+          <div className="sticky top-0 z-50 bg-black dark:bg-[#050505] text-white px-6 py-4 flex items-center justify-between shadow-xl border-b border-white/5">
             <div className="flex items-center gap-6">
               <button 
                 onClick={handleCloseModal}
@@ -237,18 +237,18 @@ const Projects = () => {
               {/* Left Column: ROI & Impact (Dashboard Style) */}
               <div className="lg:col-span-4 space-y-8">
                 {/* ROI Card */}
-                <div className="bg-gray-50 border-2 border-black p-8 rounded-3xl relative overflow-hidden group">
+                <div className="bg-gray-50 dark:bg-white/5 border-2 border-black dark:border-white/10 p-8 rounded-3xl relative overflow-hidden group transition-colors">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
                   <TrendingUp className="text-brand-red mb-6" size={40} />
                   <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Primary ROI Metric</h3>
-                  <div className="text-5xl md:text-6xl font-black text-black tracking-tighter leading-none mb-4">
+                  <div className="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter leading-none mb-4 transition-colors">
                     {selectedProject.impact_summary}
                   </div>
                   <div className="h-1 w-20 bg-brand-red"></div>
                 </div>
 
                 {/* Quantitative Results */}
-                <div className="bg-black text-white p-8 rounded-3xl shadow-2xl">
+                <div className="bg-black dark:bg-[#0a0a0a] text-white p-8 rounded-3xl shadow-2xl border border-white/5 transition-colors">
                   <h3 className="text-xs font-black text-brand-red uppercase tracking-widest mb-8 flex items-center gap-2">
                     <CheckCircle size={16} />
                     Key Performance Indicators
@@ -264,11 +264,11 @@ const Projects = () => {
                 </div>
 
                 {/* Tech Stack Visualization */}
-                <div className="bg-white border border-gray-200 p-8 rounded-3xl">
+                <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl transition-colors">
                   <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-6">System Tech Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech_stack.map(tech => (
-                      <div key={tech} className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-100 rounded-full text-[10px] font-black uppercase tracking-widest text-black hover:border-black transition-colors">
+                      <div key={tech} className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-black dark:text-white hover:border-black dark:hover:border-white transition-colors">
                         <Cpu size={12} className="text-brand-red" />
                         {tech}
                       </div>
@@ -281,49 +281,49 @@ const Projects = () => {
               <div className="lg:col-span-8 space-y-8">
                 {/* Context & Problem Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-white border border-gray-200 p-8 rounded-3xl hover:shadow-xl transition-shadow">
+                  <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl hover:shadow-xl transition-all">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-gray-50 rounded-lg">
-                        <AlertCircle className="text-black" size={24} />
+                      <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg transition-colors">
+                        <AlertCircle className="text-black dark:text-white" size={24} />
                       </div>
-                      <h3 className="text-xl font-black uppercase tracking-tighter">The Challenge</h3>
+                      <h3 className="text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Challenge</h3>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-medium transition-colors">
                       {selectedProject.problem}
                     </p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-8 rounded-3xl hover:shadow-xl transition-shadow">
+                  <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl hover:shadow-xl transition-all">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-gray-50 rounded-lg">
-                        <Layers className="text-black" size={24} />
+                      <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg transition-colors">
+                        <Layers className="text-black dark:text-white" size={24} />
                       </div>
-                      <h3 className="text-xl font-black uppercase tracking-tighter">The Solution</h3>
+                      <h3 className="text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Solution</h3>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-medium transition-colors">
                       {selectedProject.solution}
                     </p>
                   </div>
                 </div>
 
                 {/* Architecture Dashboard */}
-                <div className="bg-gray-50 border border-gray-200 p-8 md:p-12 rounded-3xl">
+                <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-8 md:p-12 rounded-3xl transition-colors">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
                     <div>
-                      <h3 className="text-2xl font-black uppercase tracking-tighter">System Architecture</h3>
+                      <h3 className="text-2xl font-black uppercase tracking-tighter text-black dark:text-white">System Architecture</h3>
                       <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Modular Workflow Infrastructure</p>
                     </div>
-                    <div className="px-4 py-2 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full">
+                    <div className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-widest rounded-full transition-colors">
                       Production Ready v1.0
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {selectedProject.architecture.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-6 p-6 bg-white border border-gray-100 rounded-2xl hover:border-brand-red transition-colors group">
-                        <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-black font-black text-xl group-hover:bg-brand-red group-hover:text-white transition-all">
+                      <div key={idx} className="flex items-center gap-6 p-6 bg-white dark:bg-black border border-gray-100 dark:border-white/10 rounded-2xl hover:border-brand-red transition-colors group">
+                        <div className="w-12 h-12 bg-gray-50 dark:bg-white/5 rounded-xl flex items-center justify-center text-black dark:text-white font-black text-xl group-hover:bg-brand-red group-hover:text-white transition-all">
                           {idx + 1}
                         </div>
-                        <span className="font-bold text-sm uppercase tracking-tight text-gray-700">{item}</span>
+                        <span className="font-bold text-sm uppercase tracking-tight text-gray-700 dark:text-gray-300 transition-colors">{item}</span>
                       </div>
                     ))}
                   </div>
