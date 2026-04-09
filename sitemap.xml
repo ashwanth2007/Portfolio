@@ -7,23 +7,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ashwanth.dev/#/projects</loc>
+    <loc>https://ashwanth.dev/case-studies</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ashwanth.dev/#/arsenal</loc>
+    <loc>https://ashwanth.dev/arsenal</loc>
     <priority>0.8</priority>
   </url>
    <url>
-    <loc>https://ashwanth.dev/#/journey</loc>
+    <loc>https://ashwanth.dev/journey</loc>
     <priority>0.8</priority>
   </url>
    <url>
-    <loc>https://ashwanth.dev/#/certifications</loc>
+    <loc>https://ashwanth.dev/certifications</loc>
     <priority>0.8</priority>
   </url>
    <url>
-    <loc>https://ashwanth.dev/#/resources</loc>
+    <loc>https://ashwanth.dev/resources</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

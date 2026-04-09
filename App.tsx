@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -31,7 +31,8 @@ const App = () => {
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/case-studies" element={<Projects />} />
+            <Route path="/case-studies/:projectId" element={<Projects />} />
             <Route path="/arsenal" element={<Arsenal />} />
             <Route path="/journey" element={<Journey />} />
             <Route path="/verification" element={<Verification />} />
