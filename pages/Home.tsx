@@ -149,7 +149,7 @@ const TECH_STACK = [
   { name: "MongoDB", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s", desc: "Database layer" },
   { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png", desc: "Database layer" },
   { name: "Supabase", logo: "https://logowik.com/content/uploads/images/supabase-icon1721342077.logowik.com.webp", desc: "Backend + DB + Auth" },
-  { name: "Flutter", logo: "https://cdn.worldvectorlogo.com/logos/flutter.svg", desc: "Monitor App Development" },
+  { name: "Advanced CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg", desc: "Modern Styling & Layouts" },
   { name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg", desc: "Enterprise SDK" },
   { name: "C++", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png", desc: "Performance Systems" },
   { name: "Render", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlZQ5lkKr_NTo29xqy0X5VQSQknoPuhuu3A&s", desc: "Backend Hosting" },
