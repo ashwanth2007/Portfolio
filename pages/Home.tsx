@@ -131,14 +131,15 @@ const TRUSTED_BY = [
 
 const ARSENAL_LOGOS = [
   { name: "n8n", logo: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/n8n-icon.png" },
-  { name: "Claude Code", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg" },
+  { name: "Claude Sonnet 4.6", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg" },
   { name: "Code Rabbit", logo: "https://intodot.net/wp-content/uploads/2025/06/coderabbit.png" },
-  { name: "Figma", logo: "https://play-lh.googleusercontent.com/hoVBnPBRehmXsCqESLXRH2E3OTxklkwKZlb1psn7imm0VUSobn2nevS9RRFWb9GM4-o=w240-h480-rw" },
-  { name: "Plane", logo: "https://play-lh.googleusercontent.com/E-K9yYDOC945RtYyht9izs--S7UaboCkoWfqWgROQd3yGTawp5alYmXPFTL3-x20Odhx7cmktUctdUY2QIAo54s=w240-h480-rw" },
   { name: "Cursor", logo: "https://img.utdstc.com/icon/a2c/de1/a2cde158af82ba714c9c50acfb13b930312e231596805f4a1a9d7ec6d8059dba:200" },
   { name: "Make.com", logo: "https://europe1.discourse-cdn.com/flex013/uploads/make/optimized/1X/694f3217def943314071cd7a9a61f8c14bce26a5_2_500x500.png" },
   { name: "Obsidian", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/1280px-2023_Obsidian_logo.svg.png" },
-  { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png" }
+  { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png" },
+  { name: "Vercel", logo: "https://smlvqzf0a1b66cku.public.blob.vercel-storage.com/images/Vercel%20Logo-IMoeV2W33gFclXzAfZxmAHqtjBuTzP.png" },
+  { name: "Render", logo: "https://assets.findstack.com/hf8tetz6wrjfxx6vxooc6igw3tah" },
+  { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" }
 ];
 
 const TECH_STACK = [
@@ -148,12 +149,12 @@ const TECH_STACK = [
   { name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", desc: "Frontend" },
   { name: "MongoDB", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s", desc: "Database layer" },
   { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png", desc: "Database layer" },
-  { name: "Supabase", logo: "https://logowik.com/content/uploads/images/supabase-icon1721342077.logowik.com.webp", desc: "Backend + DB + Auth" },
+  { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png", desc: "Backend + DB + Auth" },
   { name: "Advanced CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg", desc: "Modern Styling & Layouts" },
   { name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg", desc: "Enterprise SDK" },
   { name: "C++", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png", desc: "Performance Systems" },
-  { name: "Render", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlZQ5lkKr_NTo29xqy0X5VQSQknoPuhuu3A&s", desc: "Backend Hosting" },
-  { name: "Vercel", logo: "https://img.icons8.com/ios_filled/1200/vercel.jpg", desc: "Deployment & Edge" }
+  { name: "Render", logo: "https://assets.findstack.com/hf8tetz6wrjfxx6vxooc6igw3tah", desc: "Backend Hosting" },
+  { name: "Vercel", logo: "https://smlvqzf0a1b66cku.public.blob.vercel-storage.com/images/Vercel%20Logo-IMoeV2W33gFclXzAfZxmAHqtjBuTzP.png", desc: "Deployment & Edge" }
 ];
 
 const Home = () => {
@@ -238,7 +239,7 @@ const Home = () => {
         {/* Text Content */}
         <div className="max-w-5xl space-y-10 flex flex-col items-center">
           
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-black dark:text-white tracking-tighter leading-[0.85] uppercase transition-colors">
+          <h1 className="text-[2.5rem] sm:text-6xl md:text-8xl lg:text-[10rem] font-black text-black dark:text-white tracking-tighter leading-[0.85] uppercase transition-colors">
             I BUILD <br/>
             <span className="text-brand-red">AUTONOMOUS</span> <br/>
             AI AGENTS.
@@ -248,22 +249,22 @@ const Home = () => {
             I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 pt-6 w-full justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 w-full justify-center px-4 sm:px-0">
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
-              className="group flex items-center justify-between bg-black dark:bg-white border-2 border-black dark:border-white text-white dark:text-black px-10 py-5 min-w-[260px] hover:bg-brand-red hover:border-brand-red dark:hover:bg-brand-red dark:hover:border-brand-red dark:hover:text-white transition-all duration-300 animate-glow shadow-2xl"
+              className="group flex items-center justify-between bg-black dark:bg-white border-2 border-black dark:border-white text-white dark:text-black px-8 sm:px-10 py-4 sm:py-5 w-full sm:min-w-[260px] sm:w-auto hover:bg-brand-red hover:border-brand-red dark:hover:bg-brand-red dark:hover:border-brand-red dark:hover:text-white transition-all duration-300 animate-glow shadow-2xl"
             >
-              <span className="font-bold tracking-[0.2em] text-sm uppercase">Discovery Call</span>
+              <span className="font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">Discovery Call</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Secondary Button - Case Studies */}
             <Link 
               to="/case-studies"
-              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-10 py-5 min-w-[260px] hover:bg-black hover:border-black transition-all duration-300"
+              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-8 sm:px-10 py-4 sm:py-5 w-full sm:min-w-[260px] sm:w-auto hover:bg-black hover:border-black transition-all duration-300"
             >
-              <span className="font-bold tracking-[0.2em] text-sm uppercase">Case Studies</span>
+              <span className="font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">Case Studies</span>
             </Link>
           </div>
         </div>
@@ -304,14 +305,14 @@ const Home = () => {
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Achieved Metrics
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20">
            {[
              { value: '$100k+', label: 'Worth of Systems Delivered' },
              { value: '100+', label: 'Hours Saved Per Month' },
              { value: '20+', label: 'Production Ready Systems' }
            ].map(item => (
              <div key={item.label} className="group">
-                <h3 className="text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
+                <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
                   {item.value}
                 </h3>
                 <p className="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 border-l-4 border-gray-200 dark:border-white/10 pl-4 group-hover:border-brand-red transition-colors">
@@ -334,7 +335,7 @@ const Home = () => {
                  {FEATURES.map((feature, index) => (
                    <div 
                      key={index} 
-                     className="group relative p-10 border-r border-b border-gray-800 bg-black transition-all duration-500 overflow-hidden flex flex-col justify-center min-h-[350px]"
+                     className="group relative p-8 md:p-10 border-b border-gray-800 md:border-r last:border-b-0 bg-black transition-all duration-500 overflow-hidden flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
                    >
                       {/* Background Number Accent */}
                       <span className="absolute -bottom-2 -right-2 text-7xl font-black text-white/[0.03] pointer-events-none group-hover:text-brand-red/10 transition-colors duration-500">
@@ -578,7 +579,7 @@ const Home = () => {
             Tech Stack
         </h2>
 
-        <div className="relative bg-[#050505] rounded-[3rem] p-12 md:p-24 overflow-hidden border border-white/5">
+        <div className="relative bg-[#050505] rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden border border-white/5">
             {/* Unique Motion Graphics: The "Neural Grid" */}
             <div className="absolute inset-0 pointer-events-none opacity-20">
                 <div className="absolute inset-0" style={{ 

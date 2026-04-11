@@ -36,7 +36,7 @@ const Projects = () => {
     if (!selectedProject) return;
     const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
     const prevIndex = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
-    navigate(`/case-studies/${filteredProjects[prevIndex].id}`);
+    navigate(`/case-studies/${filteredProjects[prevIndex].id}`, { replace: true });
   };
 
   const handleNext = (e: React.MouseEvent) => {
@@ -44,7 +44,7 @@ const Projects = () => {
     if (!selectedProject) return;
     const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
     const nextIndex = (currentIndex + 1) % filteredProjects.length;
-    navigate(`/case-studies/${filteredProjects[nextIndex].id}`);
+    navigate(`/case-studies/${filteredProjects[nextIndex].id}`, { replace: true });
   };
 
   const getCategoryLabel = (cat: string) => {
@@ -54,7 +54,7 @@ const Projects = () => {
   };
 
   const handleCloseModal = () => {
-    navigate('/case-studies');
+    navigate(-1);
     setIsExpanded(false);
   };
 
@@ -87,7 +87,7 @@ const Projects = () => {
       {/* Header */}
       <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase text-black dark:text-white transition-colors">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase text-black dark:text-white transition-colors">
             Deployed Systems
             </h1>
             <div className="w-24 h-2 bg-brand-red mb-6"></div>
@@ -162,10 +162,10 @@ const Projects = () => {
                    {project.subtitle}
                  </p>
 
-                 <div className="flex items-center justify-between mt-auto">
-                    <div>
+                 <div className="flex items-center justify-between mt-auto gap-4">
+                    <div className="flex-1 min-w-0">
                       <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Impact</span>
-                      <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-0.5 transition-colors">{project.impact_summary}</span>
+                      <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-0.5 transition-colors block leading-tight">{project.impact_summary}</span>
                     </div>
                     <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-2 rounded-full group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-colors">
                        <ArrowUpRight size={16} />
@@ -188,18 +188,18 @@ const Projects = () => {
       {selectedProject && createPortal(
         <div className="fixed inset-0 z-[9999] bg-white dark:bg-black overflow-y-auto animate-in fade-in duration-300 transition-colors">
           {/* Dashboard Header */}
-          <div className="sticky top-0 z-50 bg-black dark:bg-[#050505] text-white px-6 py-4 flex items-center justify-between shadow-xl border-b border-white/5">
-            <div className="flex items-center gap-6">
+          <div className="sticky top-0 z-50 bg-black dark:bg-[#050505] text-white px-4 md:px-6 py-4 flex items-center justify-between shadow-xl border-b border-white/5">
+            <div className="flex items-center gap-3 md:gap-6 min-w-0 flex-1">
               <button 
                 onClick={handleCloseModal}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors shrink-0"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
-              <div className="h-8 w-px bg-white/20"></div>
-              <div>
-                <h2 className="text-xl font-black tracking-tighter uppercase leading-none">{selectedProject.title}</h2>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mt-1">{selectedProject.client}</p>
+              <div className="h-8 w-px bg-white/20 shrink-0"></div>
+              <div className="min-w-0 flex-1">
+                <h2 className="text-sm md:text-xl font-black tracking-tighter uppercase leading-none truncate">{selectedProject.title}</h2>
+                <p className="text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mt-1 truncate">{selectedProject.client}</p>
               </div>
             </div>
 
@@ -223,7 +223,7 @@ const Projects = () => {
               </div>
               <button 
                 onClick={handleCloseModal}
-                className="bg-brand-red text-white px-6 py-2 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+                className="hidden md:block bg-brand-red text-white px-6 py-2 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all whitespace-nowrap"
               >
                 Close Dashboard
               </button>
@@ -231,33 +231,33 @@ const Projects = () => {
           </div>
 
           {/* Dashboard Body */}
-          <div className="max-w-[1600px] mx-auto p-6 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="max-w-[1600px] mx-auto p-4 md:p-6 lg:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
               
               {/* Left Column: ROI & Impact (Dashboard Style) */}
               <div className="lg:col-span-4 space-y-8">
                 {/* ROI Card */}
-                <div className="bg-gray-50 dark:bg-white/5 border-2 border-black dark:border-white/10 p-8 rounded-3xl relative overflow-hidden group transition-colors">
+                <div className="bg-gray-50 dark:bg-white/5 border-2 border-black dark:border-white/10 p-6 md:p-8 rounded-3xl relative overflow-hidden group transition-colors">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
-                  <TrendingUp className="text-brand-red mb-6" size={40} />
-                  <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Primary ROI Metric</h3>
-                  <div className="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter leading-none mb-4 transition-colors">
+                  <TrendingUp className="text-brand-red mb-4 md:mb-6" size={32} md:size={40} />
+                  <h3 className="text-[10px] md:text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Primary ROI Metric</h3>
+                  <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-black dark:text-white tracking-tighter leading-tight mb-4 transition-colors break-words">
                     {selectedProject.impact_summary}
                   </div>
                   <div className="h-1 w-20 bg-brand-red"></div>
                 </div>
 
                 {/* Quantitative Results */}
-                <div className="bg-black dark:bg-[#0a0a0a] text-white p-8 rounded-3xl shadow-2xl border border-white/5 transition-colors">
-                  <h3 className="text-xs font-black text-brand-red uppercase tracking-widest mb-8 flex items-center gap-2">
-                    <CheckCircle size={16} />
+                <div className="bg-black dark:bg-[#0a0a0a] text-white p-6 md:p-8 rounded-3xl shadow-2xl border border-white/5 transition-colors">
+                  <h3 className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-widest mb-6 md:mb-8 flex items-center gap-2">
+                    <CheckCircle size={14} md:size={16} />
                     Key Performance Indicators
                   </h3>
-                  <div className="space-y-6">
+                  <div className="space-y-4 md:space-y-6">
                     {selectedProject.results.map((res, idx) => (
-                      <div key={idx} className="flex items-start gap-4 group">
+                      <div key={idx} className="flex items-start gap-3 md:gap-4 group">
                         <div className="mt-1 w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 group-hover:scale-150 transition-transform"></div>
-                        <p className="text-sm md:text-base font-bold uppercase tracking-tight leading-tight">{res}</p>
+                        <p className="text-xs md:text-base font-bold uppercase tracking-tight leading-tight">{res}</p>
                       </div>
                     ))}
                   </div>
@@ -306,14 +306,11 @@ const Projects = () => {
                 </div>
 
                 {/* Architecture Dashboard */}
-                <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-8 md:p-12 rounded-3xl transition-colors">
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-6 md:p-12 rounded-3xl transition-colors">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
                     <div>
-                      <h3 className="text-2xl font-black uppercase tracking-tighter text-black dark:text-white">System Architecture</h3>
-                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Modular Workflow Infrastructure</p>
-                    </div>
-                    <div className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-widest rounded-full transition-colors">
-                      Production Ready v1.0
+                      <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-black dark:text-white">System Architecture</h3>
+                      <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Modular Workflow Infrastructure</p>
                     </div>
                   </div>
 

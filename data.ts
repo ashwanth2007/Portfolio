@@ -38,7 +38,7 @@ export const EXPERIENCES: Experience[] = [
 export const TOOL_ARSENAL: ToolCategory[] = [
   {
     name: "AI Models & LLMs",
-    tools: ["Claude 4.5", "Gemini 3 Pro", "GPT-4o", "Perplexity Pro", "o3-mini"]
+    tools: ["Claude Sonnet 4.6", "Gemini 3 Pro", "GPT 5.2", "Perplexity Pro", "o3-mini"]
   },
   {
     name: "Orchestration & Workflow",
@@ -64,18 +64,18 @@ export const PROJECTS: Project[] = [
     client: '$2M/MRR D2C Brand',
     role: 'System Architect',
     impact_summary: '$150K → $600K Scale',
-    tags: ['Gemini 3 Pro', 'Claude 4.5', 'Airtable', 'Apify', 'Veo'],
+    tags: ['Gemini 3 Pro', 'Claude 4.6', 'Airtable', 'fal.ai', 'kie.ai', 'Foreplay'],
     context: 'A $2M/month D2C brand across health, auto, and digital products was spending $150K/month on ads but struggled to scale due to creative fatigue and saturation.',
     problem: 'The creative team was a bottleneck, producing only 20-40 concepts/month while competitors tested 200+. Manual research and random AI generation led to budget waste on unproven concepts.',
-    solution: 'Deployed an intelligence infrastructure: Automating competitor monitoring, analyzing winning patterns via Gemini Vision/Claude, and systematically generating 400+ variations using Nano Banana Pro/Veo.',
+    solution: 'Deployed an intelligence infrastructure: Automating competitor monitoring, analyzing winning patterns via Gemini Vision/Claude 4.6, and systematically generating 400+ variations using Veo.',
     architecture: [
-      'Competitor Radar (Apify + Foreplay)',
+      'Competitor Radar (Foreplay + Facebook Graph API)',
       'Creative Scanner (Frame-by-frame Vision Analysis)',
       'Mechanistic Prompt Engine (Brand Voice Trained)',
       'Video Variant Generator (Veo 3.1)',
       'Performance Feedback Loop (Airtable Intelligence)'
     ],
-    tech_stack: ['Airtable', 'Foreplay', 'Apify', 'Gemini 3 Pro', 'Claude 4.5', 'Veo 3.1', 'Nano Banana Pro Image Model', 'GPT Imagen'],
+    tech_stack: ['Airtable', 'fal.ai', 'kie.ai', 'Gemini 3 Pro', 'Claude 4.6', 'Veo 3.1', 'Facebook Graph API', 'Foreplay'],
     results: [
       'Scaled ad spend from $150K to $600K/month',
       'Increased testing from 20 to 400+ variations/month',
@@ -90,21 +90,21 @@ export const PROJECTS: Project[] = [
     subtitle: 'Automated signal monitoring & multi-channel outreach system.',
     client: 'Onindus (Construction Consulting)',
     role: 'Lead Developer',
-    impact_summary: '50+ New Leads/Week',
+    impact_summary: '500 Highly Qualified Leads/Week',
     tags: ['N8N', 'HubSpot', 'Clay'],
     context: 'The construction consulting firm was manually tracking construction projects and job changes across healthcare, education, and municipal sectors.',
     problem: 'They could only send 100 emails per day with minimal personalization, limiting their ability to scale outreach and capture opportunities from $50M+ construction projects. Manual research took 2+ hours per company.',
-    solution: 'Designed and built N8N workflows for automated signal monitoring across news feeds and LinkedIn. Implemented a lead enrichment pipeline with 90%+ email validity and AI-powered message generation using Claude/GPT.',
+    solution: 'Designed and built N8N workflows for automated signal monitoring across news feeds and LinkedIn. Implemented a lead enrichment pipeline with 90%+ email validity and AI-powered message generation using Claude Sonnet 4.6/GPT 4.2.',
     architecture: [
       'Automated signal monitoring (News/Press/LinkedIn)',
       'Lead enrichment pipeline (90%+ Email Validity)',
-      'AI-powered message generation (Claude/GPT)',
+      'AI-powered message generation (Claude Sonnet 4.6/GPT 4.2)',
       'Multi-domain email infrastructure'
     ],
-    tech_stack: ['N8N', 'Airtable', 'Claude', 'GPT-4', 'HubSpot', 'Clay', 'Perplexity API'],
+    tech_stack: ['N8N', 'Airtable', 'Claude Sonnet 4.6', 'GPT 4.2', 'HubSpot', 'Perplexity API'],
     results: [
       '90%+ email deliverability rate',
-      'Scaled from 100 emails/day to 500+ emails/week',
+      'Scaled from 100 emails/day to 500 highly qualified leads/week',
       'Reduced research time from 2+ hours to 15 mins'
     ]
   },
@@ -115,8 +115,8 @@ export const PROJECTS: Project[] = [
     subtitle: 'Fortune 500 intelligence & LinkedIn content automation.',
     client: 'Boston Consulting Group (Partner)',
     role: 'System Architect',
-    impact_summary: '25-40 Leads/Month',
-    tags: ['N8N', 'Explorium', 'GPT-4', 'Apify'],
+    impact_summary: '25-40 Highly Qualified Leads/Month',
+    tags: ['N8N', 'Explorium', 'GPT 4.2', 'Apify'],
     context: 'BCG TMT practice partner was spending excessive time manually creating LinkedIn content and researching Fortune 500 prospects for $500M-$1B revenue companies.',
     problem: 'No systematic way to monitor competitive intelligence, generate C-suite relevant content, or engage high-value enterprise prospects at scale.',
     solution: 'Built a dual-engine system: 1) Content Automation scraping social signals with AI classification, and 2) B2B Intelligence using Explorium for financial data and executive profiling.',
@@ -126,12 +126,11 @@ export const PROJECTS: Project[] = [
       'Custom voice profile training aligned to a defined vocal style',
       'Explorium financial signal detection'
     ],
-    tech_stack: ['N8N', 'Airtable', 'GPT-4', 'Claude', 'Perplexity Pro', 'Explorium', 'FireCrawl', 'Apify'],
+    tech_stack: ['N8N', 'Airtable', 'GPT 4.2', 'Claude Sonnet 4.6', 'Perplexity Pro', 'Explorium', 'FireCrawl', 'Apify'],
     results: [
       '90% reduction in manual content creation time',
       '5-7 strategic posts per week',
-      '25-40 qualified leads monthly',
-      '~$1,000 monthly infrastructure cost for complete system'
+      '25-40 highly qualified leads monthly'
     ]
   },
   {
@@ -142,17 +141,17 @@ export const PROJECTS: Project[] = [
     client: 'Aliyah Immigration',
     role: 'Developer',
     impact_summary: 'False Positives < 10%',
-    tags: ['GPT-4', 'LinkedIn API', 'Python'],
+    tags: ['GPT 4.2', 'LinkedIn API', 'Python'],
     context: 'Clients needed to identify US-based individuals considering Jewish immigration (Aliyah) to Israel.',
     problem: 'The keyword "Aliyah" is a common name, resulting in 80%+ false positives. Manual filtering took days per week with high error rates.',
-    solution: 'Designed a GPT-4 content classification system with 1-10 relevance scoring to semantically distinguish between immigration posts and name mentions, coupled with a 6-step email enrichment waterfall.',
+    solution: 'Designed a GPT 4.2 content classification system with 1-10 relevance scoring to semantically distinguish between immigration posts and name mentions, coupled with a 6-step email enrichment waterfall.',
     architecture: [
-      'GPT-4 Content Classification (Semantic Analysis)',
+      'GPT 4.2 Content Classification (Semantic Analysis)',
       'LinkedIn Scraping for keyword variations',
       '6-step waterfall email enrichment',
       'US-wide geographic filtering'
     ],
-    tech_stack: ['LinkedIn Scraping API', 'GPT-4', 'Apollo.io', 'Hunter.io', 'Airtable', 'Anymail API'],
+    tech_stack: ['LinkedIn Scraping API', 'GPT 4.2', 'Apollo.io', 'Hunter.io', 'Airtable', 'Anymail API'],
     results: [
       'Reduced false positives from 80%+ to under 10%',
       '12 months of historical data processed',
@@ -180,7 +179,7 @@ export const PROJECTS: Project[] = [
       'AI sentiment analysis system',
       'Dual-language Google Doc export'
     ],
-    tech_stack: ['N8N', 'Make.com', 'Airtable', 'Apify', 'Google Docs', 'OpenAI'],
+    tech_stack: ['Custom Database', 'internetemic.com', 'Airtable', 'Apify', 'Google Docs', 'OpenAI'],
     results: [
       'Reduced curation time from 10+ hours to 2 hours/week',
       'Automated dual-language output (English/German)',
@@ -196,7 +195,7 @@ export const PROJECTS: Project[] = [
     client: 'Boom & Wisdom',
     role: 'Developer',
     impact_summary: 'Multi-Platform Analysis',
-    tags: ['N8N', 'Apify', 'Airtable', 'AI'],
+    tags: ['GPT 5.2', 'Google Docs API', 'Apify API'],
     context: 'Two products (Boom & Wisdom) needed to analyze viral content across 6 social platforms to understand engagement drivers in their niches.',
     problem: 'Manual research was ad-hoc with no reproducible methodology. Needed a modular system to scrape, analyze sentiment, and generate actionable viral playbooks.',
     solution: 'Designed single N8N workflow with router-based architecture for 6 platforms (TikTok, YouTube, Twitter, LinkedIn, FB, IG) with Apify scraping and AI sentiment analysis.',
@@ -206,7 +205,7 @@ export const PROJECTS: Project[] = [
       'AI sentiment & pattern identification',
       'Webhook-triggered on-demand execution'
     ],
-    tech_stack: ['N8N', 'Apify', 'Airtable', 'AI Models'],
+    tech_stack: ['GPT 5.2', 'Google Docs API', 'Apify API'],
     results: [
       'Unified analysis across 6 social platforms',
       'Generated actionable viral playbooks for 2 products',
@@ -222,7 +221,7 @@ export const PROJECTS: Project[] = [
     client: 'Foresight',
     role: 'Developer',
     impact_summary: '85% Time Reduction',
-    tags: ['Make', 'GPT-4', 'Slack', 'Airtable'],
+    tags: ['Make', 'GPT 5.2', 'Slack', 'Airtable'],
     context: 'Clients needed consistent LinkedIn content but lacked automated ways to monitor sources and generate drafts.',
     problem: 'Manual process took 4-5 hours per post. No automated discovery, relevancy filtering, or multi-variant draft generation.',
     solution: 'Built automated monitoring via Make.com, AI relevancy classification (70+ score), three-variant draft generation, and Kanban publishing workflow.',
@@ -232,7 +231,7 @@ export const PROJECTS: Project[] = [
       'Persona-specific draft generation (3 variants)',
       'Kanban publishing workflow with Slack'
     ],
-    tech_stack: ['Make.com', 'Airtable', 'GPT-4', 'Slack', 'YouTube API'],
+    tech_stack: ['Make.com', 'Airtable', 'GPT 5.2', 'Slack', 'YouTube API', 'Apify API', 'FOA'],
     results: [
       'Reduced content creation from 4-5 hours to 45 mins',
       'Three-variant AI draft generation per topic',
@@ -300,7 +299,7 @@ export const PROJECTS: Project[] = [
     client: 'Teknova',
     role: 'Developer',
     impact_summary: '900+ Companies Qualified',
-    tags: ['Clay', 'GPT-4', 'N8N', 'Apollo'],
+    tags: ['Clay', 'GPT 4.2', 'N8N', 'Apollo'],
     context: 'Teknova (biotech reagent manufacturer) needed to qualify 900+ companies and recommend exactly 3 relevant products per prospect.',
     problem: 'Manual research took 30+ minutes per company. Needed to synthesize complex data (modality, stage, manufacturing) into high-confidence recommendations.',
     solution: 'Built 6-stage AI classification suite (Modality, Stage, Product Match) and conditional waterfall email recovery system.',
@@ -310,7 +309,7 @@ export const PROJECTS: Project[] = [
       'Campaign segmentation by modality',
       'Unified Airtable data hub'
     ],
-    tech_stack: ['Clay', 'Apollo.io', 'N8N', 'Airtable', 'GPT-4', 'Enrichley', 'LeadMagic'],
+    tech_stack: ['Clay', 'Apollo.io', 'N8N', 'Airtable', 'GPT 4.2', 'Enrichley', 'LeadMagic'],
     results: [
       'Automated qualification of 900+ companies',
       'Reduced research time by 95% (30m to automation)',
@@ -567,14 +566,14 @@ export const PROJECTS: Project[] = [
     tags: ['Make.com', 'Fireflies AI', 'Jira'],
     context: 'Product team manually scheduling discovery calls, recording meetings, transcribing feedback, and creating Jira tickets.',
     problem: 'Process took 3-4 hours per call with inconsistent feedback classification and missed insights.',
-    solution: 'Automated workflow using Fireflies AI for transcription, GPT-4o for categorization (Issues, Features, Pain Points), and Zapier/Make for Jira ticket creation.',
+    solution: 'Automated workflow using Fireflies AI for transcription, GPT 5.2 for categorization (Issues, Features, Pain Points), and Zapier/Make for Jira ticket creation.',
     architecture: [
       'Calendly & Fireflies AI integration',
-      'GPT-4o Feedback Categorization',
+      'GPT 5.2 Feedback Categorization',
       'Airtable Database Structure',
       'Jira Ticket Creation Workflow'
     ],
-    tech_stack: ['Make.com', 'Zapier', 'Airtable', 'Calendly', 'Fireflies AI', 'GPT-4o', 'Slack', 'Jira'],
+    tech_stack: ['Make.com', 'Zapier', 'Airtable', 'Calendly', 'Fireflies AI', 'GPT 5.2', 'Slack', 'Jira'],
     results: [
       'Reduced processing time from 4 hours to ~20 mins',
       '100% automated transcription & categorization',
@@ -600,7 +599,7 @@ export const PROJECTS: Project[] = [
       'Multi-variant Draft Generation',
       'Kanban Publishing Workflow'
     ],
-    tech_stack: ['Make.com', 'Airtable', 'GPT-4', 'Slack', 'Apify', 'YouTube API'],
+    tech_stack: ['Make.com', 'Airtable', 'GPT 5.2', 'Slack', 'Apify API', 'YouTube API', 'FOA'],
     results: [
       'Daily automated scraping with no manual intervention',
       '3 draft variants per high-scoring topic',

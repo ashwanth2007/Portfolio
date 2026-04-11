@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 px-6">
-      <div className="max-w-5xl mx-auto bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] px-8 h-16 flex items-center justify-between transition-colors duration-300">
+      <div className="max-w-5xl mx-auto bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] px-4 md:px-8 h-16 flex items-center justify-between transition-colors duration-300">
         {/* Logo */}
         <Link to="/" className="group flex flex-col items-start justify-center">
           <div className="text-lg md:text-xl font-black tracking-tighter text-black dark:text-white transition-colors">
