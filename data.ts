@@ -18,14 +18,6 @@ export const EXPERIENCES: Experience[] = [
     description: 'The Build Phase. Architecting complex B2B automation systems. Developed N8N workflow engineering patterns and multi-AI orchestration for high-ticket clients.'
   },
   {
-    id: 'freedom',
-    period: 'Feb 2025 - June 2025',
-    company: 'Freedom With AI',
-    role: 'Intern',
-    type: 'internship',
-    description: 'The Foundation Phase. Community & Tools Research. Managed 160+ members, researched emerging AI tools, and built initial workflow automations.'
-  },
-  {
     id: 'college',
     period: '2024 - 2028',
     company: 'VIT Vellore',
@@ -55,15 +47,46 @@ export const TOOL_ARSENAL: ToolCategory[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  // --- CASE STUDIES ---
+  // 1. Enterprise AI SDR Intelligence Infrastructure
+  {
+    id: 'zoro-bcg',
+    category: 'CASE STUDIES',
+    title: 'Enterprise AI SDR Intelligence Infrastructure',
+    subtitle: 'Full-stack business development intelligence system for a top-3 global consulting firm.',
+    client: 'Top-3 Global Management Consulting Firm (Fortune 500)',
+    role: 'System Architect',
+    impact_summary: '3,000+ enterprise leads per month. $480K SDR team replaced. Deployed live on $2M+ consulting pitches.',
+    tags: ['N8N', 'Explorium', 'GPT 4.2', 'Apify'],
+    context: 'A top-3 global management consulting firm needed to scale its business development efforts targeting large manufacturing and distribution companies without increasing headcount.',
+    problem: 'No scalable system to identify, research, and engage $500M to $2.5B manufacturing and distribution companies at executive level. Manual research took 20 to 30 minutes per prospect. Generic outbound tools produced template emails executives ignored. Hiring more SDRs was not viable at enterprise scale.',
+    solution: "Built a full-stack business development intelligence system for one of the world's top consulting firms. The system sources 10,000+ contacts per month, researches every company for financial signals, hiring momentum, and operational triggers, profiles every executive for recent priorities and decision-making authority, maps pain points to the firm's specific service offerings, and generates personalized outreach across email and LinkedIn. Managing Directors began demonstrating the system directly on consulting pitches. Prospects stopped seeing theoretical AI strategy and started seeing live AI infrastructure in action. The internal tool became a consulting revenue add-on.",
+    architecture: [
+      'Lead sourcing layer pulling 10,000+ contacts monthly from enterprise databases',
+      'Company intelligence layer analyzing financials, hiring trends, and operational signals',
+      'Executive profiling layer identifying priorities, recent activity, and budget authority',
+      'Pain point mapping engine trained on the firm\'s methodology and sector positioning',
+      'Personalized outreach generation across email and LinkedIn at scale',
+      'Campaign execution and reply management with CRM sync and real-time reporting'
+    ],
+    tech_stack: ['N8N', 'Airtable', 'GPT 4.2', 'Claude Sonnet 4.6', 'Perplexity Pro', 'Explorium', 'FireCrawl', 'Apify'],
+    results: [
+      '3,000+ qualified leads generated per month targeting $500M to $2.5B companies',
+      'Replaced 6 full-time SDRs at 99% cost reduction',
+      'Every prospect researched across 10+ business intelligence signals before first contact',
+      'Managing Directors now open $2M to $5M pitches by demonstrating this system live',
+      'Enterprise clients began requesting the system for their own sales teams',
+      'Real-time targeting pivot across industries with no ramp-up time'
+    ]
+  },
+  // 2. Ad Creator
   {
     id: 'zoro-ad-intel',
     category: 'CASE STUDIES',
-    title: 'Ad Creative Intelligence',
+    title: 'Competitor Ad Analysis to Creative Pipeline',
     subtitle: 'Automated Competitive Analysis → Systematic Winner Generation',
     client: '$2M/MRR D2C Brand',
     role: 'System Architect',
-    impact_summary: '$150K → $600K Scale',
+    impact_summary: '$150K to $600K monthly ad spend. 4x growth without a creative team.',
     tags: ['Gemini 3 Pro', 'Claude 4.6', 'Airtable', 'fal.ai', 'kie.ai', 'Foreplay'],
     context: 'A $2M/month D2C brand across health, auto, and digital products was spending $150K/month on ads but struggled to scale due to creative fatigue and saturation.',
     problem: 'The creative team was a bottleneck, producing only 20-40 concepts/month while competitors tested 200+. Manual research and random AI generation led to budget waste on unproven concepts.',
@@ -71,7 +94,7 @@ export const PROJECTS: Project[] = [
     architecture: [
       'Competitor Radar (Foreplay + Facebook Graph API)',
       'Creative Scanner (Frame-by-frame Vision Analysis)',
-      'Mechanistic Prompt Engine (Brand Voice Trained)',
+      'Mechanistic Prompt Engine (Brand voice trained)',
       'Video Variant Generator (Veo 3.1)',
       'Performance Feedback Loop (Airtable Intelligence)'
     ],
@@ -83,93 +106,53 @@ export const PROJECTS: Project[] = [
       'Found 20-25 winning concepts/month (vs 2-3 previously)'
     ]
   },
+  // 3. Enterprise Content Intelligence Infrastructure
   {
-    id: 'zoro-onindus',
+    id: 'enterprise-content-intel',
     category: 'CASE STUDIES',
-    title: 'Onindus Construction Intel',
-    subtitle: 'Automated signal monitoring & multi-channel outreach system.',
-    client: 'Onindus (Construction Consulting)',
-    role: 'Lead Developer',
-    impact_summary: '500 Highly Qualified Leads/Week',
-    tags: ['N8N', 'HubSpot', 'Clay'],
-    context: 'The construction consulting firm was manually tracking construction projects and job changes across healthcare, education, and municipal sectors.',
-    problem: 'They could only send 100 emails per day with minimal personalization, limiting their ability to scale outreach and capture opportunities from $50M+ construction projects. Manual research took 2+ hours per company.',
-    solution: 'Designed and built N8N workflows for automated signal monitoring across news feeds and LinkedIn. Implemented a lead enrichment pipeline with 90%+ email validity and AI-powered message generation using Claude Sonnet 4.6/GPT 4.2.',
-    architecture: [
-      'Automated signal monitoring (News/Press/LinkedIn)',
-      'Lead enrichment pipeline (90%+ Email Validity)',
-      'AI-powered message generation (Claude Sonnet 4.6/GPT 4.2)',
-      'Multi-domain email infrastructure'
-    ],
-    tech_stack: ['N8N', 'Airtable', 'Claude Sonnet 4.6', 'GPT 4.2', 'HubSpot', 'Perplexity API'],
-    results: [
-      '90%+ email deliverability rate',
-      'Scaled from 100 emails/day to 500 highly qualified leads/week',
-      'Reduced research time from 2+ hours to 15 mins'
-    ]
-  },
-  {
-    id: 'zoro-bcg',
-    category: 'CASE STUDIES',
-    title: 'BCG Executive System',
-    subtitle: 'Fortune 500 intelligence & LinkedIn content automation.',
-    client: 'Boston Consulting Group (Partner)',
+    title: 'Enterprise Content Intelligence Infrastructure',
+    subtitle: '50+ senior partners running automated thought leadership systems used directly in multi million dollar consulting pitches.',
+    client: 'Global Consulting Firm, TMT Practice',
     role: 'System Architect',
-    impact_summary: '25-40 Highly Qualified Leads/Month',
-    tags: ['N8N', 'Explorium', 'GPT 4.2', 'Apify'],
-    context: 'BCG TMT practice partner was spending excessive time manually creating LinkedIn content and researching Fortune 500 prospects for $500M-$1B revenue companies.',
-    problem: 'No systematic way to monitor competitive intelligence, generate C-suite relevant content, or engage high-value enterprise prospects at scale.',
-    solution: 'Built a dual-engine system: 1) Content Automation scraping social signals with AI classification, and 2) B2B Intelligence using Explorium for financial data and executive profiling.',
+    impact_summary: '50+ senior partners. Automated thought leadership deployed inside multi-million dollar consulting pitches.',
+    tags: ['n8n', 'Claude Sonnet', 'Airtable', 'LinkedIn'],
+    context: 'Built an enterprise content intelligence system designed to convert real time industry signals into structured thought leadership for senior partners.',
+    problem: 'No systematic way for senior consulting partners to translate deep expertise into consistent, high quality thought leadership. Despite advising enterprise clients on AI and transformation, their public presence did not reflect their authority.',
+    solution: 'Built an enterprise content intelligence system designed to convert real time industry signals into structured thought leadership for senior partners. The system combines: 1) Large scale intelligence monitoring across industry, competitors, and enterprise signals 2) Relevance scoring aligned to practice focus areas and individual expertise 3) Context engineered content generation trained on consulting tone and positioning 4) Multi angle output enabling strategic narrative selection per signal. This transformed thought leadership from manual effort into a repeatable infrastructure.',
     architecture: [
-      'Real-time monitoring scraping (TikTok/LinkedIn/X)',
-      'AI Classification Engine (85% rejection rate)',
-      'Custom voice profile training aligned to a defined vocal style',
-      'Explorium financial signal detection'
+      'Intelligence monitoring layer across 500+ sources including competitors, industry signals, and enterprise activity',
+      'Signal filtering engine rejecting approximately 95% of low value inputs',
+      'Relevance scoring system aligned to practice areas and individual profiles',
+      'Content generation engine trained on firm level voice and partner level communication style',
+      'Multi angle output layer generating strategic positioning options per signal',
+      'Review and approval layer for partner level control'
     ],
-    tech_stack: ['N8N', 'Airtable', 'GPT 4.2', 'Claude Sonnet 4.6', 'Perplexity Pro', 'Explorium', 'FireCrawl', 'Apify'],
+    tech_stack: ['n8n', 'Claude Sonnet', 'Airtable', 'LinkedIn', 'external intelligence sources'],
     results: [
-      '90% reduction in manual content creation time',
-      '5-7 strategic posts per week',
-      '25-40 highly qualified leads monthly'
+      '50+ senior partners actively using the system',
+      'Posting frequency increased from 1 to 2 posts per month to 4 to 6 strategic posts per month',
+      '95% signal filtering from 500+ monitored sources',
+      'Less than 10 minutes required per partner for review and approval',
+      'Zero manual content creation required',
+      'System integrated into 2M to 5M consulting pitch workflows',
+      'Content used as direct sales asset in enterprise engagements',
+      'Thought leadership became a core component of enterprise sales conversations',
+      'Prospects engaged with partner insights before initial meetings',
+      'Competitive positioning improved through real time narrative response',
+      'System used as a live demonstration during consulting pitches',
+      'Internal tool evolved into a client facing asset within engagements'
     ]
   },
-  {
-    id: 'zoro-aliyah',
-    category: 'CASE STUDIES',
-    title: 'Aliyah Lead Scraping',
-    subtitle: 'Semantic filtering & immigration lead identification.',
-    client: 'Aliyah Immigration',
-    role: 'Developer',
-    impact_summary: 'False Positives < 10%',
-    tags: ['GPT 4.2', 'LinkedIn API', 'Python'],
-    context: 'Clients needed to identify US-based individuals considering Jewish immigration (Aliyah) to Israel.',
-    problem: 'The keyword "Aliyah" is a common name, resulting in 80%+ false positives. Manual filtering took days per week with high error rates.',
-    solution: 'Designed a GPT 4.2 content classification system with 1-10 relevance scoring to semantically distinguish between immigration posts and name mentions, coupled with a 6-step email enrichment waterfall.',
-    architecture: [
-      'GPT 4.2 Content Classification (Semantic Analysis)',
-      'LinkedIn Scraping for keyword variations',
-      '6-step waterfall email enrichment',
-      'US-wide geographic filtering'
-    ],
-    tech_stack: ['LinkedIn Scraping API', 'GPT 4.2', 'Apollo.io', 'Hunter.io', 'Airtable', 'Anymail API'],
-    results: [
-      'Reduced false positives from 80%+ to under 10%',
-      '12 months of historical data processed',
-      'Weekly automated monitoring setup',
-      'Reduced qualification time from days to hours'
-    ]
-  },
-  
-  // --- INSTIG8.AI PROJECTS ---
+  // 4. Recipe Automation
   {
     id: 'instig8-recipe',
     category: 'INSTIG8',
-    title: 'Recipe Automation System',
+    title: 'Automated Viral Recipe Discovery and Production Pipeline',
     subtitle: 'Multi-lingual content scraping & sentiment analysis',
-    client: 'FalkeMedia',
+    client: 'German Recipe Media Company (500K+ Newsletter Subscribers)',
     role: 'Developer',
-    impact_summary: '80% Workload Reduction',
-    tags: ['N8N', 'Make', 'Apify', 'Airtable'],
+    impact_summary: 'ROI:\n40 to 1,000+ recipes/month. App churn cut from 28% to 12%.',
+    tags: ['Make', 'OpenAI 5.4'],
     context: 'A German media company with 500K newsletter subscribers needed to discover and structure air fryer recipe content from social media.',
     problem: 'Manual content curation took 10+ hours per week with inconsistent quality and no sentiment analysis. No automated way to scrape, analyze sentiment, or generate dual-language docs.',
     solution: 'Built N8N workflow for TikTok/Instagram scraping using Apify, implemented SRT transcription, AI sentiment analysis, and automated Google Doc export in English and German.',
@@ -179,7 +162,7 @@ export const PROJECTS: Project[] = [
       'AI sentiment analysis system',
       'Dual-language Google Doc export'
     ],
-    tech_stack: ['Custom Database', 'internetemic.com', 'Airtable', 'Apify', 'Google Docs', 'OpenAI'],
+    tech_stack: ['make.com', 'OpenAI 5.4'],
     results: [
       'Reduced curation time from 10+ hours to 2 hours/week',
       'Automated dual-language output (English/German)',
@@ -187,25 +170,95 @@ export const PROJECTS: Project[] = [
       'Duplicate detection preventing wasted processing'
     ]
   },
+  // 5. B2B Lead Intelligence & Outbound Pipeline
+  {
+    id: 'b2b-lead-intel',
+    category: 'CASE STUDIES',
+    title: 'B2B Lead Intelligence & Outbound Pipeline',
+    subtitle: 'End-to-end outbound pipeline generating 50 to 500 enriched, outreach-ready leads per run from structured ICP inputs.',
+    client: 'Industrial Software Platform (QHSE, EHS, CMMS, ESG)',
+    role: 'System Architect',
+    impact_summary: ' 50 to 500 enriched leads per run. Personalized outreach copy generated for every one. Zero manual prospecting.',
+    tags: ['Next.js', 'FastAPI', 'n8n', 'Claude', 'Airtable', 'SmartLead', 'Lovable.app'],
+    context: 'Built a full-stack lead intelligence and outbound system designed for industrial B2B targeting.',
+    problem: 'No scalable system to identify, enrich, and engage high quality industrial decision makers across multiple geographies and industries. Manual prospecting limited coverage, reduced data accuracy, and made personalized outreach at scale infeasible.',
+    solution: 'Built a full-stack lead intelligence and outbound system designed for industrial B2B targeting. The system combines: 1) Structured ICP intake with multi-parameter targeting across roles, industries, geographies, company size, and revenue 2) AI driven query expansion to normalize job titles and location variations for maximum dataset coverage 3) Automated lead generation and enrichment pipeline 4) AI personalized outreach copy generation for email and LinkedIn 5) Campaign routing and tracking across outreach channels. This created a repeatable outbound infrastructure instead of manual campaign execution.',
+    architecture: [
+      'ICP intake layer capturing targeting parameters and campaign configuration',
+      'AI query expansion layer for job title and geography normalization',
+      'Lead generation and enrichment pipeline',
+      'Outreach copy generation engine for personalized messaging',
+      'Campaign orchestration layer integrating with outreach tools',
+      'Tracking layer for leads, campaigns, and replies'
+    ],
+    tech_stack: ['Next.js', 'FastAPI', 'n8n', 'Claude', 'Airtable', 'SmartLead', 'Lovable.app'],
+    results: [
+      '50 to 500 leads generated per campaign run',
+      'Fully automated pipeline from ICP input to outreach launch',
+      'AI query expansion improving lead match coverage across datasets',
+      'Personalized email and LinkedIn outreach generated per lead',
+      'Multi-input system: ICP search, lead upload, company upload, reactivation',
+      'Reactivation campaigns targeting cold leads based on last contact window',
+      'Centralized campaign tracking across leads, campaigns, and replies',
+      '17 workflow iterations reflecting continuous system optimization'
+    ]
+  },
+  // 6. EMS Manufacturing LinkedIn Content System
+  {
+    id: 'calcuquote-linkedin',
+    category: 'CASE STUDIES',
+    title: 'EMS Manufacturing LinkedIn Content System',
+    subtitle: 'End-to-end LinkedIn content engine for manufacturing and supply chain brands.',
+    client: 'EMS Manufacturing Company',
+    role: 'System Architect',
+    impact_summary: 'End-to-end LinkedIn content engine for manufacturing and supply chain brands.',
+    tags: ['Next.js', 'FastAPI', 'Airtable', 'Claude Sonnet 4.6', 'fal.ai', 'Perplexity', 'CalcuQuote'],
+    context: 'Built a full-stack LinkedIn Content Management System tailored for an EMS manufacturing software platform, designed to transform technical product data, RFQ workflows, and supply chain insights into structured, high-quality LinkedIn content.',
+    problem: 'No scalable system to convert highly technical manufacturing, quoting, and supply chain data into consistent, high-quality LinkedIn content. Content creation required manual effort, lacked consistency across profiles, and failed to translate complex EMS concepts into clear, engaging narratives.',
+    solution: 'Built a full-stack LinkedIn Content Management System tailored for a manufacturing software company, designed to transform technical product data, RFQ workflows, and supply chain insights into structured, high-quality LinkedIn content. The system combines: 1) Knowledge ingestion from product docs, BOM workflows, transcripts, and industry sources 2) AI-driven content generation grounded in internal data + live manufacturing and supply chain research 3) Multi-layer quality control with automated scoring and rewriting 4) Scheduling and publishing workflow with full visibility across profiles. This enabled consistent, scalable content production without manual writing.',
+    architecture: [
+      'Knowledge ingestion layer (product docs, BOM data context, transcripts, URLs)',
+      'AI content generation engine (context-aware + industry research augmented)',
+      'Quality control layer (AI scoring + auto-rewrite if below threshold)',
+      'Image generation system (style-controlled visuals aligned to brand)',
+      'Multi-profile management (independent voice + technical positioning per profile)',
+      'Scheduling engine (calendar-based planning + execution tracking)'
+    ],
+    tech_stack: ['Next.js', 'FastAPI', 'Airtable', 'Claude Sonnet 4.6', 'fal.ai', 'Perplexity', 'Vercel', 'Render', 'CalcuQuote'],
+    results: [
+      'Fully automated content pipeline from technical source material to scheduled posts',
+      'Multi-profile content generation (Personal + Company profiles)',
+      '8 structured content pillars per profile for strategic coverage',
+      'Built-in AI quality control layer (auto scoring + rewriting)',
+      'Live industry research integration per generation cycle',
+      'Auto-image generation aligned to brand and technical context',
+      'End-to-end workflow: Ingest → Generate → Review → Schedule → Publish',
+      'Configurable post output per profile per cycle'
+    ]
+  },
+  // 7. Cross-Platform Viral Intelligence and Playbook Generation System
   {
     id: 'instig8-boom',
     category: 'INSTIG8',
-    title: 'Viral Playbook Generator',
-    subtitle: 'Multi-platform viral content analysis',
+    title: 'Cross-Platform Viral Intelligence and Playbook Generation System',
+    subtitle: 'Automated social intelligence system that scrapes top-performing content across 6 platforms, analyzes sentiment and audience patterns, and generates production-ready viral playbooks.',
     client: 'Boom & Wisdom',
     role: 'Developer',
-    impact_summary: 'Multi-Platform Analysis',
-    tags: ['GPT 5.2', 'Google Docs API', 'Apify API'],
+    impact_summary: '6 platforms monitored. Raw social data converted to production-ready viral playbooks. Zero manual research.',
+    tags: ['n8n', 'OpenAI GPT', 'Google Drive API', 'Google Docs API', 'Apify Custom Actors', 'Airtable'],
     context: 'Two products (Boom & Wisdom) needed to analyze viral content across 6 social platforms to understand engagement drivers in their niches.',
-    problem: 'Manual research was ad-hoc with no reproducible methodology. Needed a modular system to scrape, analyze sentiment, and generate actionable viral playbooks.',
-    solution: 'Designed single N8N workflow with router-based architecture for 6 platforms (TikTok, YouTube, Twitter, LinkedIn, FB, IG) with Apify scraping and AI sentiment analysis.',
+    problem: 'Manual content research was platform-specific, ad-hoc, and produced no reusable methodology. No system existed to systematically monitor hashtags, track custom accounts, and turn raw engagement signals into actionable creative strategy.',
+    solution: 'Built a 7-workflow n8n system with platform-specific Apify actors for TikTok, Instagram, YouTube, Twitter, LinkedIn, and Facebook. Each workflow handles data acquisition, trend extraction, and sentiment analysis. A final orchestration workflow synthesizes all signals into structured viral playbooks exported directly to Google Docs via Drive API.',
     architecture: [
-      'Router-based N8N workflow for 6 platforms',
-      'Apify pay-per-event scraping actors',
-      'AI sentiment & pattern identification',
+      'Platform-level scraping via custom Apify actors for all 6 platforms',
+      'Hashtag and custom account monitoring layer',
+      'Sentiment and audience pattern analysis per platform',
+      'Cross-platform signal aggregation workflow',
+      'AI playbook generation via OpenAI',
+      'Automated Google Docs export via Drive API',
       'Webhook-triggered on-demand execution'
     ],
-    tech_stack: ['GPT 5.2', 'Google Docs API', 'Apify API'],
+    tech_stack: ['n8n', 'OpenAI GPT', 'Google Drive API', 'Google Docs API', 'Apify Custom Actors', 'Airtable'],
     results: [
       'Unified analysis across 6 social platforms',
       'Generated actionable viral playbooks for 2 products',
@@ -213,58 +266,37 @@ export const PROJECTS: Project[] = [
       'Webhook-triggered execution for on-demand analysis'
     ]
   },
+  // 8. Construction Market Signal Intelligence and Outbound System
   {
-    id: 'instig8-foresight',
-    category: 'INSTIG8',
-    title: 'LinkedIn Content Engine',
-    subtitle: 'Automated discovery & draft generation',
-    client: 'Foresight',
-    role: 'Developer',
-    impact_summary: '85% Time Reduction',
-    tags: ['Make', 'GPT 5.2', 'Slack', 'Airtable'],
-    context: 'Clients needed consistent LinkedIn content but lacked automated ways to monitor sources and generate drafts.',
-    problem: 'Manual process took 4-5 hours per post. No automated discovery, relevancy filtering, or multi-variant draft generation.',
-    solution: 'Built automated monitoring via Make.com, AI relevancy classification (70+ score), three-variant draft generation, and Kanban publishing workflow.',
+    id: 'zoro-onindus',
+    category: 'CASE STUDIES',
+    title: 'Construction Market Signal Intelligence and Outbound System',
+    subtitle: 'Automated signal monitoring & multi-channel outreach system.',
+    client: 'Capital Projects Advisory Consulting Firm (Healthcare, Higher Education, Municipal)',
+    role: 'Lead Developer',
+    impact_summary: '500 qualified leads per week from $50M+ construction project signals. Call prep time cut 85%. Outreach scaled from 100 to 2,500+ targeted contacts per week.',
+    tags: ['N8N', 'HubSpot', 'Clay'],
+    context: 'The construction consulting firm was manually tracking construction projects and job changes across healthcare, education, and municipal sectors.',
+    problem: 'Business development was running blind. The team sent 100 emails per day with no intelligence behind the timing or targeting. When a hospital announced a $100M expansion or a new VP of Facilities joined a target organization, the team had no way to know. Manual research took 2+ hours per company. Phone calls went out without context. The result was high volume, low relevance outreach that produced no meaningful pipeline.',
+    solution: 'Built a signal-driven business development system for a capital projects advisory firm selling to hospitals, universities, and government agencies. The system monitors construction news, bond approvals, facility announcements, and leadership changes across target organizations in real time. When a relevant signal fires, the system automatically finds the right decision maker, verifies their contact details, and generates a personalized email sequence, LinkedIn message, and phone script grounded in that specific signal. Sales reps no longer research leads manually. They open their dashboard and find ready-to-contact prospects with pre-written outreach tied to a real business trigger happening right now.',
     architecture: [
-      'Automated profile & keyword monitoring',
-      'AI relevancy classification & scoring',
-      'Persona-specific draft generation (3 variants)',
-      'Kanban publishing workflow with Slack'
+      'Real-time monitoring of construction project announcements, bond approvals, and leadership changes across target industries',
+      'Automatic identification and contact verification of decision makers triggered by each signal',
+      'AI-generated personalized email sequences, LinkedIn messages, and phone scripts per lead',
+      'Coordinated outreach across email and LinkedIn with no overlap or over-messaging',
+      'Full CRM sync with live pipeline tracking and weekly performance reporting'
     ],
-    tech_stack: ['Make.com', 'Airtable', 'GPT 5.2', 'Slack', 'YouTube API', 'Apify API', 'FOA'],
+    tech_stack: ['N8N', 'Airtable', 'Claude Sonnet 4.6', 'GPT 4.2', 'HubSpot', 'Perplexity API'],
     results: [
-      'Reduced content creation from 4-5 hours to 45 mins',
-      'Three-variant AI draft generation per topic',
-      'Automated Slack notifications for workflow status',
-      'Persona-driven styling matching brand voice'
+      '500 signal-qualified leads generated per week',
+      'Outreach scaled from 100 contacts per day to 2,500+ per week',
+      'Every lead matched to a live construction trigger before first contact',
+      'Sales team receives pre-researched talking points per lead, cutting call prep from 2 hours to 15 minutes',
+      '$50M+ construction projects, bond approvals, and leadership changes tracked automatically',
+      'All activity synced to CRM with real-time pipeline visibility'
     ]
   },
-  {
-    id: 'instig8-zoefoundry',
-    category: 'INSTIG8',
-    title: 'Warm Intro Outreach',
-    subtitle: 'Mutual connection mapping & outreach',
-    client: 'Zoefoundry',
-    role: 'Developer',
-    impact_summary: '83% Research Reduction',
-    tags: ['Apify', 'Texau', 'Make', 'Airtable'],
-    context: 'Clients needed to leverage warm introductions via mutual LinkedIn connections systematically.',
-    problem: 'Manual process took 2+ hours per prospect to map connections and generate requests. No automated way to map mutual connections or manage multi-stage campaigns.',
-    solution: 'Integrated Apify (Apollo) and Texau for connection mapping, with Airtable CRM and Make.com for automated campaign triggers and multi-stage sequences.',
-    architecture: [
-      'Apollo.io lead scraping (Apify)',
-      '1st-degree mutual connection mapping (Texau)',
-      'Multi-stage email sequence (Stage 0-3)',
-      'Webhook-based response handling'
-    ],
-    tech_stack: ['Apify', 'Texau', 'Airtable', 'Make.com', 'Apollo.io'],
-    results: [
-      'Reduced prospect research from 2+ hours to 20 mins',
-      'Automated 1st-degree mutual connection mapping',
-      'Dynamic token personalization for authenticity',
-      'Real-time status tracking in Airtable'
-    ]
-  },
+  // 9. Content Strategy Automation
   {
     id: 'instig8-xpertlink',
     category: 'INSTIG8',
@@ -291,6 +323,34 @@ export const PROJECTS: Project[] = [
       'Data-driven topic selection vs manual guessing'
     ]
   },
+  // 10. Aliyah Lead Scraping
+  {
+    id: 'zoro-aliyah',
+    category: 'CASE STUDIES',
+    title: 'Aliyah Lead Scraping',
+    subtitle: 'Semantic filtering & immigration lead identification.',
+    client: 'Aliyah Immigration',
+    role: 'Developer',
+    impact_summary: 'False Positives < 10%',
+    tags: ['GPT 4.2', 'LinkedIn API', 'Python'],
+    context: 'Clients needed to identify US-based individuals considering Jewish immigration (Aliyah) to Israel.',
+    problem: 'The keyword "Aliyah" is a common name, resulting in 80%+ false positives. Manual filtering took days per week with high error rates.',
+    solution: 'Designed a GPT 4.2 content classification system with 1-10 relevance scoring to semantically distinguish between immigration posts and name mentions, coupled with a 6-step email enrichment waterfall.',
+    architecture: [
+      'GPT 4.2 Content Classification (Semantic Analysis)',
+      'LinkedIn Scraping for keyword variations',
+      '6-step waterfall email enrichment',
+      'US-wide geographic filtering'
+    ],
+    tech_stack: ['LinkedIn Scraping API', 'GPT 4.2', 'Apollo.io', 'Hunter.io', 'Airtable', 'Anymail API'],
+    results: [
+      'Reduced false positives from 80%+ to under 10%',
+      '12 months of historical data processed',
+      'Weekly automated monitoring setup',
+      'Reduced qualification time from days to hours'
+    ]
+  },
+  // 11. Teknova Lead Journey
   {
     id: 'instig8-teknova',
     category: 'INSTIG8',
@@ -317,32 +377,7 @@ export const PROJECTS: Project[] = [
       'Revenue-preservation email stack'
     ]
   },
-  {
-    id: 'instig8-patent',
-    category: 'INSTIG8',
-    title: 'Patent Data Integration',
-    subtitle: 'Automated retrieval & entity linking',
-    client: 'Biotech Firm',
-    role: 'Developer',
-    impact_summary: 'Automated Data Entry',
-    tags: ['N8N', 'Airtable', 'API'],
-    context: 'Clients needed to collect and organize biotech patent data with proper linking between patents, inventors, and assignees.',
-    problem: 'Manual data entry was error-prone and time-consuming. Needed systematic duplicate detection and entity linking.',
-    solution: 'Built N8N workflow for patent retrieval, duplicate detection, and automated linking of Patents, Inventors, and Assignees in Airtable.',
-    architecture: [
-      'Patent API retrieval workflow',
-      'Duplicate detection logic',
-      'Entity linking (Patent ↔ Inventor ↔ Assignee)',
-      'Structured claims formatting'
-    ],
-    tech_stack: ['N8N', 'Airtable', 'Patent API'],
-    results: [
-      'Automated retrieval and processing (10 patents/run)',
-      'Maintained data integrity via automated linking',
-      'Structured claims with numbers and dependencies',
-      'Reduced data entry time from hours to minutes'
-    ]
-  },
+  // 12. Ambrosia Email Automation
   {
     id: 'instig8-ambrosia',
     category: 'INSTIG8',
@@ -369,192 +404,37 @@ export const PROJECTS: Project[] = [
       'Zero-code operation for non-technical staff'
     ]
   },
-
-  // --- FREEDOM WITH AI PROJECTS ---
-   {
-    id: 'freedom-tracking',
-    category: 'FREEDOM WITH AI',
-    title: 'Diamond Member Tracking',
-    subtitle: 'Engagement & Progress Monitoring System',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: '60% Response Rate',
-    tags: ['Google Sheets', 'Fathom', 'CRM'],
-    context: 'Freedom With AI had 160+ Diamond Certification Members across 3 batches with no systematic way to track individual progress, identify blockers, or ensure completion.',
-    problem: 'Members were dropping off silently, and leadership had no visibility into completion rates or specific obstacles. Needed a way to conduct 1-on-1 tracking.',
-    solution: 'Built a comprehensive member engagement system with 1-on-1 progress calls, 3-tier follow-up protocol, color-coded status tracking, and international time-zone coordination.',
-    architecture: [
-      'Google Calendar Booking System',
-      'Fathom Transcription Analysis',
-      '3-Tier Follow-up Protocol',
-      'Color-coded Status Dashboard'
-    ],
-    tech_stack: ['Google Meet', 'WhatsApp', 'Fathom', 'Google Sheets', 'Google Calendar'],
-    results: [
-      '50-60% response rate from Indian members',
-      'Identified 49 unreachable members for attention',
-      'Documented 35 work pressure & 25 technical cases',
-      'Facilitated batch transitions for stalled members'
-    ]
-  },
-  {
-    id: 'freedom-support',
-    category: 'FREEDOM WITH AI',
-    title: 'Community Tech Support',
-    subtitle: 'Query Resolution & Escalation Matrix',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: 'Same-day Resolution',
-    tags: ['WhatsApp', 'Make', 'Retell AI'],
-    context: 'Diamond members facing daily technical issues with CRM access, tool integrations (Make.com, Retell AI), and platform configurations.',
-    problem: 'No dedicated support channel existed, causing frustration and delays. Queries piled up with no systematic resolution process.',
-    solution: 'Established a primary support system with a 3-tier escalation hierarchy (Self-resolution → Manager → Tech Lead) and query categorization.',
-    architecture: [
-      '3-Tier Escalation Hierarchy',
-      'Query Categorization System',
-      'Knowledge Base Creation',
-      'Platform-specific Troubleshooting'
-    ],
-    tech_stack: ['WhatsApp', 'CRM', 'Make.com', 'Retell AI', 'Millis AI', 'Bolt.new'],
-    results: [
-      'Reduced queries from 40 to 20 per week',
-      'Same-day resolution for majority of technical issues',
-      'Prevented member dropoff by removing blockers',
-      'Identified systematic platform infrastructure issues'
-    ]
-  },
-  {
-    id: 'freedom-lms',
-    category: 'FREEDOM WITH AI',
-    title: 'LMS Content Optimization',
-    subtitle: 'Curriculum Audit & Quality Assurance',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: '100% Curriculum Audit',
-    tags: ['LMS', 'Google Docs', 'QA'],
-    context: 'LMS content had missing resources, broken links, duplicate content, and misaligned tasks across Diamond Circle sessions.',
-    problem: 'Member confusion and reduced course effectiveness due to lack of systematic audit. Important blueprints and templates were missing.',
-    solution: 'Conducted comprehensive content audit, identified gaps, recommended video enhancements, and coordinated with LMS manager to restore missing resources.',
-    architecture: [
-      'Comprehensive Content Audit Protocol',
-      'Missing Resource Restoration',
-      'Video Enhancement Recommendations',
-      'Task Synchronization Check'
-    ],
-    tech_stack: ['Tag Mango (LMS)', 'Google Docs', 'Google Sheets'],
-    results: [
-      'Comprehensive audit of entire Diamond Circle curriculum',
-      'Restored missing JSON files, templates, and slides',
-      'Improved navigation via better resource organization',
-      'Reduced member confusion through clearer structure'
-    ]
-  },
-  {
-    id: 'freedom-research',
-    category: 'FREEDOM WITH AI',
-    title: 'AI Tools Research',
-    subtitle: 'Video/Audio Generation Tool Evaluation',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: '3 Categories Tested',
-    tags: ['Kling AI', 'Suno', 'Pika'],
-    context: 'Content team needed evaluation of emerging AI tools for video generation, music creation, and deepfakes but lacked bandwidth.',
-    problem: 'No comprehensive testing across platforms to identify limitations, compatibility issues, or technical feasibility for content ideas.',
-    solution: 'Researched and tested tools across 3 categories (Video, Music, Deepfake), documenting capabilities, limitations, and platform compatibility.',
-    architecture: [
-      'Multi-platform Testing Protocol (Web/Mobile)',
-      'Capability & Limitation Documentation',
-      'Technical Feasibility Assessment',
-      'Workaround Identification'
-    ],
-    tech_stack: ['Kling AI', 'Pika.art', 'Suno.com', 'CapCut', 'Hypic', 'Asana'],
-    results: [
-      'Evaluated Video, Music, and Deepfake tool ecosystems',
-      'Documented platform compatibility (Windows vs Mobile)',
-      'Provided technical feasibility assessments',
-      'Established recommendation framework for future tools'
-    ]
-  },
-  {
-    id: 'freedom-kt',
-    category: 'FREEDOM WITH AI',
-    title: 'Knowledge Transfer System',
-    subtitle: 'Intern Transition & Process Documentation',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: 'Zero Knowledge Loss',
-    tags: ['Documentation', 'Training', 'Video'],
-    context: 'Incoming intern needed to take over 160+ member tracking and support operations with no existing training materials.',
-    problem: 'Risk of service disruption and massive knowledge loss during transition. No written guides existed for complex processes.',
-    solution: 'Created comprehensive bilingual handover documentation (English/Tamil), conducted detailed KT sessions, and built a call recording archive.',
-    architecture: [
-      'Bilingual Documentation (English/Tamil)',
-      'Process Workflow Mapping',
-      'Escalation Protocol Guides',
-      'Call Recording Archive'
-    ],
-    tech_stack: ['Google Meet', 'Google Sheets', 'Video Recording', 'Google Docs'],
-    results: [
-      'Zero knowledge loss during transition period',
-      'Seamless handover to successor',
-      'Created comprehensive bilingual training assets',
-      'Preserved institutional knowledge systematically'
-    ]
-  },
-  {
-    id: 'freedom-events',
-    category: 'FREEDOM WITH AI',
-    title: 'Live Event Support',
-    subtitle: 'Bootcamp & Hackathon Coordination',
-    client: 'Freedom With AI',
-    role: 'Intern',
-    impact_summary: 'Real-time Incident Mgmt',
-    tags: ['Live Support', 'Event Mgmt'],
-    context: 'Live bootcamps, hackathons, and community events needed real-time technical support and coordination during critical moments.',
-    problem: 'Limited bandwidth led to potential member issues during live sessions. Needed real-time query resolution and submission management.',
-    solution: 'Provided real-time support during bootcamps/hackathons, managed submissions, resolved tool issues (Bolt.new tokens), and coordinated announcements.',
-    architecture: [
-      'Real-time Query Resolution Protocol',
-      'Submission Management System',
-      'Announcement Coordination',
-      'Task Clarification Protocol'
-    ],
-    tech_stack: ['Zoom/Meet', 'WhatsApp', 'Bolt.new', 'NotebookLM', 'Community Platforms'],
-    results: [
-      'Zero major technical disruptions during live events',
-      'Managed Hackathon Season 3 submissions successfully',
-      'Facilitated member networking and job connections',
-      'Coordinated global marketing testimonial session'
-    ]
-  },
-
-  // --- PERSONAL / OTHER ---
+  // 13. Automated Lead Intake and Conversion System
   {
     id: 'personal-bcg',
     category: 'PERSONAL',
-    title: 'BCG Services Automation',
+    title: 'Automated Lead Intake and Conversion System',
     subtitle: 'End-to-end Voice AI & CRM automation',
-    client: 'BCG Services',
+    client: 'Immigration and Financial Services Consultancy (BCG Immigration Consultancy / Insurelife Financial Group)',
     role: 'AI Engineer',
-    impact_summary: '90% Manual Work Reduction',
-    tags: ['Retell AI', 'Chatling', 'Make.com'],
+    impact_summary: 'Every new lead called by AI within minutes. Discovery calls booked with zero admin.',
+    tags: ['Retell AI', 'Chatling', 'Make.com', 'GoHighLevel CRM'],
     context: 'Dr. Charanjit S Kalra, a former ENT surgeon turned insurance advisor, needed to modernize his digital presence and automate lead handling for insurance and immigration services.',
-    problem: 'Manual workload in handling contact forms, no 24/7 support, and need to convert visitors into qualified discovery calls without hiring more staff.',
-    solution: 'Built an end-to-end AI automation system with Retell AI voice agent, Chatling chatbot, Make.com workflows, and Cal.com integration for seamless lead capture and booking.',
+    problem: 'New leads submitted forms and waited hours for a callback. No system existed to respond immediately, qualify the prospect, or book a discovery call without a staff member manually following up. Outside business hours, leads went cold. Consultants spent time on unqualified calls and had no visibility into where prospects were in the pipeline.',
+    solution: "Built an automated lead conversion system where every form submission in GoHighLevel instantly triggers an outbound AI voice call to the prospect. The voice agent qualifies the lead, answers initial questions about immigration or financial services, and books a discovery call directly into the consultant's calendar via Cal.com. A separate AI chatbot on the website handles inbound FAQs and service queries around the clock. Make.com connects the entire flow and syncs all activity back into GoHighLevel CRM in real time. The result is a fully staffed intake operation running 24/7 with no human involvement.",
     architecture: [
-      'Retell AI Voice Agent for inbound calls',
-      'Chatling AI Chatbot with knowledge base',
-      'Make.com workflow automation',
-      'Cal.com Discovery Call Booking'
+      'GoHighLevel form submission triggers automated outbound AI voice call to new lead',
+      'AI voice agent qualifies the prospect and converts to discovery call booking via Cal.com',
+      'AI chatbot on website handling inbound FAQs and service queries 24/7',
+      'Make.com workflow connecting form, voice agent, chatbot, and CRM in real time',
+      'GoHighLevel CRM receiving all lead data, call outcomes, and bookings automatically'
     ],
-    tech_stack: ['Retell AI', 'Chatling', 'Make.com', 'OpenAI', 'Cal.com', 'Hostinger', 'Gamma.app'],
+    tech_stack: ['Retell AI', 'Chatling', 'Make.com', 'OpenAI', 'Cal.com', 'Hostinger', 'Gamma.app', 'GoHighLevel CRM'],
     results: [
-      'Reduced lead response time to < 5 mins',
-      '24/7 availability via Voice Agent & Chatbot',
-      'Automated discovery call qualification & booking',
-      'Eliminated need for additional admin staff'
+      'Outbound AI voice agent calls every new lead automatically upon form submission',
+      'Lead response time reduced to under 5 minutes from any hour of the day',
+      'AI chatbot handles FAQs and service queries 24/7 from website visitors',
+      'Discovery calls qualified and booked directly into consultant calendars without human intervention',
+      'All form submissions, calls, and bookings synced automatically into CRM pipeline',
+      'Eliminated need for admin or receptionist staff to follow up on new inquiries'
     ]
   },
+  // 14. User Discovery Automation
   {
     id: 'personal-user-discovery',
     category: 'PERSONAL',
@@ -581,6 +461,7 @@ export const PROJECTS: Project[] = [
       'Zero missed discovery calls'
     ]
   },
+  // 15. LinkedIn Content Engine
   {
     id: 'personal-linkedin-engine',
     category: 'PERSONAL',
@@ -605,6 +486,87 @@ export const PROJECTS: Project[] = [
       '3 draft variants per high-scoring topic',
       'Persona-specific styling for brand voice',
       'Automated Slack notifications for approvals'
+    ]
+  },
+  // 16. Patent Data Integration
+  {
+    id: 'instig8-patent',
+    category: 'INSTIG8',
+    title: 'Patent Data Integration',
+    subtitle: 'Automated retrieval & entity linking',
+    client: 'Biotech Firm',
+    role: 'Developer',
+    impact_summary: 'Automated Data Entry',
+    tags: ['N8N', 'Airtable', 'API'],
+    context: 'Clients needed to collect and organize biotech patent data with proper linking between patents, inventors, and assignees.',
+    problem: 'Manual data entry was error-prone and time-consuming. Needed systematic duplicate detection and entity linking.',
+    solution: 'Built N8N workflow for patent retrieval, duplicate detection, and automated linking of Patents, Inventors, and Assignees in Airtable.',
+    architecture: [
+      'Patent API retrieval workflow',
+      'Duplicate detection logic',
+      'Entity linking (Patent ↔ Inventor ↔ Assignee)',
+      'Structured claims formatting'
+    ],
+    tech_stack: ['N8N', 'Airtable', 'Patent API'],
+    results: [
+      'Automated retrieval and processing (10 patents/run)',
+      'Maintained data integrity via automated linking',
+      'Structured claims with numbers and dependencies',
+      'Reduced data entry time from hours to minutes'
+    ]
+  },
+  // 17. Foresight LinkedIn Content Engine
+  {
+    id: 'instig8-foresight',
+    category: 'INSTIG8',
+    title: 'LinkedIn Content Engine',
+    subtitle: 'Automated discovery & draft generation',
+    client: 'Foresight',
+    role: 'Developer',
+    impact_summary: '85% Time Reduction',
+    tags: ['Make', 'GPT 5.2', 'Slack', 'Airtable'],
+    context: 'Clients needed consistent LinkedIn content but lacked automated ways to monitor sources and generate drafts.',
+    problem: 'Manual process took 4-5 hours per post. No automated discovery, relevancy filtering, or multi-variant draft generation.',
+    solution: 'Built automated monitoring via Make.com, AI relevancy classification (70+ score), three-variant draft generation, and Kanban publishing workflow.',
+    architecture: [
+      'Automated profile & keyword monitoring',
+      'AI relevancy classification & scoring',
+      'Persona-specific draft generation (3 variants)',
+      'Kanban publishing workflow with Slack'
+    ],
+    tech_stack: ['Make.com', 'Airtable', 'GPT 5.2', 'Slack', 'YouTube API', 'Apify API', 'FOA'],
+    results: [
+      'Reduced content creation from 4-5 hours to 45 mins',
+      'Three-variant AI draft generation per topic',
+      'Automated Slack notifications for workflow status',
+      'Persona-driven styling matching brand voice'
+    ]
+  },
+  // 18. Warm Intro Outreach
+  {
+    id: 'instig8-zoefoundry',
+    category: 'INSTIG8',
+    title: 'Warm Intro Outreach',
+    subtitle: 'Mutual connection mapping & outreach',
+    client: 'Zoefoundry',
+    role: 'Developer',
+    impact_summary: '83% Research Reduction',
+    tags: ['Apify', 'Texau', 'Make', 'Airtable'],
+    context: 'Clients needed to leverage warm introductions via mutual LinkedIn connections systematically.',
+    problem: 'Manual process took 2+ hours per prospect to map connections and generate requests. No automated way to map mutual connections or manage multi-stage campaigns.',
+    solution: 'Integrated Apify (Apollo) and Texau for connection mapping, with Airtable CRM and Make.com for automated campaign triggers and multi-stage sequences.',
+    architecture: [
+      'Apollo.io lead scraping (Apify)',
+      '1st-degree mutual connection mapping (Texau)',
+      'Multi-stage email sequence (Stage 0-3)',
+      'Webhook-based response handling'
+    ],
+    tech_stack: ['Apify', 'Texau', 'Airtable', 'Make.com', 'Apollo.io'],
+    results: [
+      'Reduced prospect research from 2+ hours to 20 mins',
+      'Automated 1st-degree mutual connection mapping',
+      'Dynamic token personalization for authenticity',
+      'Real-time status tracking in Airtable'
     ]
   }
 ];

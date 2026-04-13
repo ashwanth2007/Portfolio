@@ -6,21 +6,17 @@ import { Project } from '../types';
 import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, Maximize2, Minimize2, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const CATEGORIES = ['CASE STUDIES', 'INSTIG8', 'FREEDOM WITH AI', 'PERSONAL'];
-
 const Projects = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeCategory, setActiveCategory] = useState('CASE STUDIES');
   const [isExpanded, setIsExpanded] = useState(false);
 
-  useEffect(() => {
+      useEffect(() => {
     if (projectId) {
       const project = PROJECTS.find(p => p.id === projectId);
       if (project) {
         setSelectedProject(project);
-        setActiveCategory(project.category);
       } else {
         navigate('/case-studies', { replace: true });
       }
@@ -29,28 +25,22 @@ const Projects = () => {
     }
   }, [projectId, navigate]);
 
-  const filteredProjects = PROJECTS.filter(p => p.category === activeCategory);
+  const filteredProjects = PROJECTS;
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!selectedProject) return;
-    const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
-    const prevIndex = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
-    navigate(`/case-studies/${filteredProjects[prevIndex].id}`, { replace: true });
+    const currentIndex = PROJECTS.findIndex(p => p.id === selectedProject.id);
+    const prevIndex = (currentIndex - 1 + PROJECTS.length) % PROJECTS.length;
+    navigate(`/case-studies/${PROJECTS[prevIndex].id}`, { replace: true });
   };
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!selectedProject) return;
-    const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
-    const nextIndex = (currentIndex + 1) % filteredProjects.length;
-    navigate(`/case-studies/${filteredProjects[nextIndex].id}`, { replace: true });
-  };
-
-  const getCategoryLabel = (cat: string) => {
-    if (cat === 'CASE STUDIES') return 'CASE STUDIES';
-    if (cat === 'INSTIG8') return 'INSTIG8.AI';
-    return cat;
+    const currentIndex = PROJECTS.findIndex(p => p.id === selectedProject.id);
+    const nextIndex = (currentIndex + 1) % PROJECTS.length;
+    navigate(`/case-studies/${PROJECTS[nextIndex].id}`, { replace: true });
   };
 
   const handleCloseModal = () => {
@@ -92,7 +82,7 @@ const Projects = () => {
             </h1>
             <div className="w-24 h-2 bg-brand-red mb-6"></div>
             <p className="text-gray-500 dark:text-gray-400 max-w-xl text-lg font-medium transition-colors">
-            Select a portfolio sector below to view specific case studies.
+            A comprehensive list of deployed AI systems and enterprise automation projects.
             </p>
         </div>
         
@@ -103,26 +93,6 @@ const Projects = () => {
             <ShieldCheck size={16} />
             Data Verification Center
         </Link>
-      </div>
-
-      {/* Category Navigation */}
-      <div className="flex flex-wrap gap-4 md:gap-8 border-b border-gray-200 dark:border-white/10 mb-12 transition-colors">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`pb-4 text-xs md:text-sm font-bold tracking-[0.2em] transition-all relative ${
-              activeCategory === cat 
-                ? 'text-black dark:text-white' 
-                : 'text-gray-400 hover:text-black dark:hover:text-white'
-            }`}
-          >
-            {getCategoryLabel(cat)}
-            {activeCategory === cat && (
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-red"></div>
-            )}
-          </button>
-        ))}
       </div>
 
       {/* Grid */}
@@ -138,37 +108,45 @@ const Projects = () => {
               <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000),linear-gradient(45deg,#000_25%,transparent_25%,transparent_75%,#000_75%,#000)] dark:bg-[linear-gradient(45deg,#fff_25%,transparent_25%,transparent_75%,#fff_75%,#fff),linear-gradient(45deg,#fff_25%,transparent_25%,transparent_75%,#fff_75%,#fff)] bg-[length:20px_20px]"></div>
 
               {/* Card Header Section */}
-              <div className="p-8 pb-4 relative z-10">
-                 <div className="flex justify-between items-start mb-6">
-                    <span className="text-5xl font-black text-gray-100 dark:text-white/5 group-hover:text-brand-red/10 transition-colors">
+              <div className="p-10 pb-8 relative z-10 flex-none h-[260px] flex flex-col justify-between">
+                 <div className="flex justify-between items-start">
+                    <span className="text-6xl font-black text-gray-100 dark:text-white/5 group-hover:text-brand-red/10 transition-colors">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                  </div>
 
-                 <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-2 text-black dark:text-white group-hover:text-brand-red transition-colors">
-                   {project.title}
-                 </h3>
-                 <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">
-                   {project.client}
-                 </p>
+                 <div>
+                    <h3 className="text-2xl font-black uppercase tracking-tighter leading-[1.1] mb-4 text-black dark:text-white group-hover:text-brand-red transition-colors line-clamp-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] line-clamp-1">
+                      {project.client}
+                    </p>
+                 </div>
               </div>
 
               {/* Divider */}
               <div className="w-full h-px bg-gray-100 dark:bg-white/10 group-hover:bg-brand-red transition-colors"></div>
 
               {/* Card Footer Section */}
-              <div className="p-8 pt-4 flex-1 flex flex-col justify-between relative z-10 bg-gray-50/50 dark:bg-white/5 transition-colors">
-                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                   {project.subtitle}
-                 </p>
+              <div className="p-10 pt-8 flex-1 flex flex-col justify-between relative z-10 bg-gray-50/50 dark:bg-white/5 transition-colors">
+                 <div className="mb-8">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-3 font-medium h-[60px]">
+                      {project.subtitle}
+                    </p>
+                 </div>
 
-                 <div className="flex items-center justify-between mt-auto gap-4">
+                 <div className="flex items-center justify-between mt-auto gap-6">
                     <div className="flex-1 min-w-0">
-                      <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Impact</span>
-                      <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-0.5 transition-colors block leading-tight">{project.impact_summary}</span>
+                      <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Impact</span>
+                      <div className="h-[40px] flex items-center">
+                        <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-1 transition-colors block leading-tight line-clamp-2">
+                          {project.impact_summary}
+                        </span>
+                      </div>
                     </div>
-                    <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-2 rounded-full group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-colors">
-                       <ArrowUpRight size={16} />
+                    <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-3 rounded-full group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition-colors shrink-0">
+                       <ArrowUpRight size={18} />
                     </div>
                  </div>
               </div>
