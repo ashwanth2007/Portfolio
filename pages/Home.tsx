@@ -114,7 +114,7 @@ const TRUSTED_BY = [
   {
     name: "Mani Kanasani",
     image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/mani_kanasani.jpg",
-    testimonial: "https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1",
+    testimonial: "https://lh3.googleusercontent.com/d/1qUnk3Fp9YgRSTG96rPSgR2Yff__5Pyj7",
     link: "https://www.youtube.com/@ManiKanasani",
     headline: "Agency Owner & Content Creator",
     stats: ["15,000 YouTube subscribers", "10,000 Skool community members", "Agency owner making $100K+/month"]
@@ -218,8 +218,8 @@ const Home = () => {
     "url": "https://ashwanth.dev",
     "sameAs": [
       "https://www.linkedin.com/in/ashwanthofficial/",
-      "https://x.com/ashwanth_off",
-      "https://www.youtube.com/@ashwanthdotdev"
+      "https://x.com/ashwanth_ai",
+      "https://www.instagram.com/ashwanth_pvt.in/"
     ],
     "knowsAbout": ["AI Automation", "System Architecture", "Multi-Agent Orchestration", "Enterprise Systems"]
   };
@@ -515,14 +515,13 @@ const Home = () => {
 
         <div className="space-y-12">
             {DEPLOYMENTS.map((deployment, index) => (
-              <Link 
+              <div 
                 key={index}
-                to={`/case-studies/${deployment.projectId}`}
-                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] hover:-translate-y-2 transition-all duration-500"
+                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] transition-all duration-500"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Video Side */}
-                  <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                  <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
                     <video 
                       className="w-full h-full object-contain"
                       controls
@@ -535,7 +534,10 @@ const Home = () => {
                   </div>
 
                   {/* Text Side */}
-                  <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
+                  <Link 
+                    to={`/case-studies/${deployment.projectId}`}
+                    className="p-8 md:p-12 flex flex-col justify-center space-y-6 hover:bg-white/5 transition-colors"
+                  >
                     <div className="flex items-center gap-3">
                       <span className="text-brand-red font-black text-2xl">
                         {(index + 1).toString().padStart(2, '0')}
@@ -554,9 +556,9 @@ const Home = () => {
                     <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
                       View Case Study <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                     </div>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
         </div>
 

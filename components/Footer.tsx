@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Twitter, Youtube, Instagram } from 'lucide-react';
+import { Linkedin, Mail, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -40,8 +40,7 @@ const Footer = () => {
             <div className="flex gap-4">
               {[
                 { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/ashwanthofficial/", label: "LinkedIn" },
-                { icon: <Twitter size={20} />, href: "https://x.com/ashwanth_off", label: "X (Twitter)" },
-                { icon: <Youtube size={20} />, href: "https://www.youtube.com/@ashwanthdotdev", label: "YouTube" },
+                { icon: <Twitter size={20} />, href: "https://x.com/ashwanth_ai", label: "X (Twitter)" },
                 { icon: <Instagram size={20} />, href: "https://www.instagram.com/ashwanth_pvt.in/", label: "Instagram" }
               ].map((social) => (
                 <a 
