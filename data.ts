@@ -236,11 +236,11 @@ export const PROJECTS: Project[] = [
       'Configurable post output per profile per cycle'
     ]
   },
-  // 7. Cross-Platform Viral Intelligence and Playbook Generation System
+  // 7. Viral Content Intelligence and Playbook System
   {
     id: 'instig8-boom',
     category: 'INSTIG8',
-    title: 'Cross-Platform Viral Intelligence and Playbook Generation System',
+    title: 'Viral Content Intelligence and Playbook System',
     subtitle: 'Automated social intelligence system that scrapes top-performing content across 6 platforms, analyzes sentiment and audience patterns, and generates production-ready viral playbooks.',
     client: 'Boom & Wisdom',
     role: 'Developer',
@@ -274,7 +274,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Automated signal monitoring & multi-channel outreach system.',
     client: 'Capital Projects Advisory Consulting Firm (Healthcare, Higher Education, Municipal)',
     role: 'Lead Developer',
-    impact_summary: '500 qualified leads per week from $50M+ construction project signals. Call prep time cut 85%. Outreach scaled from 100 to 2,500+ targeted contacts per week.',
+    impact_summary: '500 signal-triggered leads per week. Outreach scaled 25x. Call prep cut 85%.',
     tags: ['N8N', 'HubSpot', 'Clay'],
     context: 'The construction consulting firm was manually tracking construction projects and job changes across healthcare, education, and municipal sectors.',
     problem: 'Business development was running blind. The team sent 100 emails per day with no intelligence behind the timing or targeting. When a hospital announced a $100M expansion or a new VP of Facilities joined a target organization, the team had no way to know. Manual research took 2+ hours per company. Phone calls went out without context. The result was high volume, low relevance outreach that produced no meaningful pipeline.',
