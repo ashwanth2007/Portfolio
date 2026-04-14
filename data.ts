@@ -296,31 +296,31 @@ export const PROJECTS: Project[] = [
       'All activity synced to CRM with real-time pipeline visibility'
     ]
   },
-  // 9. Content Strategy Automation
+  // 9. Content Strategy Agent
   {
     id: 'instig8-xpertlink',
     category: 'INSTIG8',
-    title: 'Content Strategy Automation',
-    subtitle: 'Trend analysis & SEO calendar generation',
+    title: 'Content Strategy Agent',
+    subtitle: 'Modular Workflow Infrastructure',
     client: 'XpertLink',
     role: 'Developer',
-    impact_summary: 'Weeks to Days Planning',
-    tags: ['N8N', 'Web Scraping', 'SEO', 'AI'],
-    context: 'Client needed to become a leading resource for AI business insights based on actual industry trends.',
-    problem: 'Manual content planning was ad-hoc. Needed automated analysis of 1000+ articles to identify patterns and generate SEO-optimized calendar.',
-    solution: 'Built system to extract data from 1000+ URLs, perform AI pattern analysis, identify strategic themes, and generate SEO-optimized content calendar.',
+    impact_summary: 'Zero API spend on unapproved articles. Enrichment is approval-gated; duplicates skip billing.',
+    tags: ['Make.com', 'Airtable', 'Inoreader', 'DataForSEO', 'OpenAI'],
+    context: 'Paul was running a manual editorial queue on top of Inoreader. Duplicates were bleeding through, DataForSEO credits were burning on articles that would never get published, and basic AI prompts were returning keyword slop instead of real terms from the article body.',
+    problem: 'Paul was running a manual editorial queue on top of Inoreader. Duplicates were bleeding through, DataForSEO credits were burning on articles that would never get published, and basic AI prompts were returning keyword slop instead of real terms from the article body. The backlog had passed 300 articles with no structured way to triage by search value or content type.',
+    solution: 'A four-stage Make.com pipeline layered on an Airtable single source of truth. Inoreader feeds a deduplicated Pending queue. Operator approval is the only trigger that releases a row into paid enrichment. Keywords are extracted from full article text and checked against a Keyword Master before any DataForSEO call is made. Outline generation pulls only AI Score 5 and above sources for a chosen target keyword and returns a structured H1 to H3 outline in under ten minutes.',
     architecture: [
-      'Web article data extraction (1000+ URLs)',
-      'AI content pattern & theme analysis',
-      'SEO-optimized calendar generation',
-      'Strategic theme classification'
+      'Ingest and Fetch (every 12h). Inoreader to Airtable with URL dedup, full-body fetch, and AI classification for Target Audience, Content Type, and AI Score.',
+      'Approval Gate. Operator flips Status to Approved. SEO Ready flag verifies full content exists before any paid call is allowed to fire.',
+      'Keyword Enrichment. AI extracts 3 primary and 5 secondary keywords from the article body. New keywords only hit DataForSEO, then write back to Keyword Master and Article Keywords.',
+      'Outline Generation. Operator picks a target keyword. Collect Articles pulls linked sources scoring 5 or higher. GPT assembles the H1 to H3 outline and writes it back to Outline Generator as Draft.'
     ],
-    tech_stack: ['N8N', 'Web Scraping Tools', 'AI Models', 'SEO Systems'],
+    tech_stack: ['Make.com', 'Airtable', 'Inoreader', 'DataForSEO', 'OpenAI'],
     results: [
-      'Annual content calendar generated from 1000+ articles',
-      'Identified 6 key strategic themes',
-      'SEO-optimized categorization across 8 types',
-      'Data-driven topic selection vs manual guessing'
+      'Four-table Airtable state machine governs article lifecycle from Pending to publishable outline.',
+      'Approval gate blocks DataForSEO calls on rejected articles, collapsing credit burn to near zero.',
+      'Keyword Master dedup layer reuses prior enrichment across campaigns, so cost compounds downward.',
+      'AI Score (1 to 10) filters weak sources before outline generation, so only rank-worthy inputs reach GPT.'
     ]
   },
   // 10. Aliyah Lead Scraping
