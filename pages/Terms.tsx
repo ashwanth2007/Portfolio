@@ -168,7 +168,7 @@ const Terms = () => {
               <h2 className="text-xl font-black text-black uppercase tracking-tight mb-4">13. Contact Information</h2>
               <p>For questions about these Terms of Service, please contact us at:</p>
               <p className="mt-4">
-                <strong>Email:</strong> ashwanth2007@gmail.com<br/>
+                <strong>Email:</strong> me@ashwanth.dev<br/>
                 <strong>Address:</strong> Vellore, Tamil Nadu, India - 632014
               </p>
             </section>

@@ -23,7 +23,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   useEffect(() => {
     // 1. Update Title
-    const fullTitle = `${title} | AI Systems Architect`;
+    const fullTitle = title.includes('Ashwanth S') ? title : `${title} | Ashwanth S`;
     document.title = fullTitle;
 
     // 2. Helper to set meta tags
@@ -57,8 +57,8 @@ const SEO: React.FC<SEOProps> = ({
     }
 
     // Canonical
-    const siteUrl = 'https://ashwanth.dev';
-    const currentUrl = canonical ? canonical : window.location.href;
+    const siteUrl = 'https://ashwanth.in';
+    const currentUrl = canonical ? canonical : window.location.href.replace(window.location.origin, siteUrl);
     setLinkTag('canonical', currentUrl);
 
     // Open Graph

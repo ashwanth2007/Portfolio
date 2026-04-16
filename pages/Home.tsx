@@ -85,12 +85,6 @@ const DEPLOYMENTS = [
     projectId: "instig8-zoefoundry",
     description: "An AI system that tracks real-time activity in a brand’s niche to find both high-value customers and relevant creators in one workflow. It scans viral content and engagement, analyzes profiles and language to detect intent and fit, ranks people by conversion potential, and automatically generates personalized outreach messages for partnerships, demos, or sales turning social activity into a continuous lead and influencer pipeline.",
     video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/audience_intelligence.mp4"
-  },
-  {
-    title: "AI Ad Creative Generation Agent",
-    projectId: "zoro-ad-intel",
-    description: "An AI system that transforms any product into conversion-ready ad creatives. It studies brand visuals, audience psychology, and winning ad patterns, then generates high-impact hooks, messages, and platform-specific visuals for Instagram, Facebook, and TikTok. The agent delivers complete, ready-to-run ad assets without designers, copywriters, or long production cycles.",
-    video: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/ad_creatives_qn_1.mp4"
   }
 ];
 
@@ -101,7 +95,7 @@ const TRUSTED_BY = [
     testimonial: "https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1",
     link: "https://www.linkedin.com/in/aryanmahajaninstig8/",
     headline: "AI Systems Architect for Fortune 500",
-    stats: ["50,000 LinkedIn followers", "20,000 Twitter followers", "Fortune 500 Growth Consultant"]
+    stats: ["Fortune 500 Growth Consultant"]
   },
   {
     name: "Avinash Mada",
@@ -109,7 +103,7 @@ const TRUSTED_BY = [
     testimonial: "https://lh3.googleusercontent.com/d/1xFOlidtCqE6AlnacRmWnw98gnoI0exlO",
     link: "https://www.instagram.com/meetavinash",
     headline: "AI Visionary & Entrepreneur",
-    stats: ["500K Instagram followers", "Top coach in India", "3 Lakh+ inner circle members"]
+    stats: ["Top coach in India"]
   },
   {
     name: "Mani Kanasani",
@@ -117,7 +111,7 @@ const TRUSTED_BY = [
     testimonial: "https://lh3.googleusercontent.com/d/1qUnk3Fp9YgRSTG96rPSgR2Yff__5Pyj7",
     link: "https://www.youtube.com/@ManiKanasani",
     headline: "Agency Owner & Content Creator",
-    stats: ["15,000 YouTube subscribers", "10,000 Skool community members", "Agency owner making $100K+/month"]
+    stats: ["Agency Owner"]
   },
   {
     name: "Kanchan Bhatta",
@@ -125,7 +119,7 @@ const TRUSTED_BY = [
     testimonial: "https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP",
     link: "https://www.linkedin.com/in/growthxkanchan/",
     headline: "GTM & LinkedIn Expert",
-    stats: ["GTM Expert", "LinkedIn Expert", "Growth Strategy"]
+    stats: ["GTM Expert", "LinkedIn Expert"]
   }
 ];
 
@@ -215,11 +209,10 @@ const Home = () => {
     "@type": "Person",
     "name": "Ashwanth S",
     "jobTitle": "AI Systems Architect",
-    "url": "https://ashwanth.dev",
+    "url": "https://ashwanth.in",
+    "email": "me@ashwanth.dev",
     "sameAs": [
-      "https://www.linkedin.com/in/ashwanthofficial/",
-      "https://x.com/ashwanth_ai",
-      "https://www.instagram.com/ashwanth_pvt.in/"
+      "https://linkedin.com/in/ashwanth-s"
     ],
     "knowsAbout": ["AI Automation", "System Architecture", "Multi-Agent Orchestration", "Enterprise Systems"]
   };
@@ -227,8 +220,8 @@ const Home = () => {
   return (
     <div className="min-h-screen pt-32 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
       <SEO 
-        title="Home" 
-        description="Ashwanth S - AI Systems Architect specializing in enterprise automation, multi-agent systems, and scalable workflows. Trusted by Fortune 500s."
+        title="Ashwanth S | AI Systems Architect" 
+        description="I build autonomous AI agents that turn manual work into scalable processes. Trusted by top consulting firms and growth-stage companies."
         schema={personSchema}
         keywords={["AI Architect", "Automation", "N8N", "Enterprise AI", "System Architecture"]}
       />
@@ -320,6 +313,39 @@ const Home = () => {
                 </p>
              </div>
            ))}
+        </div>
+      </div>
+
+      {/* About Section */}
+      <div className="mt-32">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            WHO BUILDS THIS
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <h1 className="text-4xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase leading-none transition-colors">
+              I'M <span className="text-brand-red">ASHWANTH.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-medium leading-relaxed transition-colors">
+              I'm an AI systems architect who builds production-grade automation infrastructure for consulting firms, B2B sales teams, and growth-stage companies. I've shipped agents for clients including BCG, handling lead intelligence, outbound pipelines, and content systems at scale.
+            </p>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-medium leading-relaxed transition-colors">
+              I don't build demos. I build things that run in production and generate measurable output from day one. I'm 18 and fully remote. Every system I've delivered has been built while carrying a full college course load. That's not a disclaimer, that's the point.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="aspect-[4/5] bg-gray-100 dark:bg-white/5 rounded-[3rem] overflow-hidden border-2 border-black dark:border-white shadow-[20px_20px_0px_0px_rgba(220,38,38,1)]">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-black uppercase tracking-widest">
+                <img 
+                  src="https://raw.githubusercontent.com/ashwanth2007/Resources/main/profile-pic.jpg" 
+                  alt="Ashwanth S" 
+                  className="about-photo w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -656,7 +682,7 @@ const Home = () => {
             
             <div className="flex items-center gap-4">
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
-                    Trusted by <span className="text-brand-red">5,500+</span> operators on LinkedIn
+                    TRUSTED BY <span className="text-brand-red">20+</span> COMPANIES ACROSS CONSULTING, B2B, AND GROWTH-STAGE.
                 </p>
                 <div className="h-px flex-grow bg-gray-200 dark:bg-white/10 transition-colors"></div>
             </div>
