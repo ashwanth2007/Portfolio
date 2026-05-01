@@ -150,21 +150,21 @@ const Home = () => {
         keywords={["AI Architect", "Automation", "N8N", "Enterprise AI", "System Architecture"]}
       />
       
-      {/* Hero Section - extends right past the max-w-7xl container to use available white space */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center py-6 md:py-10 lg:mr-[-3rem] xl:mr-[-6rem] 2xl:mr-[-10rem]">
+      {/* Hero Section - stacks on tablets, splits 2-col only on xl+ to avoid overflow */}
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-12 items-center py-6 md:py-10">
 
         {/* Left: Text Content */}
-        <div className="lg:col-span-5 space-y-6 md:space-y-7 text-center lg:text-left">
+        <div className="xl:col-span-6 space-y-6 md:space-y-7 text-center xl:text-left">
 
-          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.25rem] font-black text-black dark:text-white tracking-tight leading-[1.02] transition-colors">
+          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.75rem] 2xl:text-[5.75rem] font-black text-black dark:text-white tracking-tight leading-[1.02] transition-colors">
             <span className="text-brand-red">Self-improving</span> AI agents.
           </h1>
 
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 transition-colors">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed max-w-xl mx-auto xl:mx-0 transition-colors">
             Trusted by 40+ companies across consulting, B2B, and growth-stage to ship autonomous AI agents into production.
           </p>
 
-          <div className="flex flex-col gap-3 pt-2 items-center lg:items-start w-full">
+          <div className="flex flex-col gap-3 pt-2 items-center xl:items-start w-full">
             {/* Primary Button - Discovery Call */}
             <Link
               to="/discovery"
@@ -185,8 +185,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Right: Auto-rotating screenshot showcase, pushed slightly right for breathing room */}
-        <div className="lg:col-span-7 w-full max-w-3xl mx-auto lg:max-w-none lg:pl-6 xl:pl-12">
+        {/* Right: Auto-rotating screenshot showcase */}
+        <div className="xl:col-span-6 w-full max-w-2xl md:max-w-3xl mx-auto xl:max-w-none">
           <ScreenshotShowcase />
         </div>
       </div>
