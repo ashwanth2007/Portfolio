@@ -9,6 +9,7 @@ const SLIDES: ShowcaseSlide[] = [
   { src: '/showcase/AI SDR - Dashboard.png', title: 'Self-improving AI SDR' },
   { src: '/showcase/AI SDR - Lead Portfolio.png', title: 'Bulk outreach AI SDR' },
   { src: '/showcase/Linkedin Content System - Dashboard.png', title: 'LinkedIn AI agent' },
+  { src: '/showcase/AI Ad Infrastructure.png', title: 'AI ad infrastructure' },
 ];
 
 const INTERVAL_MS = 3500;
