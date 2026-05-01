@@ -3,14 +3,13 @@ import { createPortal } from 'react-dom';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { PROJECTS } from '../data';
 import { Project } from '../types';
-import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, Maximize2, Minimize2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, X, Layers, Cpu, TrendingUp, AlertCircle, CheckCircle, FolderOpen, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Projects = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
 
       useEffect(() => {
     if (projectId) {
@@ -45,7 +44,6 @@ const Projects = () => {
 
   const handleCloseModal = () => {
     navigate(-1);
-    setIsExpanded(false);
   };
 
   const projectSchema = {
@@ -209,120 +207,153 @@ const Projects = () => {
           </div>
 
           {/* Dashboard Body */}
-          <div className="max-w-[1600px] mx-auto p-4 md:p-6 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-              
-              {/* Left Column: ROI & Impact (Dashboard Style) */}
-              <div className="lg:col-span-4 space-y-8">
-                {/* ROI Card */}
-                <div className="bg-gray-50 dark:bg-white/5 border-2 border-black dark:border-white/10 p-6 md:p-8 rounded-3xl relative overflow-hidden group transition-colors">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
-                  <TrendingUp className="text-brand-red mb-4 md:mb-6" size={32} md:size={40} />
-                  <h3 className="text-[10px] md:text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Primary ROI Metric</h3>
-                  <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-black dark:text-white tracking-tighter leading-tight mb-4 transition-colors break-words">
-                    {selectedProject.impact_summary}
-                  </div>
-                  <div className="h-1 w-20 bg-brand-red"></div>
-                </div>
+          <div className="max-w-[1400px] mx-auto p-4 md:p-6 lg:p-10 space-y-8">
 
-                {/* Quantitative Results */}
-                <div className="bg-black dark:bg-[#0a0a0a] text-white p-6 md:p-8 rounded-3xl shadow-2xl border border-white/5 transition-colors">
-                  <h3 className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-widest mb-6 md:mb-8 flex items-center gap-2">
-                    <CheckCircle size={14} md:size={16} />
-                    Key Performance Indicators
-                  </h3>
-                  <div className="space-y-4 md:space-y-6">
-                    {selectedProject.results.map((res, idx) => (
-                      <div key={idx} className="flex items-start gap-3 md:gap-4 group">
-                        <div className="mt-1 w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 group-hover:scale-150 transition-transform"></div>
-                        <p className="text-xs md:text-base font-bold uppercase tracking-tight leading-tight">{res}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+            {/* Hero Impact Strip - stat cards from impact_summary */}
+            {(() => {
+              const stats = selectedProject.impact_summary
+                .split(/(?<=[.!])\s+/)
+                .map(s => s.replace(/[.!]+$/, '').trim())
+                .filter(Boolean);
 
-                {/* Tech Stack Visualization */}
-                <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl transition-colors">
-                  <h3 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-6">System Tech Stack</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedProject.tech_stack.map(tech => (
-                      <div key={tech} className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-black dark:text-white hover:border-black dark:hover:border-white transition-colors">
-                        <Cpu size={12} className="text-brand-red" />
-                        {tech}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              const splitStat = (stat: string) => {
+                const m = stat.match(/^([\$₹€£]?[\d.,]+\s*[KMBkmb%+]*\+?)\s+(.+)$/);
+                if (m) return { lead: m[1], rest: m[2] };
+                return { lead: stat, rest: '' };
+              };
 
-              {/* Right Column: Problem, Solution & Architecture */}
-              <div className="lg:col-span-8 space-y-8">
-                {/* Context & Problem Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl hover:shadow-xl transition-all">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg transition-colors">
-                        <AlertCircle className="text-black dark:text-white" size={24} />
-                      </div>
-                      <h3 className="text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Challenge</h3>
-                    </div>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-medium transition-colors">
-                      {selectedProject.problem}
-                    </p>
-                  </div>
-                  <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-8 rounded-3xl hover:shadow-xl transition-all">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg transition-colors">
-                        <Layers className="text-black dark:text-white" size={24} />
-                      </div>
-                      <h3 className="text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Solution</h3>
-                    </div>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-medium transition-colors">
-                      {selectedProject.solution}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Architecture Dashboard */}
-                <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-6 md:p-12 rounded-3xl transition-colors">
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4">
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-black dark:text-white">System Architecture</h3>
-                      <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">Modular Workflow Infrastructure</p>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {selectedProject.architecture.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-6 p-6 bg-white dark:bg-black border border-gray-100 dark:border-white/10 rounded-2xl hover:border-brand-red transition-colors group">
-                        <div className="w-12 h-12 bg-gray-50 dark:bg-white/5 rounded-xl flex items-center justify-center text-black dark:text-white font-black text-xl group-hover:bg-brand-red group-hover:text-white transition-all">
-                          {idx + 1}
+              return (
+                <div className="relative bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a0a0a] text-white p-6 md:p-10 rounded-3xl overflow-hidden border border-white/10">
+                  <div className="absolute top-0 right-0 w-72 h-72 bg-brand-red/10 blur-3xl rounded-full -mr-36 -mt-36 pointer-events-none"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6 md:mb-8 flex-wrap gap-4">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2.5 bg-brand-red/15 rounded-xl">
+                          <TrendingUp className="text-brand-red" size={22} />
                         </div>
-                        <span className="font-bold text-sm uppercase tracking-tight text-gray-700 dark:text-gray-300 transition-colors">{item}</span>
+                        <div>
+                          <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.25em]">Headline Impact</p>
+                          <p className="text-xs font-black text-brand-red uppercase tracking-widest mt-0.5">Deployed Results</p>
+                        </div>
                       </div>
-                    ))}
+                      <p className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">
+                        {selectedProject.client} · {selectedProject.role}
+                      </p>
+                    </div>
+
+                    <div className={`grid gap-3 md:gap-4 ${stats.length === 1 ? 'grid-cols-1' : stats.length === 2 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
+                      {stats.map((stat, i) => {
+                        const { lead, rest } = splitStat(stat);
+                        return (
+                          <div key={i} className="relative bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6 hover:border-brand-red/40 transition-colors group">
+                            <span className="absolute top-3 right-4 text-[10px] font-black text-gray-600 uppercase tracking-widest">0{i + 1}</span>
+                            <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none mb-3 group-hover:text-brand-red transition-colors break-words">
+                              {lead}
+                            </div>
+                            {rest && (
+                              <p className="text-xs md:text-sm font-medium text-gray-400 leading-snug">
+                                {rest.charAt(0).toUpperCase() + rest.slice(1)}
+                              </p>
+                            )}
+                            <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-brand-red/60 to-transparent"></div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
+              );
+            })()}
 
-                {/* Bottom Navigation for Mobile */}
-                <div className="flex md:hidden justify-between items-center pt-8">
-                  <button 
-                    onClick={handlePrev}
-                    className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black transition-colors"
-                  >
-                    <ChevronLeft size={16} />
-                    Previous
-                  </button>
-                  <button 
-                    onClick={handleNext}
-                    className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black transition-colors"
-                  >
-                    Next
-                    <ChevronRight size={16} />
-                  </button>
+            {/* Challenge / Solution */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-6 md:p-8 rounded-3xl">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2 bg-gray-50 dark:bg-white/5 rounded-lg">
+                    <AlertCircle className="text-black dark:text-white" size={20} />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Challenge</h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-[15px] leading-relaxed font-medium">
+                  {selectedProject.problem}
+                </p>
+              </div>
+              <div className="bg-white dark:bg-black border border-gray-200 dark:border-white/10 p-6 md:p-8 rounded-3xl">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2 bg-brand-red/10 rounded-lg">
+                    <Layers className="text-brand-red" size={20} />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-black uppercase tracking-tighter text-black dark:text-white">The Solution</h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-[15px] leading-relaxed font-medium">
+                  {selectedProject.solution}
+                </p>
+              </div>
+            </div>
+
+            {/* KPIs - full width */}
+            <div className="bg-black dark:bg-[#0a0a0a] text-white p-6 md:p-10 rounded-3xl border border-white/5">
+              <div className="flex items-center justify-between mb-6 md:mb-8 flex-wrap gap-3">
+                <h3 className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-widest flex items-center gap-2">
+                  <CheckCircle size={14} />
+                  Key Performance Indicators
+                </h3>
+                <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.25em]">{selectedProject.results.length} Outcomes</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
+                {selectedProject.results.map((res, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="mt-1.5 w-1.5 h-1.5 bg-brand-red rounded-full shrink-0"></div>
+                    <p className="text-[13px] md:text-sm font-medium leading-snug text-gray-100">{res}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Architecture - full width with inline tech stack */}
+            <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 md:p-10 rounded-3xl">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 md:mb-8 gap-4">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter text-black dark:text-white">System Architecture</h3>
+                  <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">{selectedProject.architecture.length} Layers · Modular Workflow Infrastructure</p>
+                </div>
+                <div className="flex flex-wrap gap-1.5 md:max-w-[60%] md:justify-end">
+                  {selectedProject.tech_stack.map(tech => (
+                    <span key={tech} className="inline-flex items-center gap-1 px-2.5 py-1 bg-white dark:bg-black border border-gray-200 dark:border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
+                      <Cpu size={10} className="text-brand-red" />
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {selectedProject.architecture.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-5 bg-white dark:bg-black border border-gray-100 dark:border-white/10 rounded-2xl hover:border-brand-red transition-colors group">
+                    <div className="w-10 h-10 bg-gray-50 dark:bg-white/5 rounded-xl flex items-center justify-center text-black dark:text-white font-black text-base shrink-0 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                      {String(idx + 1).padStart(2, '0')}
+                    </div>
+                    <span className="font-bold text-sm uppercase tracking-tight text-gray-700 dark:text-gray-300 leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
+            {/* Bottom Navigation for Mobile */}
+            <div className="flex md:hidden justify-between items-center pt-4">
+              <button
+                onClick={handlePrev}
+                className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              >
+                <ChevronLeft size={16} />
+                Previous
+              </button>
+              <button
+                onClick={handleNext}
+                className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              >
+                Next
+                <ChevronRight size={16} />
+              </button>
             </div>
           </div>
         </div>,

@@ -1,0 +1,48 @@
+@keyframes arsenal-orbit {
+  from {
+    transform: rotate(var(--start-rot)) translateX(220px) rotate(var(--start-rot-neg));
+  }
+  to {
+    transform: rotate(var(--end-rot)) translateX(220px) rotate(var(--end-rot-neg));
+  }
+}
+
+/* Scroll reveal: slide in from right */
+.reveal {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(235, 54, 54, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(235, 54, 54, 0.6); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes data-pulse {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+.data-node {
+  animation: data-pulse 3s ease-in-out infinite;
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

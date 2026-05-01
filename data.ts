@@ -2,20 +2,28 @@ import { Project, Experience, ToolCategory } from './types';
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: 'zoro',
+    id: 'present',
     period: 'Present',
     company: 'Ashwanth S',
     role: 'AI Systems Architect',
     type: 'work',
-    description: 'The Scale Phase. Architecting autonomous systems for Fortune 500s. Building AI agent systems for capital-intensive B2B firms and expanding capabilities in multi-agent orchestration.'
+    description: 'The Scale Phase. Architecting autonomous AI systems for enterprises and Fortune 500s. Building agent infrastructure for capital-intensive B2B firms and expanding capabilities in multi-agent orchestration.'
+  },
+  {
+    id: 'zoro',
+    period: 'Apr 2025 - Apr 2026',
+    company: 'Zoro Corp',
+    role: 'AI Systems Architect',
+    type: 'work',
+    description: 'Led the design and deployment of enterprise-grade AI systems for high-ticket B2B clients including BCG. Built end-to-end intelligence infrastructure spanning lead sourcing, executive profiling, outbound generation, and creative pipelines.'
   },
   {
     id: 'instig8',
-    period: 'May 2025 - Present',
+    period: 'Apr 2024 - Sep 2024',
     company: 'Instig8.AI',
     role: 'AI Automation Developer',
     type: 'work',
-    description: 'The Build Phase. Architecting complex B2B automation systems. Developed N8N workflow engineering patterns and multi-AI orchestration for high-ticket clients.'
+    description: 'The Build Phase. Six months engineering complex B2B automation systems. Developed N8N workflow patterns and multi-AI orchestration for high-ticket clients.'
   },
   {
     id: 'college',

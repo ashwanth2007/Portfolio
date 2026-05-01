@@ -8,7 +8,6 @@ import Arsenal from './pages/Arsenal';
 import Journey from './pages/Journey';
 import Verification from './pages/Verification';
 import Certifications from './pages/Certifications';
-import Resources from './pages/Resources';
 import Discovery from './pages/Discovery';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
@@ -29,7 +28,7 @@ const App = () => {
     <ThemeProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white font-sans selection:bg-brand-red selection:text-white transition-colors duration-300">
+        <div className="min-h-screen overflow-x-hidden bg-white dark:bg-black text-black dark:text-white font-sans selection:bg-brand-red selection:text-white transition-colors duration-300">
           <Navbar />
           
           <main className="relative z-10">
@@ -40,8 +39,8 @@ const App = () => {
               <Route path="/arsenal" element={<Arsenal />} />
               <Route path="/journey" element={<Journey />} />
               <Route path="/verification" element={<Verification />} />
+              <Route path="/credentials" element={<Certifications />} />
               <Route path="/certifications" element={<Certifications />} />
-              <Route path="/resources" element={<Resources />} />
               <Route path="/discovery" element={<Discovery />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />

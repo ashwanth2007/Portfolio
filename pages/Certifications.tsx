@@ -125,10 +125,10 @@ const Certifications = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-32 px-6 max-w-7xl mx-auto">
-      <SEO 
-        title="Credentials & Certifications" 
-        description="Official certifications, awards, and letters of recommendation in AI architecture and web development."
-        keywords={["Certifications", "Awards", "AI Credentials", "Web Development", "Credentials"]}
+      <SEO
+        title="Credentials"
+        description="Official credentials, awards, and letters of recommendation in AI architecture and web development."
+        keywords={["Credentials", "Awards", "AI Credentials", "Web Development"]}
       />
 
       {/* Header */}

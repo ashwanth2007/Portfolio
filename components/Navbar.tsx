@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Linkedin, Home, FolderOpen, Cpu, Map, Award, BookOpen, Mail, Sun, Moon } from 'lucide-react';
+import { Menu, X, Home, FolderOpen, Map, Award, Sun, Moon } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 
 const Navbar = () => {
@@ -14,19 +14,18 @@ const Navbar = () => {
     { name: 'HOME', path: '/', icon: <Home size={18} /> },
     { name: 'CASE STUDIES', path: '/case-studies', icon: <FolderOpen size={18} /> },
     { name: 'JOURNEY', path: '/journey', icon: <Map size={18} /> },
-    { name: 'CERTIFICATIONS', path: '/certifications', icon: <Award size={18} /> },
-    { name: 'RESOURCES', path: '/resources', icon: <BookOpen size={18} /> },
+    { name: 'CREDENTIALS', path: '/credentials', icon: <Award size={18} /> },
   ];
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 px-6">
       <div className="max-w-5xl mx-auto bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] px-4 md:px-8 h-16 flex items-center justify-between transition-colors duration-300">
-        {/* Logo */}
-        <Link to="/" className="group flex flex-col items-start justify-center">
-          <div className="text-lg md:text-xl font-black tracking-tighter text-black dark:text-white transition-colors">
+        {/* Wordmark */}
+        <Link to="/" className="group flex flex-col items-start justify-center shrink-0">
+          <div className="text-lg md:text-xl font-black tracking-tighter text-black dark:text-white transition-colors leading-none">
             ASHWANTH S
           </div>
-          <div className="flex h-1 w-full mt-0.5">
+          <div className="flex h-1 w-full mt-1">
             <div className="w-2/3 h-full bg-black dark:bg-white transition-colors"></div>
             <div className="w-1/3 h-full bg-brand-red"></div>
           </div>

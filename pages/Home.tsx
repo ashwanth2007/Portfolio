@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, ScanLine, Webhook, Database, Briefcase, ChevronLeft, ChevronRight, ExternalLink, Cpu } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, Database, Briefcase, ExternalLink, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 const LOGOS = [
   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/BCG_Corporate_Logo.svg/1280px-BCG_Corporate_Logo.svg.png",
@@ -10,7 +11,12 @@ const LOGOS = [
   "https://www.ambrosiabakery.in/cdn/shop/files/ambrosialogozoomed_135x@2x.png?v=1613709932",
   "https://images.ctfassets.net/ktn111j92rjl/QJUGNfyrlW58EgayGLDPZ/7eb8f1578b469c85104643ec883fbba2/Logotype.svg",
   "https://shop.muddymats.com/product/muddy-mat-csb/app/desktop/images/LogoMuddyMat.png",
-  "https://storage.getlatka.com/images/onindus.com.png"
+  "https://storage.getlatka.com/images/onindus.com.png",
+  "https://avanew.ai/wp-content/uploads/2025/11/new-fav.png",
+  "/clients/calcuquote.jpg",
+  "https://www.boomshare.ai/assets/BoomLightIconLogo.svg",
+  "/clients/falke-media.png",
+  "https://www.xpertlink.ai/wp-content/uploads/2022/04/xpertlink_ai.png"
 ];
 
 const FEATURES = [
@@ -115,7 +121,7 @@ const TRUSTED_BY = [
   },
   {
     name: "Kanchan Bhatta",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-scale_400_400/B56ZsrA0DAHsAk-/0/1765953192842?e=1777507200&v=beta&t=SqxV5Bc6S2IR14PzUiIZerk0kvMVoJILajzN8RdJrKM",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-crop_800_800/B56ZsrA0DAHsAM-/0/1765953192718?e=1779321600&v=beta&t=Z4e2fxom_zelPzrqtZmBasVIR9CiSyuJJKGEACg0c9I",
     testimonial: "https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP",
     link: "https://www.linkedin.com/in/growthxkanchan/",
     headline: "GTM & LinkedIn Expert",
@@ -152,58 +158,6 @@ const TECH_STACK = [
 ];
 
 const Home = () => {
-  const [currentDeploymentIndex, setCurrentDeploymentIndex] = useState(0);
-
-  const nextDeployment = () => {
-    setCurrentDeploymentIndex((prev) => (prev + 1) % DEPLOYMENTS.length);
-  };
-
-  const prevDeployment = () => {
-    setCurrentDeploymentIndex((prev) => (prev - 1 + DEPLOYMENTS.length) % DEPLOYMENTS.length);
-  };
-
-  useEffect(() => {
-    (function (C: any, A: string, L: string) { 
-      let p = function (a: any, ar: any) { a.q.push(ar); }; 
-      let d = C.document; 
-      C.Cal = C.Cal || function () { 
-        let cal = C.Cal; 
-        let ar = arguments; 
-        if (!cal.loaded) { 
-          cal.ns = {}; 
-          cal.q = cal.q || []; 
-          d.head.appendChild(d.createElement("script")).src = A; 
-          cal.loaded = true; 
-        } 
-        if (ar[0] === L) { 
-          const api = function () { p(api, arguments); }; 
-          const namespace = ar[1]; 
-          api.q = api.q || []; 
-          if(typeof namespace === "string"){
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar); 
-          return;
-        } 
-        p(cal, ar); 
-      }; 
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-
-    const Cal = (window as any).Cal;
-    if (Cal) {
-      Cal("init", "custom-ai-agent-consultation", {origin:"https://app.cal.com"});
-
-      Cal.ns["custom-ai-agent-consultation"]("inline", {
-        elementOrSelector:"#my-cal-inline-custom-ai-agent-consultation",
-        config: {"layout":"month_view"},
-        calLink: "ashwanthofficial/custom-ai-agent-consultation",
-      });
-
-      Cal.ns["custom-ai-agent-consultation"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-    }
-  }, []);
-
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -218,7 +172,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
+    <div className="min-h-screen pt-24 pb-12 px-6 max-w-7xl mx-auto flex flex-col">
       <SEO 
         title="Ashwanth S | AI Systems Architect" 
         description="I build autonomous AI agents that turn manual work into scalable processes. Trusted by top consulting firms and growth-stage companies."
@@ -227,22 +181,20 @@ const Home = () => {
       />
       
       {/* Hero Section */}
-      <div className="flex flex-col items-center text-center space-y-12 py-16 md:py-24">
-        
+      <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 py-6 md:py-10">
+
         {/* Text Content */}
-        <div className="max-w-5xl space-y-10 flex flex-col items-center">
-          
-          <h1 className="text-[2.5rem] sm:text-6xl md:text-8xl lg:text-[10rem] font-black text-black dark:text-white tracking-tighter leading-[0.85] uppercase transition-colors">
-            I BUILD <br/>
-            <span className="text-brand-red">AUTONOMOUS</span> <br/>
-            AI AGENTS.
+        <div className="max-w-5xl space-y-6 md:space-y-8 flex flex-col items-center">
+
+          <h1 className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-[6.5rem] font-black text-black dark:text-white tracking-tighter leading-[0.9] uppercase transition-colors">
+            I BUILD <span className="text-brand-red">AUTONOMOUS</span> AI AGENTS.
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 font-medium italic leading-relaxed max-w-3xl transition-colors">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 font-medium italic leading-relaxed max-w-3xl transition-colors">
             I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 w-full justify-center px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 pt-2 w-full justify-center px-4 sm:px-0">
             {/* Primary Button - Discovery Call */}
             <Link 
               to="/discovery"
@@ -263,28 +215,28 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Client Logos Scroll */}
-      <div className="mt-8 border-t border-b border-gray-100 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden -mx-6 w-[calc(100%+3rem)] md:w-auto md:mx-0 transition-colors">
+      {/* Client Logos Scroll - full bleed */}
+      <div className="mt-6 relative w-screen left-1/2 -translate-x-1/2 border-t border-b border-gray-100 dark:border-white/10 bg-white/50 dark:bg-black/50 backdrop-blur-sm py-6 md:py-8 overflow-hidden transition-colors">
          <div className="relative w-full flex overflow-hidden group">
             <div className="flex w-max animate-marquee pause-on-hover items-center">
                {/* First Set */}
                {LOGOS.map((logo, index) => (
                  <div key={index} className="flex-shrink-0 h-10 md:h-12 w-28 md:w-36 flex items-center justify-center mr-16 md:mr-24">
-                    <img 
-                      src={logo} 
-                      alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200" 
+                    <img
+                      src={logo}
+                      alt="Client Logo"
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200"
                     />
                  </div>
                ))}
-               
+
                {/* Second Set (Duplicate for Loop) */}
                {LOGOS.map((logo, index) => (
                  <div key={`dup-${index}`} className="flex-shrink-0 h-10 md:h-12 w-28 md:w-36 flex items-center justify-center mr-16 md:mr-24">
-                    <img 
-                      src={logo} 
-                      alt="Client Logo" 
-                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200" 
+                    <img
+                      src={logo}
+                      alt="Client Logo"
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300 dark:invert dark:brightness-200"
                     />
                  </div>
                ))}
@@ -293,16 +245,16 @@ const Home = () => {
       </div>
 
       {/* Achieved Metrics Section */}
-      <div className="mt-24">
+      <Reveal as="section" className="mt-24">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Achieved Metrics
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20">
            {[
+             { value: '$450k+', label: 'In Client Systems Impact' },
              { value: '$100k+', label: 'Worth of Systems Delivered' },
-             { value: '100+', label: 'Hours Saved Per Month' },
-             { value: '20+', label: 'Production Ready Systems' }
+             { value: '40+', label: 'Systems Deployed' }
            ].map(item => (
              <div key={item.label} className="group">
                 <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
@@ -314,13 +266,13 @@ const Home = () => {
              </div>
            ))}
         </div>
-      </div>
+      </Reveal>
 
       {/* About Section */}
-      <div className="mt-32">
+      <Reveal as="section" className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
-            WHO BUILDS THIS
+            WHO BUILDS THIS?
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -332,7 +284,7 @@ const Home = () => {
               I'm an AI systems architect who builds production-grade automation infrastructure for consulting firms, B2B sales teams, and growth-stage companies. I've shipped agents for clients including BCG, handling lead intelligence, outbound pipelines, and content systems at scale.
             </p>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-medium leading-relaxed transition-colors">
-              I don't build demos. I build things that run in production and generate measurable output from day one. I'm 18 and fully remote. Every system I've delivered has been built while carrying a full college course load. That's not a disclaimer, that's the point.
+              I don't build demos. I build things that run in production and generate measurable output from day one. Every system I ship is owned end to end, from architecture down to the deploy pipeline, and the only metric that matters is whether it returns measurable revenue or hours back to the business.
             </p>
           </div>
           <div className="relative">
@@ -347,10 +299,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Core Capabilities Section */}
-      <div className="mt-32 relative">
+      <Reveal as="section" className="mt-32 relative">
            <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
               <span className="w-8 h-[2px] bg-brand-red"></span>
               Core Capabilities
@@ -390,10 +342,10 @@ const Home = () => {
                  ))}
               </div>
            </div>
-      </div>
+      </Reveal>
 
       {/* Arsenal Section */}
-      <div className="mt-32 relative overflow-hidden">
+      <Reveal as="section" className="mt-32 relative overflow-hidden">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Arsenal
@@ -428,7 +380,7 @@ const Home = () => {
                     
                     <div className="flex flex-wrap gap-4">
                         {['AUTONOMOUS', 'SCALABLE', 'SECURE', 'INTELLIGENT'].map(tag => (
-                            <span key={tag} className="px-6 py-3 bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] text-gray-300 uppercase hover:bg-white/[0.08] hover:border-brand-red/30 transition-all duration-300 cursor-default">
+                            <span key={tag} className="px-6 py-3 bg-white/[0.04] border border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] text-gray-300 uppercase hover:bg-white/[0.08] hover:border-brand-red/30 transition-colors duration-300 cursor-default">
                                 {tag}
                             </span>
                         ))}
@@ -439,7 +391,7 @@ const Home = () => {
                     {/* Rotating Logos Container */}
                     <div className="relative w-full h-full flex items-center justify-center">
                         {/* Center Logo (Claude) */}
-                        <div className="relative z-30 w-36 h-36 bg-white/[0.03] backdrop-blur-3xl border border-white/20 rounded-[2.5rem] p-8 shadow-[0_0_80px_-10px_rgba(235,54,54,0.3)] flex items-center justify-center group">
+                        <div className="relative z-30 w-36 h-36 bg-white/[0.04] border border-white/20 rounded-[2.5rem] p-8 shadow-[0_0_80px_-10px_rgba(235,54,54,0.3)] flex items-center justify-center group">
                             <img src={ARSENAL_LOGOS[1].logo} alt="Claude" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                             <div className="absolute inset-0 bg-brand-red/5 rounded-[2.5rem] animate-pulse"></div>
                         </div>
@@ -447,24 +399,26 @@ const Home = () => {
                         {/* Orbiting Logos */}
                         {ARSENAL_LOGOS.map((item, index) => {
                             if (index === 1) return null; // Skip Claude as it's in center
-                            const angle = (index * (360 / (ARSENAL_LOGOS.length - 1))) * (Math.PI / 180);
-                            const radius = 220; // Increased radius for better spacing
-                            const x = Math.cos(angle) * radius;
-                            const y = Math.sin(angle) * radius;
+                            const adjustedIndex = index < 1 ? index : index - 1;
+                            const totalOrbiting = ARSENAL_LOGOS.length - 1;
+                            const angleDeg = adjustedIndex * (360 / totalOrbiting);
 
                             return (
-                                <div 
+                                <div
                                     key={item.name}
-                                    className="absolute w-20 h-20 md:w-24 md:h-24 bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl p-5 flex items-center justify-center hover:bg-white/[0.08] hover:border-brand-red/40 transition-all duration-500 group cursor-pointer z-20"
+                                    className="absolute w-20 h-20 md:w-24 md:h-24 bg-white/[0.04] border border-white/10 rounded-3xl p-5 flex items-center justify-center hover:bg-white/[0.08] hover:border-brand-red/40 transition-colors duration-300 group cursor-pointer z-20 will-change-transform"
                                     style={{
-                                        transform: `translate(${x}px, ${y}px)`,
-                                        animation: `orbit ${30 + index * 2}s linear infinite`
+                                        ['--start-rot' as any]: `${angleDeg}deg`,
+                                        ['--start-rot-neg' as any]: `${-angleDeg}deg`,
+                                        ['--end-rot' as any]: `${angleDeg + 360}deg`,
+                                        ['--end-rot-neg' as any]: `${-(angleDeg + 360)}deg`,
+                                        animation: 'arsenal-orbit 60s linear infinite',
                                     }}
                                 >
-                                    <img src={item.logo} alt={item.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
-                                    
+                                    <img src={item.logo} alt={item.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+
                                     {/* Tooltip */}
-                                    <div className="absolute -bottom-12 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-black/80 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-lg text-[10px] font-black text-white uppercase tracking-widest whitespace-nowrap z-50">
+                                    <div className="absolute -bottom-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 border border-white/10 px-3 py-1.5 rounded-lg text-[10px] font-black text-white uppercase tracking-widest whitespace-nowrap z-50">
                                         {item.name}
                                     </div>
                                 </div>
@@ -495,38 +449,10 @@ const Home = () => {
             </div>
         </div>
 
-        <style dangerouslySetInnerHTML={{ __html: `
-            @keyframes orbit {
-                from { transform: rotate(0deg) translateX(220px) rotate(0deg); }
-                to { transform: rotate(360deg) translateX(220px) rotate(-360deg); }
-            }
-            @keyframes glow {
-                0%, 100% { box-shadow: 0 0 20px rgba(235, 54, 54, 0.2); }
-                50% { box-shadow: 0 0 40px rgba(235, 54, 54, 0.6); }
-            }
-            .animate-glow {
-                animation: glow 2s ease-in-out infinite;
-            }
-            @keyframes float {
-                0%, 100% { transform: translateY(0) rotate(0deg); }
-                50% { transform: translateY(-10px) rotate(1deg); }
-            }
-            .animate-float {
-                animation: float 6s ease-in-out infinite;
-            }
-            @keyframes data-pulse {
-                0% { opacity: 0; transform: scale(0.5); }
-                50% { opacity: 1; transform: scale(1.2); }
-                100% { opacity: 0; transform: scale(0.5); }
-            }
-            .data-node {
-                animation: data-pulse 3s ease-in-out infinite;
-            }
-        `}} />
-      </div>
+      </Reveal>
 
       {/* Few Deployed Agents Section */}
-      <div className="mt-32">
+      <Reveal as="section" className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Few Deployed Agents
@@ -539,51 +465,51 @@ const Home = () => {
             </h1>
         </div>
 
-        <div className="space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {DEPLOYMENTS.map((deployment, index) => (
-              <div 
+              <div
                 key={index}
-                className="block group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_80px_-10px_rgba(235,54,54,0.4)] transition-all duration-500"
+                className="group flex flex-col bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_60px_-10px_rgba(235,54,54,0.35)] transition-colors duration-300"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Video Side */}
-                  <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
-                    <video 
-                      className="w-full h-full object-contain"
-                      controls
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={deployment.video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-
-                  {/* Text Side */}
-                  <Link 
-                    to={`/case-studies/${deployment.projectId}`}
-                    className="p-8 md:p-12 flex flex-col justify-center space-y-6 hover:bg-white/5 transition-colors"
+                {/* Video */}
+                <div className="relative aspect-video bg-black overflow-hidden">
+                  <video
+                    className="w-full h-full object-contain"
+                    controls
+                    playsInline
+                    preload="metadata"
                   >
+                    <source src={deployment.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                {/* Text */}
+                <Link
+                  to={`/case-studies/${deployment.projectId}`}
+                  className="p-6 md:p-8 flex flex-col justify-between gap-5 flex-1 hover:bg-white/[0.03] transition-colors"
+                >
+                  <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="text-brand-red font-black text-2xl">
+                      <span className="text-brand-red font-black text-xl">
                         {(index + 1).toString().padStart(2, '0')}
                       </span>
                       <div className="h-px w-8 bg-white/10"></div>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none text-white group-hover:text-brand-red transition-colors">
+                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-tight text-white group-hover:text-brand-red transition-colors">
                       {deployment.title}
                     </h3>
-                    
-                    <p className="text-white text-sm md:text-base leading-relaxed font-medium">
+
+                    <p className="text-gray-300 text-sm leading-relaxed font-medium line-clamp-5">
                       {deployment.description}
                     </p>
+                  </div>
 
-                    <div className="flex items-center gap-2 text-white font-bold text-sm uppercase tracking-widest group-hover:text-brand-red transition-colors">
-                      View Case Study <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-                    </div>
-                  </Link>
-                </div>
+                  <div className="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group-hover:text-brand-red transition-colors mt-auto">
+                    View Case Study <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </Link>
               </div>
             ))}
         </div>
@@ -598,10 +524,10 @@ const Home = () => {
             <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>
-      </div>
+      </Reveal>
 
       {/* Tech Stack Section */}
-      <div className="mt-32 relative overflow-hidden">
+      <Reveal as="section" className="mt-32 relative overflow-hidden">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Tech Stack
@@ -641,16 +567,15 @@ const Home = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {TECH_STACK.map((tech, index) => (
-                        <div 
+                    {TECH_STACK.map((tech) => (
+                        <div
                             key={tech.name}
-                            className="group relative bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-3xl p-8 hover:bg-white/[0.05] hover:border-brand-red/40 hover:shadow-[0_0_40px_-10px_rgba(235,54,54,0.2)] hover:-translate-y-2 transition-all duration-500 animate-float"
-                            style={{ animationDelay: `${index * 0.2}s` }}
+                            className="group relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.06] hover:border-brand-red/40 hover:shadow-[0_0_40px_-10px_rgba(235,54,54,0.2)] hover:-translate-y-1 transition-colors duration-300"
                         >
-                            <div className="mb-6 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl p-2 group-hover:scale-110 transition-transform duration-500">
+                            <div className="mb-6 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl p-2 group-hover:scale-110 transition-transform duration-300">
                                 <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain" />
                             </div>
-                            
+
                             <h4 className="text-xl font-black text-white uppercase tracking-tight mb-2 group-hover:text-brand-red transition-colors">
                                 {tech.name}
                             </h4>
@@ -665,10 +590,10 @@ const Home = () => {
                 </div>
             </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Schedule Discovery Section */}
-      <div className="mt-32">
+      <Reveal as="section" className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Contact
@@ -689,12 +614,21 @@ const Home = () => {
         </div>
 
         <div className="w-full h-[700px] bg-black border border-white/10 shadow-2xl rounded-xl overflow-hidden relative z-10">
-            <div style={{width:"100%", height:"100%", overflow:"scroll"}} id="my-cal-inline-custom-ai-agent-consultation"></div>
+            <iframe
+              src="https://cal.com/ashwanthofficial/custom-ai-agent-consultation?embed=true&theme=dark&layout=month_view"
+              title="Schedule a Discovery Call"
+              loading="lazy"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              className="w-full h-full"
+              allow="camera; microphone; autoplay; clipboard-read; clipboard-write"
+            />
         </div>
-      </div>
+      </Reveal>
 
       {/* Recommendations Section */}
-      <div className="mt-32">
+      <Reveal as="section" className="mt-32">
         <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-3">
             <span className="w-8 h-[2px] bg-brand-red"></span>
             Recommendations
@@ -707,64 +641,53 @@ const Home = () => {
             </h1>
         </div>
         
-        <div className="flex flex-col gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {TRUSTED_BY.map((person, index) => (
-                <div 
-                    key={index} 
-                    className="group relative bg-white dark:bg-black border-2 border-black dark:border-white rounded-3xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[16px_16px_0px_0px_rgba(235,54,54,1)] transition-all duration-500"
+                <div
+                    key={index}
+                    className="group relative bg-white dark:bg-black border-2 border-black dark:border-white rounded-2xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.08)] hover:shadow-[10px_10px_0px_0px_rgba(235,54,54,1)] transition-shadow duration-300"
                 >
-                    {/* Header with Profile Photo and Name */}
-                    <div className="p-6 border-b-2 border-black dark:border-white flex flex-col md:flex-row md:items-center gap-6 bg-gray-50 dark:bg-white/5 transition-colors">
-                        <div className="flex items-center gap-4">
-                            <img 
-                                src={person.image} 
-                                alt={person.name} 
-                                className="w-16 h-16 rounded-full border-2 border-black dark:border-white object-cover"
-                                referrerPolicy="no-referrer"
-                            />
-                            <div>
-                                <h3 className="text-xl font-black text-black dark:text-white uppercase tracking-tight group-hover:text-brand-red transition-colors">
-                                    {person.name}
-                                </h3>
-                                <p className="text-xs font-bold text-brand-red uppercase tracking-widest">
-                                    {person.headline}
-                                </p>
-                            </div>
+                    {/* Header */}
+                    <div className="px-4 py-3 border-b-2 border-black dark:border-white flex items-center gap-3 bg-gray-50 dark:bg-white/5">
+                        <img
+                            src={person.image}
+                            alt={person.name}
+                            className="w-10 h-10 rounded-full border border-black dark:border-white object-cover shrink-0"
+                            referrerPolicy="no-referrer"
+                        />
+                        <div className="min-w-0 flex-1">
+                            <h3 className="text-sm font-black text-black dark:text-white uppercase tracking-tight group-hover:text-brand-red transition-colors truncate">
+                                {person.name}
+                            </h3>
+                            <p className="text-[9px] font-bold text-brand-red uppercase tracking-widest truncate">
+                                {person.headline}
+                            </p>
                         </div>
-
-                        <div className="flex flex-wrap gap-2 md:ml-8">
-                            {person.stats?.map((stat, i) => (
-                                <span key={i} className="px-3 py-1 bg-black dark:bg-white text-white dark:text-black text-[10px] font-black uppercase tracking-widest rounded-full transition-colors">
-                                    {stat}
-                                </span>
-                            ))}
-                        </div>
-                        
-                        <div className="md:ml-auto">
-                            <a 
-                                href={person.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="bg-black dark:bg-white text-white dark:text-black p-3 rounded-full hover:bg-brand-red dark:hover:bg-brand-red dark:hover:text-white transition-colors flex items-center justify-center shadow-lg"
-                            >
-                                <ExternalLink size={20} />
-                            </a>
-                        </div>
+                        <a
+                            href={person.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black dark:bg-white text-white dark:text-black p-2 rounded-full hover:bg-brand-red dark:hover:bg-brand-red dark:hover:text-white transition-colors flex items-center justify-center shrink-0"
+                            aria-label={`Open ${person.name} profile`}
+                        >
+                            <ExternalLink size={14} />
+                        </a>
                     </div>
 
-                    <div className="w-full bg-white dark:bg-black p-4 md:p-8 transition-colors">
-                        <img 
-                            src={person.testimonial} 
-                            alt={`${person.name} Recommendation Screenshot`} 
-                            className="w-full h-auto block rounded-xl border border-gray-100 dark:border-white/10 shadow-sm"
+                    {/* Testimonial screenshot */}
+                    <div className="w-full bg-white dark:bg-black p-3">
+                        <img
+                            src={person.testimonial}
+                            alt={`${person.name} Recommendation`}
+                            className="w-full h-auto max-h-[320px] object-contain block rounded-lg border border-gray-100 dark:border-white/10"
                             referrerPolicy="no-referrer"
                         />
                     </div>
                 </div>
             ))}
         </div>
-      </div>
-      
+      </Reveal>
+
     </div>
   );
 };
