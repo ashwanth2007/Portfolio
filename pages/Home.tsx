@@ -3,6 +3,7 @@ import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, Da
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
+import ScreenshotShowcase from '../components/ScreenshotShowcase';
 import { TESTIMONIALS } from '../data';
 
 const LOGOS = [
@@ -106,7 +107,9 @@ const ARSENAL_LOGOS = [
   { name: "Vercel", logo: "https://smlvqzf0a1b66cku.public.blob.vercel-storage.com/images/Vercel%20Logo-IMoeV2W33gFclXzAfZxmAHqtjBuTzP.png" },
   { name: "Render", logo: "https://assets.findstack.com/hf8tetz6wrjfxx6vxooc6igw3tah" },
   { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" },
-  { name: "Hermes", logo: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/hermesagent.png" }
+  { name: "Hermes", logo: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/hermesagent.png" },
+  { name: "HeyReach", logo: "https://cdn.prod.website-files.com/65492afe86bfa964d89f2005/682dda971399f5cd7b96726b_HQ-Favicon-1000x1000.png" },
+  { name: "SmartLead", logo: "https://play-lh.googleusercontent.com/3TRenpb3zBDoRTurTpPFsmFPQYeByFoqKDxBIQ_nayEo3qUYw8bDiB0lYGUf9d3QiQ=w240-h480-rw" }
 ];
 
 const TECH_STACK = [
@@ -147,38 +150,44 @@ const Home = () => {
         keywords={["AI Architect", "Automation", "N8N", "Enterprise AI", "System Architecture"]}
       />
       
-      {/* Hero Section */}
-      <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 py-6 md:py-10">
+      {/* Hero Section - extends right past the max-w-7xl container to use available white space */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center py-6 md:py-10 lg:mr-[-3rem] xl:mr-[-6rem] 2xl:mr-[-10rem]">
 
-        {/* Text Content */}
-        <div className="max-w-5xl space-y-6 md:space-y-8 flex flex-col items-center">
+        {/* Left: Text Content */}
+        <div className="lg:col-span-5 space-y-6 md:space-y-7 text-center lg:text-left">
 
-          <h1 className="text-[2.25rem] sm:text-5xl md:text-7xl lg:text-[6.5rem] font-black text-black dark:text-white tracking-tighter leading-[0.9] uppercase transition-colors">
-            I BUILD <span className="text-brand-red">AUTONOMOUS</span> AI AGENTS.
+          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.25rem] font-black text-black dark:text-white tracking-tight leading-[1.02] transition-colors">
+            <span className="text-brand-red">Self-improving</span> AI agents.
           </h1>
 
-          <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 font-medium italic leading-relaxed max-w-3xl transition-colors">
-            I build autonomous AI agents that turn your manual work into scalable processes that agents handle for you.
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 transition-colors">
+            Trusted by 40+ companies across consulting, B2B, and growth-stage to ship autonomous AI agents into production.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 pt-2 w-full justify-center px-4 sm:px-0">
+          <div className="flex flex-col gap-3 pt-2 items-center lg:items-start w-full">
             {/* Primary Button - Discovery Call */}
-            <Link 
+            <Link
               to="/discovery"
-              className="group flex items-center justify-between bg-black dark:bg-white border-2 border-black dark:border-white text-white dark:text-black px-8 sm:px-10 py-4 sm:py-5 w-full sm:min-w-[260px] sm:w-auto hover:bg-brand-red hover:border-brand-red dark:hover:bg-brand-red dark:hover:border-brand-red dark:hover:text-white transition-all duration-300 animate-glow shadow-2xl"
+              className="group flex items-center justify-between bg-black dark:bg-white border-2 border-black dark:border-white text-white dark:text-black px-7 py-4 w-full sm:w-auto sm:min-w-[300px] rounded-xl hover:bg-brand-red hover:border-brand-red dark:hover:bg-brand-red dark:hover:border-brand-red dark:hover:text-white transition-colors duration-300 shadow-xl"
             >
-              <span className="font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">Discovery Call</span>
+              <span className="font-semibold text-sm sm:text-base">Discovery call</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Secondary Button - Case Studies */}
-            <Link 
+            <Link
               to="/case-studies"
-              className="group flex items-center justify-center bg-brand-red border-2 border-brand-red text-white px-8 sm:px-10 py-4 sm:py-5 w-full sm:min-w-[260px] sm:w-auto hover:bg-black hover:border-black transition-all duration-300"
+              className="group flex items-center justify-between bg-brand-red border-2 border-brand-red text-white px-7 py-4 w-full sm:w-auto sm:min-w-[300px] rounded-xl hover:bg-black hover:border-black transition-colors duration-300"
             >
-              <span className="font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">Case Studies</span>
+              <span className="font-semibold text-sm sm:text-base">Case studies</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
+        </div>
+
+        {/* Right: Auto-rotating screenshot showcase, pushed slightly right for breathing room */}
+        <div className="lg:col-span-7 w-full max-w-3xl mx-auto lg:max-w-none lg:pl-6 xl:pl-12">
+          <ScreenshotShowcase />
         </div>
       </div>
 
