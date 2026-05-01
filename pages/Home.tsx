@@ -230,15 +230,15 @@ const Home = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20">
            {[
-             { value: '$450k+', label: 'In Client Systems Impact' },
-             { value: '$100k+', label: 'Worth of Systems Delivered' },
-             { value: '40+', label: 'Systems Deployed' }
+             { value: '$450k+', label: 'In client systems impact' },
+             { value: '$100k+', label: 'Worth of systems delivered' },
+             { value: '40+', label: 'Systems deployed' }
            ].map(item => (
              <div key={item.label} className="group">
                 <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white tracking-tighter mb-4 group-hover:text-brand-red transition-colors">
                   {item.value}
                 </h3>
-                <p className="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 border-l-4 border-gray-200 dark:border-white/10 pl-4 group-hover:border-brand-red transition-colors">
+                <p className="text-sm font-bold tracking-wide text-gray-500 dark:text-gray-400 border-l-4 border-gray-200 dark:border-white/10 pl-4 group-hover:border-brand-red transition-colors">
                   {item.label}
                 </p>
              </div>
