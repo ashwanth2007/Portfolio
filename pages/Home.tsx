@@ -105,7 +105,8 @@ const ARSENAL_LOGOS = [
   { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png" },
   { name: "Vercel", logo: "https://smlvqzf0a1b66cku.public.blob.vercel-storage.com/images/Vercel%20Logo-IMoeV2W33gFclXzAfZxmAHqtjBuTzP.png" },
   { name: "Render", logo: "https://assets.findstack.com/hf8tetz6wrjfxx6vxooc6igw3tah" },
-  { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" }
+  { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png" },
+  { name: "Hermes", logo: "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/hermesagent.png" }
 ];
 
 const TECH_STACK = [
@@ -395,7 +396,7 @@ const Home = () => {
                     </p>
                     
                     <div className="flex flex-wrap gap-4">
-                        {['AUTONOMOUS', 'SCALABLE', 'SECURE', 'INTELLIGENT'].map(tag => (
+                        {['AUTONOMOUS', 'SCALABLE', 'SECURE', 'INTELLIGENT', 'PERSISTENT MEMORY', 'SELF-HEALING', 'PRODUCTION-GRADE'].map(tag => (
                             <span key={tag} className="px-6 py-3 bg-white/[0.04] border border-white/10 rounded-2xl text-[11px] font-black tracking-[0.2em] text-gray-300 uppercase hover:bg-white/[0.08] hover:border-brand-red/30 transition-colors duration-300 cursor-default">
                                 {tag}
                             </span>
@@ -530,13 +531,13 @@ const Home = () => {
             ))}
         </div>
 
-        {/* View More Case Studies Button */}
+        {/* More Agents Button */}
         <div className="mt-16 flex justify-center">
           <Link
             to="/case-studies"
             className="group flex items-center gap-4 bg-black text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-brand-red/20"
           >
-            View More Case Studies
+            More Agents
             <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>
@@ -616,7 +617,7 @@ const Home = () => {
                             <img
                                 src={tech.logo}
                                 alt={tech.name}
-                                className="max-w-[60%] max-h-[60%] object-contain group-hover:scale-110 transition-transform duration-300"
+                                className="max-w-[78%] max-h-[78%] object-contain group-hover:scale-110 transition-transform duration-300"
                             />
                         </div>
                     ))}
@@ -640,7 +641,7 @@ const Home = () => {
             
             <div className="flex items-center gap-4">
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
-                    TRUSTED BY <span className="text-brand-red">20+</span> COMPANIES ACROSS CONSULTING, B2B, AND GROWTH-STAGE.
+                    TRUSTED BY <span className="text-brand-red">40+</span> COMPANIES ACROSS CONSULTING, B2B, AND GROWTH-STAGE.
                 </p>
                 <div className="h-px flex-grow bg-gray-200 dark:bg-white/10 transition-colors"></div>
             </div>
