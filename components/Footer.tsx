@@ -103,14 +103,12 @@ const Footer = () => {
             >
               Privacy
             </Link>
-            <a
-              href="https://cal.com/ashwanthofficial/custom-ai-agent-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/discovery"
               className="text-[10px] font-black text-gray-500 hover:text-brand-red uppercase tracking-[0.2em] transition-colors"
             >
               Book a Call
-            </a>
+            </Link>
           </div>
         </div>
       </div>

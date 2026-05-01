@@ -1,4 +1,39 @@
-import { Project, Experience, ToolCategory } from './types';
+import { Project, Experience, ToolCategory, Testimonial } from './types';
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: 'Aryan Mahajan',
+    image: 'https://raw.githubusercontent.com/ashwanth2007/Resources/main/aryan.jpg',
+    testimonial: 'https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1',
+    link: 'https://www.linkedin.com/in/aryanmahajaninstig8/',
+    headline: 'AI Systems Architect for Fortune 500',
+    stats: ['Fortune 500 Growth Consultant'],
+  },
+  {
+    name: 'Avinash Mada',
+    image: 'https://raw.githubusercontent.com/ashwanth2007/Resources/main/avinash_mada.jpg',
+    testimonial: 'https://lh3.googleusercontent.com/d/1xFOlidtCqE6AlnacRmWnw98gnoI0exlO',
+    link: 'https://www.instagram.com/meetavinash',
+    headline: 'AI Visionary & Entrepreneur',
+    stats: ['Top coach in India'],
+  },
+  {
+    name: 'Mani Kanasani',
+    image: 'https://raw.githubusercontent.com/ashwanth2007/Resources/main/mani_kanasani.jpg',
+    testimonial: 'https://lh3.googleusercontent.com/d/1qUnk3Fp9YgRSTG96rPSgR2Yff__5Pyj7',
+    link: 'https://www.youtube.com/@ManiKanasani',
+    headline: 'Agency Owner & Content Creator',
+    stats: ['Agency Owner'],
+  },
+  {
+    name: 'Kanchan Bhatta',
+    image: 'https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-crop_800_800/B56ZsrA0DAHsAM-/0/1765953192718?e=1779321600&v=beta&t=Z4e2fxom_zelPzrqtZmBasVIR9CiSyuJJKGEACg0c9I',
+    testimonial: 'https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP',
+    link: 'https://www.linkedin.com/in/growthxkanchan/',
+    headline: 'GTM & LinkedIn Expert',
+    stats: ['GTM Expert', 'LinkedIn Expert'],
+  },
+];
 
 export const EXPERIENCES: Experience[] = [
   {

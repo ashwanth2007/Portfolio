@@ -1,8 +1,9 @@
 import React from 'react';
-import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, Database, Briefcase, ExternalLink, Cpu } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, Database, Briefcase, ExternalLink, Cpu, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
+import { TESTIMONIALS } from '../data';
 
 const LOGOS = [
   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/BCG_Corporate_Logo.svg/1280px-BCG_Corporate_Logo.svg.png",
@@ -91,41 +92,6 @@ const DEPLOYMENTS = [
     projectId: "instig8-zoefoundry",
     description: "An AI system that tracks real-time activity in a brand’s niche to find both high-value customers and relevant creators in one workflow. It scans viral content and engagement, analyzes profiles and language to detect intent and fit, ranks people by conversion potential, and automatically generates personalized outreach messages for partnerships, demos, or sales turning social activity into a continuous lead and influencer pipeline.",
     video: "https://raw.githubusercontent.com/ashwanth2007/Resources/867ec75289e2ba238c5c30226c5dbf8ccb1181d1/audience_intelligence.mp4"
-  }
-];
-
-const TRUSTED_BY = [
-  {
-    name: "Aryan Mahajan",
-    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/aryan.jpg",
-    testimonial: "https://lh3.googleusercontent.com/d/1dHDTcgQM9rF3O717_gd8PgtcoXRReBa1",
-    link: "https://www.linkedin.com/in/aryanmahajaninstig8/",
-    headline: "AI Systems Architect for Fortune 500",
-    stats: ["Fortune 500 Growth Consultant"]
-  },
-  {
-    name: "Avinash Mada",
-    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/avinash_mada.jpg",
-    testimonial: "https://lh3.googleusercontent.com/d/1xFOlidtCqE6AlnacRmWnw98gnoI0exlO",
-    link: "https://www.instagram.com/meetavinash",
-    headline: "AI Visionary & Entrepreneur",
-    stats: ["Top coach in India"]
-  },
-  {
-    name: "Mani Kanasani",
-    image: "https://raw.githubusercontent.com/ashwanth2007/Resources/main/mani_kanasani.jpg",
-    testimonial: "https://lh3.googleusercontent.com/d/1qUnk3Fp9YgRSTG96rPSgR2Yff__5Pyj7",
-    link: "https://www.youtube.com/@ManiKanasani",
-    headline: "Agency Owner & Content Creator",
-    stats: ["Agency Owner"]
-  },
-  {
-    name: "Kanchan Bhatta",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-crop_800_800/B56ZsrA0DAHsAM-/0/1765953192718?e=1779321600&v=beta&t=Z4e2fxom_zelPzrqtZmBasVIR9CiSyuJJKGEACg0c9I",
-    testimonial: "https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP",
-    link: "https://www.linkedin.com/in/growthxkanchan/",
-    headline: "GTM & LinkedIn Expert",
-    stats: ["GTM Expert", "LinkedIn Expert"]
   }
 ];
 
@@ -266,6 +232,30 @@ const Home = () => {
              </div>
            ))}
         </div>
+
+        {/* Inline CTA after Achieved Metrics */}
+        <div className="mt-16 relative overflow-hidden rounded-3xl bg-black dark:bg-[#0a0a0a] border border-black dark:border-white/10 px-6 sm:px-10 py-8 md:py-10">
+          <div className="absolute -right-16 -top-16 w-64 h-64 bg-brand-red/15 blur-3xl rounded-full pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <p className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-[0.3em]">Want this on your team?</p>
+              <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight">
+                Book a Call <span className="text-brand-red">Right Now</span>
+              </h3>
+              <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
+                30-minute discovery call. We map the agent, the metric, and what shipping it would actually cost.
+              </p>
+            </div>
+            <Link
+              to="/discovery"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+            >
+              <Calendar size={16} />
+              Schedule a Call
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
       </Reveal>
 
       {/* About Section */}
@@ -342,6 +332,32 @@ const Home = () => {
                  ))}
               </div>
            </div>
+      </Reveal>
+
+      {/* Inline CTA between Core Capabilities and Arsenal */}
+      <Reveal as="section" className="mt-32">
+        <div className="relative overflow-hidden rounded-3xl bg-black dark:bg-[#0a0a0a] border border-black dark:border-white/10 px-6 sm:px-10 py-8 md:py-10">
+          <div className="absolute -right-16 -top-16 w-64 h-64 bg-brand-red/15 blur-3xl rounded-full pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <p className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-[0.3em]">Got a system in mind?</p>
+              <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight">
+                Book a Call <span className="text-brand-red">Right Now</span>
+              </h3>
+              <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
+                30-minute discovery call. We map the agent, the metric, and what shipping it would actually cost.
+              </p>
+            </div>
+            <Link
+              to="/discovery"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+            >
+              <Calendar size={16} />
+              Schedule a Call
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
       </Reveal>
 
       {/* Arsenal Section */}
@@ -516,13 +532,37 @@ const Home = () => {
 
         {/* View More Case Studies Button */}
         <div className="mt-16 flex justify-center">
-          <Link 
+          <Link
             to="/case-studies"
             className="group flex items-center gap-4 bg-black text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-brand-red transition-all duration-300 shadow-xl hover:shadow-brand-red/20"
           >
             View More Case Studies
             <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
           </Link>
+        </div>
+
+        {/* Inline CTA after Few Deployed Agents */}
+        <div className="mt-16 relative overflow-hidden rounded-3xl bg-black dark:bg-[#0a0a0a] border border-black dark:border-white/10 px-6 sm:px-10 py-8 md:py-10">
+          <div className="absolute -right-16 -top-16 w-64 h-64 bg-brand-red/15 blur-3xl rounded-full pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <p className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-[0.3em]">Ready to ship one of these?</p>
+              <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight">
+                Book a Call <span className="text-brand-red">Right Now</span>
+              </h3>
+              <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
+                30-minute discovery call. We map the agent, the metric, and what shipping it would actually cost.
+              </p>
+            </div>
+            <Link
+              to="/discovery"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+            >
+              <Calendar size={16} />
+              Schedule a Call
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
       </Reveal>
 
@@ -566,25 +606,18 @@ const Home = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
                     {TECH_STACK.map((tech) => (
                         <div
                             key={tech.name}
-                            className="group relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.06] hover:border-brand-red/40 hover:shadow-[0_0_40px_-10px_rgba(235,54,54,0.2)] hover:-translate-y-1 transition-colors duration-300"
+                            title={tech.name}
+                            className="group relative aspect-square bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center p-4 md:p-5 hover:bg-white/[0.08] hover:border-brand-red/40 hover:shadow-[0_0_24px_-10px_rgba(235,54,54,0.3)] transition-colors duration-300"
                         >
-                            <div className="mb-6 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl p-2 group-hover:scale-110 transition-transform duration-300">
-                                <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain" />
-                            </div>
-
-                            <h4 className="text-xl font-black text-white uppercase tracking-tight mb-2 group-hover:text-brand-red transition-colors">
-                                {tech.name}
-                            </h4>
-                            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest">
-                                {tech.desc}
-                            </p>
-
-                            {/* Decorative Corner */}
-                            <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-white/20 group-hover:border-brand-red/50 transition-colors"></div>
+                            <img
+                                src={tech.logo}
+                                alt={tech.name}
+                                className="max-w-[60%] max-h-[60%] object-contain group-hover:scale-110 transition-transform duration-300"
+                            />
                         </div>
                     ))}
                 </div>
@@ -642,7 +675,7 @@ const Home = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {TRUSTED_BY.map((person, index) => (
+            {TESTIMONIALS.map((person, index) => (
                 <div
                     key={index}
                     className="group relative bg-white dark:bg-black border-2 border-black dark:border-white rounded-2xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.08)] hover:shadow-[10px_10px_0px_0px_rgba(235,54,54,1)] transition-shadow duration-300"

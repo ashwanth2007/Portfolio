@@ -28,3 +28,12 @@ export interface ToolCategory {
   name: string;
   tools: string[];
 }
+
+export interface Testimonial {
+  name: string;
+  image: string;
+  testimonial: string;
+  link: string;
+  headline: string;
+  stats: string[];
+}
