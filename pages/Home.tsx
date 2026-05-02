@@ -113,7 +113,7 @@ const ARSENAL_LOGOS = [
 ];
 
 const TECH_STACK = [
-  { name: "Next.js", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVW3qpDKsp9c6aqWdkAsVTiqhOOxNxJbk8dg&s", desc: "Backend / full-stack apps" },
+  { name: "Next.js", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s", desc: "Backend / full-stack apps" },
   { name: "FastAPI", logo: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg", desc: "Backend APIs" },
   { name: "Node.js", logo: "https://cdn.iconscout.com/icon/free/png-256/free-node-js-logo-icon-svg-download-png-3030179.png?f=webp", desc: "Server-side Runtime" },
   { name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", desc: "Frontend" },
