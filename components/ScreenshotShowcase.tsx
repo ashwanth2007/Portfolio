@@ -15,6 +15,8 @@ const DEFAULT_SLIDES: ShowcaseSlide[] = [
 
 const INTERVAL_MS = 3500;
 
+const isVideoSrc = (src: string) => /\.(mp4|webm|mov|m4v)(\?|$)/i.test(src);
+
 const Card: React.FC<{ slide: ShowcaseSlide; compact?: boolean }> = ({ slide, compact }) => (
   <div className="w-full h-full rounded-3xl bg-white dark:bg-[#0d0d0d] border border-black/5 dark:border-white/10 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col">
     {/* Title */}
@@ -36,13 +38,25 @@ const Card: React.FC<{ slide: ShowcaseSlide; compact?: boolean }> = ({ slide, co
     {/* Grey divider */}
     <div className="h-px bg-gray-200 dark:bg-white/10"></div>
 
-    {/* Screenshot fills the rest of the card without cropping */}
+    {/* Media fills the rest of the card. Compact (case study) covers edge to edge. */}
     <div className="flex-1 min-h-0 overflow-hidden bg-white dark:bg-[#0d0d0d]">
-      <img
-        src={slide.src}
-        alt={slide.title}
-        className="w-full h-full object-contain object-top block"
-      />
+      {isVideoSrc(slide.src) ? (
+        <video
+          src={slide.src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className={`w-full h-full block ${compact ? 'object-cover object-top' : 'object-contain object-top'}`}
+        />
+      ) : (
+        <img
+          src={slide.src}
+          alt={slide.title}
+          className={`w-full h-full block ${compact ? 'object-cover object-top' : 'object-contain object-top'}`}
+        />
+      )}
     </div>
   </div>
 );

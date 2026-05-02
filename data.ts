@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'zoro-bcg',
     category: 'CASE STUDIES',
-    title: 'Enterprise AI SDR Intelligence Infrastructure',
+    title: 'Enterprise AI SDR Intelligence Agent',
     subtitle: 'Full-stack business development intelligence system for a top-3 global consulting firm.',
     client: 'Top-3 Global Management Consulting Firm (Fortune 500)',
     role: 'System Architect',
@@ -199,7 +199,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'zoro-ad-intel',
     category: 'CASE STUDIES',
-    title: 'Competitor Ad Analysis to Creative Pipeline',
+    title: 'Ad Creative Intelligence Agent',
     subtitle: 'Automated Competitive Analysis → Systematic Winner Generation',
     client: '$2M/MRR D2C Brand',
     role: 'System Architect',
@@ -263,13 +263,45 @@ export const PROJECTS: Project[] = [
       'Increased testing from 20 to 400+ variations/month',
       'Reduced creative cost from $12k/mo to $600/mo',
       'Found 20-25 winning concepts/month (vs 2-3 previously)'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/zoro-ad-intel/3.png',
+        title: 'Competitor Ad Repository',
+        caption: 'Live capture of every running competitor video ad with creative metadata, hook tags, and platform context.'
+      },
+      {
+        src: '/case-studies/zoro-ad-intel/4.png',
+        title: 'Repurposed Visual Creatives',
+        caption: 'Static and overlay variants generated from competitor patterns, classified by hook, problem, and offer angle.'
+      },
+      {
+        src: '/case-studies/zoro-ad-intel/5.png',
+        title: 'Repurposed Video Creatives',
+        caption: 'Per-clip prompt history with character, lighting, setting, and product-angle tags driving variant generation.'
+      },
+      {
+        src: '/case-studies/zoro-ad-intel/3.png',
+        title: 'Competitor Library Drill-down',
+        caption: 'Same competitor library, drilled into a single ad to show how every running creative is decomposed and tagged.'
+      },
+      {
+        src: '/case-studies/zoro-ad-intel/2.png',
+        title: 'Facebook Ad Analytics',
+        caption: 'Per-ad performance with winners, losers, and undetermined classification feeding the prompt-engine loop.'
+      },
+      {
+        src: '/case-studies/zoro-ad-intel/1.png',
+        title: 'Campaign Analytics Dashboard',
+        caption: 'Top-level Facebook ad campaign view: spend, impressions, clicks, and active vs paused campaigns at a glance.'
+      }
     ]
   },
   // 3. Enterprise Content Intelligence Infrastructure
   {
     id: 'enterprise-content-intel',
     category: 'CASE STUDIES',
-    title: 'Enterprise Content Intelligence Infrastructure',
+    title: 'Enterprise Content Intelligence Agent',
     subtitle: '50+ senior partners running automated thought leadership systems used directly in multi million dollar consulting pitches.',
     client: 'Global Consulting Firm, TMT Practice',
     role: 'System Architect',
@@ -352,7 +384,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'instig8-recipe',
     category: 'INSTIG8',
-    title: 'Automated Viral Recipe Discovery and Production Pipeline',
+    title: 'Viral Recipe Discovery Agent',
     subtitle: 'Multi-lingual content scraping & sentiment analysis',
     client: 'German Recipe Media Company (500K+ Newsletter Subscribers)',
     role: 'Developer',
@@ -406,17 +438,29 @@ export const PROJECTS: Project[] = [
       'Automated dual-language output (English/German)',
       'Structured recipe database with engagement metrics',
       'Duplicate detection preventing wasted processing'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/instig8-recipe/1.png',
+        title: 'Recipe Content Database',
+        caption: 'Master Airtable holding every discovered recipe with Google Doc URL, top-performer flag, cuisine type, source video, status pills, and output-generation state per row.'
+      },
+      {
+        src: '/case-studies/instig8-recipe/3.png',
+        title: 'Creator & Profile Watchlist',
+        caption: 'Per-creator tracking across TikTok and Instagram, segmented by channel and active state, so the agent only ingests fresh content from accounts that are still publishing.'
+      }
     ]
   },
   // 5. B2B Lead Intelligence & Outbound Pipeline
   {
     id: 'b2b-lead-intel',
     category: 'CASE STUDIES',
-    title: 'B2B Lead Intelligence & Outbound Pipeline',
-    subtitle: 'End-to-end outbound pipeline generating 50 to 500 enriched, outreach-ready leads per run from structured ICP inputs.',
+    title: 'B2B Lead Intelligence Agent',
+    subtitle: 'End-to-end outbound pipeline generating 500 highly qualified, outreach-ready leads per run from structured ICP inputs, with personalized copy in three languages.',
     client: 'Industrial Software Platform (QHSE, EHS, CMMS, ESG)',
     role: 'System Architect',
-    impact_summary: ' 50 to 500 enriched leads per run. Personalized outreach copy generated for every one. Zero manual prospecting.',
+    impact_summary: '500 leads per run. Personalized outreach copy in three languages for highly qualified leads. End-to-end pipeline from ICP intake to outreach.',
     tags: ['Next.js', 'FastAPI', 'n8n', 'Claude', 'Airtable', 'SmartLead', 'Lovable.app'],
     context: 'Built a full-stack lead intelligence and outbound system designed for industrial B2B targeting.',
     problem: 'No scalable system to identify, enrich, and engage high quality industrial decision makers across multiple geographies and industries. Manual prospecting limited coverage, reduced data accuracy, and made personalized outreach at scale infeasible.',
@@ -479,17 +523,54 @@ export const PROJECTS: Project[] = [
     ],
     tech_stack: ['Next.js', 'FastAPI', 'n8n', 'Claude', 'Airtable', 'SmartLead', 'Lovable.app'],
     results: [
-      '50 to 500 enriched leads generated per campaign run',
-      'Fully automated pipeline from ICP input to outreach launch',
-      'Personalized email and LinkedIn outreach generated per lead',
-      'Centralized campaign tracking across leads, campaigns, and replies'
+      '500 highly qualified leads generated per run',
+      'Personalized outreach copy delivered in three languages per lead',
+      'End-to-end pipeline from ICP intake to outreach launch',
+      'Centralized tracking across leads, campaigns, and replies'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/b2b-lead-intel/1.png',
+        title: 'Operator Dashboard',
+        caption: 'Single entry point for the lead intelligence pipeline. Inputs (Lead Search, Upload Leads, Upload Companies, Parameter Builder, Reactivation) on the left; outputs (Leads, Campaigns, Replies) on the right.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/2.png',
+        title: 'Structured ICP Intake',
+        caption: 'Operator captures campaign name, target job titles, geographies, industries, keywords, employee count, revenue range, and additional instructions. Every campaign starts from one queryable definition.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/3.png',
+        title: 'Bulk Upload & Capacity Guardrails',
+        caption: 'CSV / XLSX upload for companies and leads with hard caps (max 100 companies per upload, 1,000 leads per request) and best-practice prompts so operators never overshoot the enrichment budget.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/4.png',
+        title: 'Reactivation Campaign Builder',
+        caption: 'Re-engagement layer for leads gone cold. Filter by last-contacted window (3 / 6 / 10 months), narrow by job title and country, and pass campaign-specific context for the AI copy engine.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/5.png',
+        title: 'Multi-Language Sequence (Italian)',
+        caption: 'Per-lead 4-email sequence generated in Italian for an Italy-based prospect. Subject lines and bodies are personalized to the lead\'s role, geography, and reference accounts in their region.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/6.png',
+        title: 'Multi-Language Sequence (English)',
+        caption: 'Same 4-email structure for an English-speaking executive across rigs. Three-language coverage (English, Italian, Spanish) is generated per lead with no separate prompt or workflow.'
+      },
+      {
+        src: '/case-studies/b2b-lead-intel/7.png',
+        title: 'Campaign Intelligence System',
+        caption: 'Per-campaign view with launch state, results summary (leads, yield %, channel split, existing HubSpot contacts), and the full search configuration captured at run time for audit.'
+      }
     ]
   },
   // 6. EMS Manufacturing LinkedIn Content System
   {
     id: 'calcuquote-linkedin',
     category: 'CASE STUDIES',
-    title: 'EMS Manufacturing LinkedIn Content System',
+    title: 'EMS LinkedIn Content Agent',
     subtitle: 'End-to-end LinkedIn content engine for manufacturing and supply chain brands.',
     client: 'EMS Manufacturing Company',
     role: 'System Architect',
@@ -563,13 +644,40 @@ export const PROJECTS: Project[] = [
       'Auto-image generation aligned to brand and technical context',
       'End-to-end workflow: Ingest → Generate → Review → Schedule → Publish',
       'Configurable post output per profile per cycle'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/calcuquote-linkedin/1.png',
+        title: 'Content Workspace Dashboard',
+        caption: 'Single-pane view of the day: active profiles, knowledge-base size, drafts in review, and posts already published, with recommended-action prompts and a handoff checklist.'
+      },
+      {
+        src: '/case-studies/calcuquote-linkedin/2.png',
+        title: 'Post Manager (Kanban)',
+        caption: 'Generated posts flow through Under Review → Approved → Posted. Each card carries the post draft, supporting research thumbnail, profile, and pillar tag for quick triage.'
+      },
+      {
+        src: '/case-studies/calcuquote-linkedin/3.png',
+        title: 'Post Manager (Table)',
+        caption: 'Same posts in a dense table view: ID, body preview, status, profile, content pillar (Framework / Behind the Scenes / Thought Leadership / Industry Insight), and scheduled date.'
+      },
+      {
+        src: '/case-studies/calcuquote-linkedin/4.png',
+        title: 'LinkedIn Profile Manager',
+        caption: 'Per-profile control surface for the Company account plus three executive accounts (CMO, CEO, CFO). Posts-per-run, totals, and active toggle govern routing of every generated post.'
+      },
+      {
+        src: '/case-studies/calcuquote-linkedin/5.png',
+        title: 'Auto-Schedule Settings',
+        caption: 'Operator-facing scheduler: enable autonomous post generation across all active profiles, set the next run date, and preserve manual override from the dashboard.'
+      }
     ]
   },
   // 7. Viral Content Intelligence and Playbook System
   {
     id: 'instig8-boom',
     category: 'INSTIG8',
-    title: 'Viral Content Intelligence and Playbook System',
+    title: 'Viral Content Playbook Agent',
     subtitle: 'Automated social intelligence system that scrapes top-performing content across 6 platforms, analyzes sentiment and audience patterns, and generates production-ready viral playbooks.',
     client: 'Boom & Wisdom',
     role: 'Developer',
@@ -648,13 +756,20 @@ export const PROJECTS: Project[] = [
       'Generated actionable viral playbooks for 2 products',
       'Modular architecture enabling easy replication',
       'Webhook-triggered execution for on-demand analysis'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/instig8-boom/viral-content-engine.mp4',
+        title: 'Viral Content Engine',
+        caption: 'Live walkthrough of the 7-workflow n8n system: parallel Apify scrapes across TikTok, Instagram, YouTube, Twitter, LinkedIn, and Facebook → sentiment + pattern analysis → cross-platform aggregation → AI playbook generation → auto-export to Google Docs.'
+      }
     ]
   },
   // 8. Construction Market Signal Intelligence and Outbound System
   {
     id: 'zoro-onindus',
     category: 'CASE STUDIES',
-    title: 'Construction Market Signal Intelligence and Outbound System',
+    title: 'Construction Signal Outreach Agent',
     subtitle: 'Automated signal monitoring & multi-channel outreach system.',
     client: 'Capital Projects Advisory Consulting Firm (Healthcare, Higher Education, Municipal)',
     role: 'Lead Developer',
@@ -719,6 +834,38 @@ export const PROJECTS: Project[] = [
       'Sales team receives pre-researched talking points per lead, cutting call prep from 2 hours to 15 minutes',
       '$50M+ construction projects, bond approvals, and leadership changes tracked automatically',
       'All activity synced to CRM with real-time pipeline visibility'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/zoro-onindus/1.png',
+        title: 'Executive Dashboard',
+        caption: 'Single landing page wiring every module of the system together: lead intake, request processing, lead and company analytics, email performance, and reply tracking, all reachable in one click.'
+      },
+      {
+        src: '/case-studies/zoro-onindus/2.png',
+        title: 'Request Processing Status',
+        caption: 'Live queue of every lead-generation request, status pills (Campaign Created), record counts per request, requestor identity, and timestamps, so operators always know what is in flight.'
+      },
+      {
+        src: '/case-studies/zoro-onindus/3.png',
+        title: 'Lead Validation Center',
+        caption: 'Manual checklist surface for new email and LinkedIn leads (121 + 126 in this run) with ICP fitness score, existing-contact flag, and verified headline before any lead is released to outreach.'
+      },
+      {
+        src: '/case-studies/zoro-onindus/4.png',
+        title: 'Lead Performance Analytics',
+        caption: '7,548 total leads broken down by channel: 3,767 email, 1,297 LinkedIn, 302 already in HubSpot, 1,732 existing leads, 512 invalid, with a drillable per-campaign email lead list below.'
+      },
+      {
+        src: '/case-studies/zoro-onindus/5.png',
+        title: 'Company Intelligence Dossier',
+        caption: 'Per-account profile (Alamance County Government shown) with company info, people, SIC codes, socials, location, revenue and employee details, industry, research data, funding, and sub-organisations.'
+      },
+      {
+        src: '/case-studies/zoro-onindus/6.png',
+        title: 'Email Response Tracking',
+        caption: 'Reply intelligence per contact: category (Interested / Meeting Request / Information Request), sentiment, master inbox URL, full reply text, and contact dossier on the right for fast follow-up.'
+      }
     ]
   },
   // 9. Content Strategy Agent
@@ -782,6 +929,23 @@ export const PROJECTS: Project[] = [
       'Approval gate blocks DataForSEO calls on rejected articles, collapsing credit burn to near zero.',
       'Keyword Master dedup layer reuses prior enrichment across campaigns, so cost compounds downward.',
       'AI Score (1 to 10) filters weak sources before outline generation, so only rank-worthy inputs reach GPT.'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/instig8-xpertlink/1.png',
+        title: 'Article Ingest from Inoreader',
+        caption: 'Make.com pipeline that pulls every new feed item from Inoreader, fetches the full article body, dedupes by URL, and classifies each post for Target Audience, Content Type, and AI Score before staging in Airtable.'
+      },
+      {
+        src: '/case-studies/instig8-xpertlink/2.png',
+        title: 'Approval-Gated SEO Enrichment',
+        caption: 'Approval-gated keyword enrichment branch. AI extracts 3 primary and 5 secondary keywords from the article body; only new keywords hit DataForSEO before writing back to Keyword Master and Article Keywords.'
+      },
+      {
+        src: '/case-studies/instig8-xpertlink/3.png',
+        title: 'AI Outline Generator',
+        caption: 'Webhook-triggered outline builder. Pulls AI Score 5+ source articles from Airtable, routes through iterators and OpenAI tools, and writes back an H1 to H3 outline as Draft, ready for the editor.'
+      }
     ]
   },
   // 10. Aliyah Lead Scraping
@@ -842,6 +1006,18 @@ export const PROJECTS: Project[] = [
       '12 months of historical data processed',
       'Weekly automated monitoring setup',
       'Reduced qualification time from days to hours'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/zoro-aliyah/1.png',
+        title: 'LinkedIn Post Scraping Engine',
+        caption: 'Apify-backed LinkedIn scraper pulls posts matching every keyword variant of "Aliyah" across US-based profiles, captures text, media, reactions, comments, and author info, and exports to JSON ready for semantic classification.'
+      },
+      {
+        src: '/case-studies/zoro-aliyah/2.png',
+        title: 'Email Enrichment Waterfall',
+        caption: 'Hunter-backed lookup layer filters high-score profiles by location, industry, and company size, then runs domain pattern search to capture verified emails before the address is confirmed deliverable.'
+      }
     ]
   },
   // 11. Teknova Lead Journey
@@ -903,6 +1079,18 @@ export const PROJECTS: Project[] = [
       'Reduced research time by 95% (30m to automation)',
       'Science-first product recommendations (3 per prospect)',
       'Revenue-preservation email stack'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/instig8-teknova/1.png',
+        title: 'Biotech Qualification Database',
+        caption: 'Per-contact view of every qualified prospect: title, modality (Gene Therapy, mAbs), emerging themes (Custom GMP, Buffers and Reagents), company segment (Large Biopharma, CMO/CDMO), and pipeline stage flagged per row, ready for product matching.'
+      },
+      {
+        src: '/case-studies/instig8-teknova/2.png',
+        title: 'AAV Workflow Email Templates',
+        caption: 'Modality-specific outreach templates with version control (Long / Short / V-A / V-B) and dynamic placeholders for company name, contact name, and rep assignment by region. Same offer framed for the right pipeline stage.'
+      }
     ]
   },
   // 12. Ambrosia Email Automation
@@ -962,6 +1150,23 @@ export const PROJECTS: Project[] = [
       'Automated 7 unique customer segments',
       'Eliminated duplicate sends via auto-exclusion',
       'Zero-code operation for non-technical staff'
+    ],
+    gallery: [
+      {
+        src: '/case-studies/instig8-ambrosia/1.png',
+        title: 'Customer Segmentation Engine',
+        caption: 'Beehiiv segment dashboard wired to Airtable: subscribers tagged across 7 cohorts (Bulk Buyers, Loyal Customers, Dormant Customers, First Time Buyers, One-Time Buyers, High Spenders, Deal Hunters) with live open and click metrics per segment.'
+      },
+      {
+        src: '/case-studies/instig8-ambrosia/2.png',
+        title: 'Segment-Specific Post Library',
+        caption: 'Every weekly campaign is composed once, then auto-routed to the right segment ("Let\'s make it a mango moment" for Dormant Customers, "Big cravings, big celebrations" for Bulk Buyers, "Big flavors. Sweet deals." for Deal Hunters).'
+      },
+      {
+        src: '/case-studies/instig8-ambrosia/3.png',
+        title: 'Personalized Newsletter Send',
+        caption: 'Final sent newsletter rendered per recipient: name token resolved, the prior bestseller list pulled from purchase history, and a segment-specific 10% discount stitched in for the Loyal Customers cohort.'
+      }
     ]
   },
   // 13. Automated Lead Intake and Conversion System

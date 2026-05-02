@@ -121,13 +121,10 @@ const deriveSteps = (project: Project): ArchitectureStep[] => {
 const CaseStudySidebar: React.FC<{ activeId: string }> = ({ activeId }) => (
   <aside className="hidden lg:block sticky top-28 self-start max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 [&::-webkit-scrollbar]:w-0 [scrollbar-width:none] [-ms-overflow-style:none]">
     <div className="border border-gray-200 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0a0a0a]">
-      <div className="px-3 py-2 flex items-center justify-between border-b border-gray-100 dark:border-white/10">
+      <div className="px-3 py-2 border-b border-gray-100 dark:border-white/10">
         <p className="text-[9px] font-black text-gray-500 dark:text-gray-400 uppercase tracking-[0.25em]">
           All Case Studies
         </p>
-        <span className="text-[9px] font-black text-gray-400 dark:text-gray-500">
-          {String(PROJECTS.length).padStart(2, '0')}
-        </span>
       </div>
       <ul className="p-2 space-y-0.5">
         {PROJECTS.map((p, i) => {
@@ -302,7 +299,7 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
               System Snapshots
             </h3>
           </div>
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <ScreenshotShowcase slides={project.gallery} compact />
           </div>
         </div>
@@ -476,7 +473,7 @@ const CaseStudyList: React.FC = () => (
   <div className="min-h-screen pt-32 pb-32 px-6 max-w-7xl mx-auto">
     <div className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
       <div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase text-black dark:text-white transition-colors">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-6 text-black dark:text-white transition-colors">
           Deployed Systems
         </h1>
         <div className="w-24 h-2 bg-brand-red mb-6"></div>
@@ -534,10 +531,10 @@ const CaseStudyList: React.FC = () => (
                 </span>
               </div>
               <div>
-                <h3 className="text-2xl font-black uppercase tracking-tighter leading-[1.1] mb-4 text-black dark:text-white group-hover:text-brand-red transition-colors line-clamp-3">
+                <h3 className="text-2xl font-black tracking-tighter leading-[1.1] mb-4 text-black dark:text-white group-hover:text-brand-red transition-colors line-clamp-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] line-clamp-1">
+                <p className="text-gray-500 dark:text-gray-400 text-[10px] font-bold tracking-[0.2em] line-clamp-1">
                   {project.client}
                 </p>
               </div>

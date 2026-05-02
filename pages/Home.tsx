@@ -585,7 +585,7 @@ const Home = () => {
             Tech Stack
         </h2>
 
-        <div className="relative bg-[#050505] rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 overflow-hidden border border-white/5">
+        <div className="relative bg-[#050505] rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 overflow-hidden border border-white/5">
             {/* Unique Motion Graphics: The "Neural Grid" */}
             <div className="absolute inset-0 pointer-events-none opacity-20">
                 <div className="absolute inset-0" style={{ 
@@ -608,22 +608,22 @@ const Home = () => {
             </div>
 
             <div className="relative z-10">
-                <div className="max-w-2xl mb-20">
-                    <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.85] mb-8">
+                <div className="max-w-2xl mb-12">
+                    <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.85] mb-6">
                         THE <span className="text-brand-red">ARCHITECTURE</span> <br/>
                         OF SCALE
                     </h3>
-                    <p className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed">
+                    <p className="text-gray-400 text-base md:text-lg font-medium leading-relaxed">
                         Tools and frameworks powering our automation systems. We build on the edge of what's possible.
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                <div className="max-w-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
                     {TECH_STACK.map((tech) => (
                         <div
                             key={tech.name}
                             title={tech.name}
-                            className="group relative aspect-square bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center p-4 md:p-5 hover:bg-white/[0.08] hover:border-brand-red/40 hover:shadow-[0_0_24px_-10px_rgba(235,54,54,0.3)] transition-colors duration-300"
+                            className="group relative aspect-square bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center p-3 md:p-4 hover:bg-white/[0.08] hover:border-brand-red/40 hover:shadow-[0_0_24px_-10px_rgba(235,54,54,0.3)] transition-colors duration-300"
                         >
                             <img
                                 src={tech.logo}

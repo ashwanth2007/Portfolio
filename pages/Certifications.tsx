@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
-import { Award, FileCheck, ExternalLink, Eye, X, BadgeCheck, FileText, Medal, Star } from 'lucide-react';
+import { Award, FileCheck, ExternalLink, Eye, X, BadgeCheck, FileText, Medal, Star, Calendar, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { TESTIMONIALS } from '../data';
 
@@ -166,11 +167,11 @@ const Certifications = () => {
             </span>
           </div>
 
-          <h3 className="text-xl font-black uppercase tracking-tighter mb-2 group-hover:text-brand-red transition-colors text-black dark:text-white">
+          <h3 className="text-xl font-black tracking-tighter mb-2 group-hover:text-brand-red transition-colors text-black dark:text-white">
             {cert.title}
           </h3>
 
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">
+          <p className="text-xs font-bold text-gray-500 tracking-wider mb-4">
             Issued by {cert.issuer}
           </p>
 
@@ -199,7 +200,7 @@ const Certifications = () => {
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
           <Award className="text-black dark:text-white" size={32} />
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-black dark:text-white">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-black dark:text-white">
             Credentials
           </h1>
         </div>
@@ -253,7 +254,7 @@ const Certifications = () => {
                     referrerPolicy="no-referrer"
                   />
                   <div>
-                    <h3 className="text-lg font-black text-black dark:text-white uppercase tracking-tight group-hover:text-brand-red transition-colors">
+                    <h3 className="text-lg font-black text-black dark:text-white tracking-tight group-hover:text-brand-red transition-colors">
                       {person.name}
                     </h3>
                     <p className="text-[10px] font-bold text-brand-red uppercase tracking-widest">
@@ -297,6 +298,32 @@ const Certifications = () => {
         </div>
       )}
 
+      {/* Book a Call CTA */}
+      <div className="mt-20 relative overflow-hidden rounded-3xl bg-black dark:bg-[#0a0a0a] border border-black dark:border-white/10 px-6 sm:px-10 py-7 md:py-9">
+        <div className="absolute -right-16 -top-16 w-64 h-64 bg-brand-red/15 blur-3xl rounded-full pointer-events-none"></div>
+        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+          <div className="space-y-1.5 max-w-xl">
+            <p className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-[0.3em]">
+              Like what you see?
+            </p>
+            <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter leading-tight">
+              Book a Call <span className="text-brand-red">Right Now</span>
+            </h3>
+            <p className="text-sm text-gray-400 font-medium leading-relaxed">
+              30 minutes. We map the agent, the metric, and what shipping it would actually cost.
+            </p>
+          </div>
+          <Link
+            to="/discovery"
+            className="group inline-flex items-center justify-center gap-2.5 bg-brand-red text-white px-6 py-3.5 sm:px-8 sm:py-4 font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+          >
+            <Calendar size={14} />
+            Schedule a Call
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </div>
+
       {/* Modal Portal */}
       {selectedCert && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8">
@@ -312,7 +339,7 @@ const Certifications = () => {
                   {getIcon(selectedCert.type)}
                 </div>
                 <div>
-                  <h3 className="text-sm md:text-lg font-black uppercase tracking-tighter leading-none text-black dark:text-white">
+                  <h3 className="text-sm md:text-lg font-black tracking-tighter leading-none text-black dark:text-white">
                     {selectedCert.title}
                   </h3>
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">

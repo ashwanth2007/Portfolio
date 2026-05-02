@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Home, FolderOpen, Map, Award, Sun, Moon } from 'lucide-react';
+import { Menu, X, Home, FolderOpen, Map, Award, Sun, Moon, Calendar } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 
 const Navbar = () => {
@@ -15,6 +15,7 @@ const Navbar = () => {
     { name: 'CASE STUDIES', path: '/case-studies', icon: <FolderOpen size={18} /> },
     { name: 'JOURNEY', path: '/journey', icon: <Map size={18} /> },
     { name: 'CREDENTIALS', path: '/credentials', icon: <Award size={18} /> },
+    { name: 'BOOK', path: '/discovery', icon: <Calendar size={18} /> },
   ];
 
   return (
@@ -56,7 +57,7 @@ const Navbar = () => {
               </Link>
             );
           })}
-          
+
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
