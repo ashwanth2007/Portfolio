@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 
 export interface ShowcaseSlide {
   src: string;
@@ -18,7 +19,7 @@ const INTERVAL_MS = 3500;
 
 const isVideoSrc = (src: string) => /\.(mp4|webm|mov|m4v)(\?|$)/i.test(src);
 
-// ─── Lightbox ────────────────────────────────────────────────────────────────
+// ─── Lightbox (portalled into document.body — no stacking-context trap) ──────
 
 const Lightbox: React.FC<{
   slides: ShowcaseSlide[];
@@ -41,21 +42,47 @@ const Lightbox: React.FC<{
   }, [onClose, prev, next]);
 
   useEffect(() => {
-    const prev = document.body.style.overflow;
+    const original = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = prev; };
+    return () => { document.body.style.overflow = original; };
   }, []);
 
   const slide = slides[current];
 
-  return (
-    <div className="fixed inset-0 z-[9999] bg-black/90 flex flex-col" onClick={onClose}>
+  const overlay = (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 999999,
+        background: 'rgba(0,0,0,0.93)',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       {/* Top bar */}
-      <div className="flex items-center justify-between px-5 py-4 shrink-0" onClick={(e) => e.stopPropagation()}>
-        <span className="text-white/50 text-sm font-medium">{current + 1} / {slides.length}</span>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', flexShrink: 0 }}
+      >
+        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, fontWeight: 600 }}>
+          {current + 1} / {slides.length}
+        </span>
         <button
           onClick={onClose}
-          className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+          style={{
+            background: 'rgba(255,255,255,0.12)',
+            border: 'none',
+            borderRadius: '50%',
+            width: 36,
+            height: 36,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: '#fff',
+          }}
           aria-label="Close"
         >
           <X size={18} />
@@ -63,51 +90,68 @@ const Lightbox: React.FC<{
       </div>
 
       {/* Image area */}
-      <div className="flex-1 flex items-center justify-center px-14 md:px-20 min-h-0" onClick={(e) => e.stopPropagation()}>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', padding: '0 60px', minHeight: 0 }}
+      >
         {isVideoSrc(slide.src) ? (
           <video
             src={slide.src}
             autoPlay loop muted playsInline
-            className="max-w-full max-h-full rounded-xl object-contain shadow-2xl"
+            style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: 12, objectFit: 'contain' }}
           />
         ) : (
           <img
             src={slide.src}
             alt={slide.title}
-            className="max-w-full max-h-full rounded-xl object-contain shadow-2xl"
+            style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: 12, objectFit: 'contain', display: 'block' }}
           />
         )}
 
-        {/* Prev */}
         {slides.length > 1 && (
-          <button
-            onClick={prev}
-            className="absolute left-2 md:left-4 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors"
-            aria-label="Previous"
-          >
-            <ChevronLeft size={24} />
-          </button>
-        )}
-
-        {/* Next */}
-        {slides.length > 1 && (
-          <button
-            onClick={next}
-            className="absolute right-2 md:right-4 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition-colors"
-            aria-label="Next"
-          >
-            <ChevronRight size={24} />
-          </button>
+          <>
+            <button
+              onClick={prev}
+              style={{
+                position: 'absolute', left: 8,
+                background: 'rgba(255,255,255,0.12)', border: 'none', borderRadius: '50%',
+                width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', color: '#fff',
+              }}
+              aria-label="Previous"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={next}
+              style={{
+                position: 'absolute', right: 8,
+                background: 'rgba(255,255,255,0.12)', border: 'none', borderRadius: '50%',
+                width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', color: '#fff',
+              }}
+              aria-label="Next"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </>
         )}
       </div>
 
       {/* Caption */}
-      <div className="shrink-0 text-center px-6 py-4" onClick={(e) => e.stopPropagation()}>
-        <p className="text-white font-bold text-sm md:text-base">{slide.title}</p>
-        {slide.caption && <p className="text-white/40 text-xs mt-1 max-w-lg mx-auto">{slide.caption}</p>}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{ flexShrink: 0, textAlign: 'center', padding: '12px 24px 20px' }}
+      >
+        <p style={{ color: '#fff', fontWeight: 700, fontSize: 14, margin: 0 }}>{slide.title}</p>
+        {slide.caption && (
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 12, marginTop: 4 }}>{slide.caption}</p>
+        )}
       </div>
     </div>
   );
+
+  return createPortal(overlay, document.body);
 };
 
 // ─── Card ────────────────────────────────────────────────────────────────────
@@ -115,32 +159,47 @@ const Lightbox: React.FC<{
 const Card: React.FC<{
   slide: ShowcaseSlide;
   compact?: boolean;
-  onImageClick?: () => void;
-}> = ({ slide, compact, onImageClick }) => (
+  onExpand?: () => void;
+}> = ({ slide, compact, onExpand }) => (
   <div className="w-full h-full rounded-3xl bg-white dark:bg-[#0d0d0d] border border-black/5 dark:border-white/10 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col">
-    {/* Title */}
-    <div className={compact ? 'px-5 md:px-6 pt-3.5 md:pt-4 pb-2.5 md:pb-3' : 'px-6 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4'}>
-      <h3 className={compact
-        ? 'text-base md:text-lg lg:text-xl font-black tracking-tight text-black dark:text-white leading-tight'
-        : 'text-xl md:text-2xl lg:text-3xl font-black tracking-tight text-black dark:text-white leading-tight'}>
-        {slide.title}
-      </h3>
-      {slide.caption && (
-        <p className={compact
-          ? 'mt-1 text-[11px] md:text-xs font-medium text-gray-500 dark:text-gray-400 leading-snug'
-          : 'mt-2 text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 leading-snug'}>
-          {slide.caption}
-        </p>
+
+    {/* Title row — expand icon on the right */}
+    <div className={`flex items-start justify-between gap-3 ${compact ? 'px-5 md:px-6 pt-3.5 md:pt-4 pb-2.5 md:pb-3' : 'px-6 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4'}`}>
+      <div className="min-w-0">
+        <h3 className={compact
+          ? 'text-base md:text-lg lg:text-xl font-black tracking-tight text-black dark:text-white leading-tight'
+          : 'text-xl md:text-2xl lg:text-3xl font-black tracking-tight text-black dark:text-white leading-tight'}>
+          {slide.title}
+        </h3>
+        {slide.caption && (
+          <p className={compact
+            ? 'mt-1 text-[11px] md:text-xs font-medium text-gray-500 dark:text-gray-400 leading-snug'
+            : 'mt-2 text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 leading-snug'}>
+            {slide.caption}
+          </p>
+        )}
+      </div>
+
+      {/* Expand button — always visible, top-right of title area */}
+      {onExpand && (
+        <button
+          onClick={onExpand}
+          className="shrink-0 mt-0.5 p-1.5 rounded-lg border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+          title="Expand"
+          aria-label="Expand image"
+        >
+          <Maximize2 size={13} />
+        </button>
       )}
     </div>
 
     {/* Divider */}
-    <div className="h-px bg-gray-200 dark:bg-white/10" />
+    <div className="h-px bg-gray-200 dark:bg-white/10 shrink-0" />
 
     {/* Media — click to open lightbox */}
     <div
-      className={`flex-1 min-h-0 overflow-hidden bg-white dark:bg-[#0d0d0d] ${onImageClick ? 'cursor-zoom-in' : ''}`}
-      onClick={onImageClick}
+      className={`flex-1 min-h-0 overflow-hidden bg-white dark:bg-[#0d0d0d] ${onExpand ? 'cursor-zoom-in' : ''}`}
+      onClick={onExpand}
     >
       {isVideoSrc(slide.src) ? (
         <video
@@ -215,7 +274,7 @@ const ScreenshotShowcase: React.FC<ScreenshotShowcaseProps> = ({ slides, interva
               <Card
                 slide={slide}
                 compact={compact}
-                onImageClick={isFront ? openLightbox : undefined}
+                onExpand={isFront ? openLightbox : undefined}
               />
             </div>
           );
