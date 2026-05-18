@@ -1,18 +1,40 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, ChevronLeft, ChevronRight, Maximize2, ArrowRight } from 'lucide-react';
 
 export interface ShowcaseSlide {
   src: string;
   title: string;
   caption?: string;
+  caseStudyId?: string;
+  metric?: string;
 }
 
 const DEFAULT_SLIDES: ShowcaseSlide[] = [
-  { src: '/showcase/AI SDR - Dashboard.png', title: 'Self-improving AI SDR' },
-  { src: '/showcase/AI SDR - Lead Portfolio.png', title: 'Bulk outreach AI SDR' },
-  { src: '/showcase/Linkedin Content System - Dashboard.png', title: 'LinkedIn AI agent' },
-  { src: '/showcase/AI Ad Infrastructure.png', title: 'AI Ad infrastructure' },
+  {
+    src: '/showcase/AI Ad Infrastructure.png',
+    title: 'AI Ad Infrastructure',
+    caseStudyId: 'zoro-ad-intel',
+    metric: '4× Revenue Growth',
+  },
+  {
+    src: '/showcase/AI SDR - Dashboard.png',
+    title: 'Self-improving AI SDR',
+    caseStudyId: 'zoro-bcg',
+    metric: '$480K SDR Team Replaced',
+  },
+  {
+    src: '/showcase/Linkedin Content System - Dashboard.png',
+    title: 'LinkedIn Content AI agent',
+    caseStudyId: 'calcuquote-linkedin',
+    metric: 'Hyper-Personalized End-to-End Pipeline',
+  },
+  {
+    src: '/showcase/AI SDR - Lead Portfolio.png',
+    title: 'Bulk outreach AI SDR',
+    caseStudyId: 'b2b-lead-intel',
+  },
 ];
 
 const INTERVAL_MS = 3500;
@@ -163,35 +185,50 @@ const Card: React.FC<{
 }> = ({ slide, compact, onExpand }) => (
   <div className="w-full h-full rounded-3xl bg-white dark:bg-[#0d0d0d] border border-black/5 dark:border-white/10 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col">
 
-    {/* Title row — expand icon on the right */}
-    <div className={`flex items-start justify-between gap-3 ${compact ? 'px-5 md:px-6 pt-3.5 md:pt-4 pb-2.5 md:pb-3' : 'px-6 md:px-8 pt-5 md:pt-6 pb-3 md:pb-4'}`}>
-      <div className="min-w-0">
-        <h3 className={compact
-          ? 'text-base md:text-lg lg:text-xl font-black tracking-tight text-black dark:text-white leading-tight'
-          : 'text-xl md:text-2xl lg:text-3xl font-black tracking-tight text-black dark:text-white leading-tight'}>
-          {slide.title}
-        </h3>
-        {slide.caption && (
-          <p className={compact
-            ? 'mt-1 text-[11px] md:text-xs font-medium text-gray-500 dark:text-gray-400 leading-snug'
-            : 'mt-2 text-xs md:text-sm font-medium text-gray-500 dark:text-gray-400 leading-snug'}>
+    {/* Title row — title left, case study + expand right */}
+    <div className={`flex items-center justify-between gap-3 ${compact ? 'px-5 md:px-6 pt-3.5 md:pt-4 pb-1.5' : 'px-6 md:px-8 pt-5 md:pt-6 pb-2'}`}>
+      <h3 className={`min-w-0 flex-1 ${compact
+        ? 'text-base md:text-lg lg:text-xl font-black tracking-tight text-black dark:text-white leading-tight'
+        : 'text-xl md:text-2xl lg:text-3xl font-black tracking-tight text-black dark:text-white leading-tight'}`}>
+        {slide.title}
+      </h3>
+      <div className="flex items-center gap-2 shrink-0">
+        {slide.caseStudyId && (
+          <Link
+            to={`/case-studies/${slide.caseStudyId}`}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-brand-red text-white text-[11px] font-black uppercase tracking-[0.1em] hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors whitespace-nowrap"
+          >
+            View Case Study <ArrowRight size={11} />
+          </Link>
+        )}
+        {onExpand && (
+          <button
+            onClick={onExpand}
+            className="p-1.5 rounded-lg border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+            title="Expand"
+            aria-label="Expand image"
+          >
+            <Maximize2 size={13} />
+          </button>
+        )}
+      </div>
+    </div>
+
+    {/* Metric row */}
+    {(slide.metric || slide.caption) && (
+      <div className={`flex items-center ${compact ? 'px-5 md:px-6 pb-2.5 md:pb-3' : 'px-6 md:px-8 pb-3 md:pb-4'}`}>
+        {slide.metric && (
+          <span className="inline-flex items-center px-2.5 py-1 bg-emerald-50 dark:bg-emerald-900/25 border border-emerald-300 dark:border-emerald-500/35 rounded-full text-[10px] font-black text-emerald-700 dark:text-emerald-400 uppercase tracking-[0.15em] whitespace-nowrap">
+            {slide.metric}
+          </span>
+        )}
+        {slide.caption && !slide.metric && (
+          <p className="text-[11px] md:text-xs font-medium text-gray-500 dark:text-gray-400 leading-snug">
             {slide.caption}
           </p>
         )}
       </div>
-
-      {/* Expand button — always visible, top-right of title area */}
-      {onExpand && (
-        <button
-          onClick={onExpand}
-          className="shrink-0 mt-0.5 p-1.5 rounded-lg border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors"
-          title="Expand"
-          aria-label="Expand image"
-        >
-          <Maximize2 size={13} />
-        </button>
-      )}
-    </div>
+    )}
 
     {/* Divider */}
     <div className="h-px bg-gray-200 dark:bg-white/10 shrink-0" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Building2, ShieldCheck, Infinity, Database, Briefcase, ExternalLink, Cpu, Calendar } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Zap, Clock, Infinity, RefreshCw, Database, Briefcase, ExternalLink, Cpu, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
@@ -33,14 +33,29 @@ const FEATURES = [
     desc: "Fully compliant solutions ensuring data sovereignty and privacy."
   },
   {
+    icon: <Zap size={24} />,
+    title: "4 Systems / Month",
+    desc: "Average project delivery velocity for production-ready agents."
+  },
+  {
     icon: <Briefcase size={24} />,
     title: "5+ Industries Served",
     desc: "Media, Biotech, Consulting, Fintech, and Construction expertise."
   },
   {
+    icon: <Clock size={24} />,
+    title: "90% Time Reduction",
+    desc: "Massive efficiency gains based on recent project impact."
+  },
+  {
     icon: <Infinity size={24} />,
     title: "End-to-End Systems",
     desc: "Complete automation solutions, not point fixes built for scale."
+  },
+  {
+    icon: <RefreshCw size={24} />,
+    title: "Real-Time Data Sync",
+    desc: "Live data synchronization between CRMs, databases, and tools."
   },
   {
     icon: <Database size={24} />,
@@ -50,7 +65,7 @@ const FEATURES = [
   {
     icon: <Cpu size={24} />,
     title: "Agentic Infrastructure",
-    desc: "MCP-native agent orchestration, OpenClaw-based tool frameworks, and multi-model pipelines that turn hours of manual work into seconds."
+    desc: "Leveraging advanced AI models to deploy and build complex systems faster than traditional methods."
   }
 ];
 
@@ -97,6 +112,20 @@ const ARSENAL_LOGOS = [
   { name: "SmartLead", logo: "https://play-lh.googleusercontent.com/3TRenpb3zBDoRTurTpPFsmFPQYeByFoqKDxBIQ_nayEo3qUYw8bDiB0lYGUf9d3QiQ=w240-h480-rw" }
 ];
 
+const TECH_STACK = [
+  { name: "Next.js", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s", desc: "Backend / full-stack apps" },
+  { name: "FastAPI", logo: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg", desc: "Backend APIs" },
+  { name: "Node.js", logo: "https://cdn.iconscout.com/icon/free/png-256/free-node-js-logo-icon-svg-download-png-3030179.png?f=webp", desc: "Server-side Runtime" },
+  { name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", desc: "Frontend" },
+  { name: "MongoDB", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s", desc: "Database layer" },
+  { name: "Airtable", logo: "https://keycombiner.com/media/application-icons/airtable.png", desc: "Database layer" },
+  { name: "Supabase", logo: "https://monkedo-static.s3.eu-central-1.amazonaws.com/component-icons/supabase.png", desc: "Backend + DB + Auth" },
+  { name: "Advanced CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg", desc: "Modern Styling & Layouts" },
+  { name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg", desc: "Enterprise SDK" },
+  { name: "C++", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png", desc: "Performance Systems" },
+  { name: "Render", logo: "https://assets.findstack.com/hf8tetz6wrjfxx6vxooc6igw3tah", desc: "Backend Hosting" },
+  { name: "Vercel", logo: "https://smlvqzf0a1b66cku.public.blob.vercel-storage.com/images/Vercel%20Logo-IMoeV2W33gFclXzAfZxmAHqtjBuTzP.png", desc: "Deployment & Edge" }
+];
 
 const Home = () => {
   const personSchema = {
@@ -546,6 +575,65 @@ const Home = () => {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
+        </div>
+      </Reveal>
+
+      {/* Tech Stack Section */}
+      <Reveal as="section" className="mt-32 relative overflow-hidden">
+        <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-brand-red"></span>
+            Tech Stack
+        </h2>
+
+        <div className="relative bg-[#050505] rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 overflow-hidden border border-white/5">
+            {/* Unique Motion Graphics: The "Neural Grid" */}
+            <div className="absolute inset-0 pointer-events-none opacity-20">
+                <div className="absolute inset-0" style={{ 
+                    backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
+                    backgroundSize: '100px 100px'
+                }}></div>
+                
+                {/* Random Glowing Nodes */}
+                {[...Array(12)].map((_, i) => (
+                    <div 
+                        key={i}
+                        className="absolute w-1 h-1 bg-brand-red rounded-full data-node"
+                        style={{
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                            animationDelay: `${i * 0.4}s`
+                        }}
+                    ></div>
+                ))}
+            </div>
+
+            <div className="relative z-10">
+                <div className="max-w-2xl mb-12">
+                    <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.85] mb-6">
+                        THE <span className="text-brand-red">ARCHITECTURE</span> <br/>
+                        OF SCALE
+                    </h3>
+                    <p className="text-gray-400 text-base md:text-lg font-medium leading-relaxed">
+                        Tools and frameworks powering our automation systems. We build on the edge of what's possible.
+                    </p>
+                </div>
+
+                <div className="max-w-2xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+                    {TECH_STACK.map((tech) => (
+                        <div
+                            key={tech.name}
+                            title={tech.name}
+                            className="group relative aspect-square bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center p-3 md:p-4 hover:bg-white/[0.08] hover:border-brand-red/40 hover:shadow-[0_0_24px_-10px_rgba(235,54,54,0.3)] transition-colors duration-300"
+                        >
+                            <img
+                                src={tech.logo}
+                                alt={tech.name}
+                                className="max-w-[78%] max-h-[78%] object-contain group-hover:scale-110 transition-transform duration-300"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
       </Reveal>
 

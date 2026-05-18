@@ -5,7 +5,7 @@ import { Linkedin, Mail, Twitter, Instagram } from 'lucide-react';
 const SOCIALS = [
   { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/ashwanthofficial/', label: 'LinkedIn' },
   { icon: <Twitter size={18} />, href: 'https://x.com/ashwanth_ai', label: 'X (Twitter)' },
-  { icon: <Instagram size={18} />, href: 'https://instagram.com/_ashwanth_s', label: 'Instagram' },
+  { icon: <Instagram size={18} />, href: 'https://www.instagram.com/itsashwanths/', label: 'Instagram' },
 ];
 
 const Footer = () => {
