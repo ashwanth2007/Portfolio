@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ExternalLink, Calendar } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Infinity, Database, Briefcase, ExternalLink, Cpu, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Reveal from '../components/Reveal';
@@ -19,6 +19,39 @@ const LOGOS = [
   "https://www.boomshare.ai/assets/BoomLightIconLogo.svg",
   "/clients/falke-media.png",
   "https://www.xpertlink.ai/wp-content/uploads/2022/04/xpertlink_ai.png"
+];
+
+const FEATURES = [
+  {
+    icon: <Building2 size={24} />,
+    title: "Fortune 500 Trusted",
+    desc: "Trusted by Fortune 500s & Enterprises for critical automation."
+  },
+  {
+    icon: <ShieldCheck size={24} />,
+    title: "GDPR Compliant",
+    desc: "Fully compliant solutions ensuring data sovereignty and privacy."
+  },
+  {
+    icon: <Briefcase size={24} />,
+    title: "5+ Industries Served",
+    desc: "Media, Biotech, Consulting, Fintech, and Construction expertise."
+  },
+  {
+    icon: <Infinity size={24} />,
+    title: "End-to-End Systems",
+    desc: "Complete automation solutions, not point fixes built for scale."
+  },
+  {
+    icon: <Database size={24} />,
+    title: "Database Design & Management",
+    desc: "Airtable, PostgreSQL, and NoSQL solutions for automation backends."
+  },
+  {
+    icon: <Cpu size={24} />,
+    title: "Agentic Infrastructure",
+    desc: "MCP-native agent orchestration, OpenClaw-based tool frameworks, and multi-model pipelines that turn hours of manual work into seconds."
+  }
 ];
 
 const DEPLOYMENTS = [
@@ -236,6 +269,71 @@ const Home = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Core Capabilities Section */}
+      <Reveal as="section" className="mt-32 relative">
+           <h2 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-12 flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-brand-red"></span>
+              Core Capabilities
+           </h2>
+
+           <div className="border border-gray-800 rounded-[3rem] overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+                 {FEATURES.map((feature, index) => (
+                   <div
+                     key={index}
+                     className="group relative p-8 md:p-10 border-b border-gray-800 md:border-r last:border-b-0 bg-black transition-all duration-500 overflow-hidden flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
+                   >
+                      <span className="absolute -bottom-2 -right-2 text-7xl font-black text-white/[0.03] pointer-events-none group-hover:text-brand-red/10 transition-colors duration-500">
+                         {(index + 1).toString().padStart(2, '0')}
+                      </span>
+                      <div className="relative z-10 space-y-8">
+                         <div className="w-14 h-14 flex items-center justify-center bg-white/5 rounded-2xl text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-500 shadow-xl">
+                            {feature.icon}
+                         </div>
+                         <div className="space-y-4">
+                            <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter group-hover:text-brand-red transition-colors duration-500">
+                              {feature.title}
+                            </h3>
+                            <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed group-hover:text-gray-200 transition-colors duration-500">
+                              {feature.desc}
+                            </p>
+                         </div>
+                         <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="h-1 w-12 bg-brand-red"></div>
+                         </div>
+                      </div>
+                   </div>
+                 ))}
+              </div>
+           </div>
+      </Reveal>
+
+      {/* Inline CTA between Core Capabilities and Arsenal */}
+      <Reveal as="section" className="mt-32">
+        <div className="relative overflow-hidden rounded-3xl bg-black dark:bg-[#0a0a0a] border border-black dark:border-white/10 px-6 sm:px-10 py-8 md:py-10">
+          <div className="absolute -right-16 -top-16 w-64 h-64 bg-brand-red/15 blur-3xl rounded-full pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <p className="text-[10px] md:text-xs font-black text-brand-red uppercase tracking-[0.3em]">Got a system in mind?</p>
+              <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight">
+                Book a Call <span className="text-brand-red">Right Now</span>
+              </h3>
+              <p className="text-sm md:text-base text-gray-400 font-medium leading-relaxed">
+                30-minute discovery call. We map the agent, the metric, and what shipping it would actually cost.
+              </p>
+            </div>
+            <Link
+              to="/discovery"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+            >
+              <Calendar size={16} />
+              Schedule a Call
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </Reveal>
