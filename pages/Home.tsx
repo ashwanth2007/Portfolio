@@ -200,7 +200,7 @@ const Home = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20">
            {[
-             { value: '$450k+', label: 'In client systems impact' },
+             { value: '$500k+', label: 'In client systems impact' },
              { value: '$100k+', label: 'Worth of systems delivered' },
              { value: '40+', label: 'Systems deployed' }
            ].map(item => (
