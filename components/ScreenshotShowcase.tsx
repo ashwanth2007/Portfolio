@@ -196,9 +196,10 @@ const Card: React.FC<{
         {slide.caseStudyId && (
           <Link
             to={`/case-studies/${slide.caseStudyId}`}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-brand-red text-white text-[11px] font-black uppercase tracking-[0.1em] hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-lg bg-brand-red text-white text-[11px] font-black uppercase tracking-[0.1em] hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors"
           >
-            View Case Study <ArrowRight size={11} />
+            <span className="hidden sm:inline whitespace-nowrap">View Case Study</span>
+            <ArrowRight size={11} />
           </Link>
         )}
         {onExpand && (

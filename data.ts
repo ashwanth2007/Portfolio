@@ -27,7 +27,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: 'Kanchan Bhatta',
-    image: 'https://media.licdn.com/dms/image/v2/D5603AQEVXAJ0JLLxUA/profile-displayphoto-crop_800_800/B56ZsrA0DAHsAM-/0/1765953192718?e=1779321600&v=beta&t=Z4e2fxom_zelPzrqtZmBasVIR9CiSyuJJKGEACg0c9I',
+    image: 'https://raw.githubusercontent.com/ashwanth2007/Resources/main/kanchan_bhatta.jpg',
     testimonial: 'https://lh3.googleusercontent.com/d/1KtK-TQqGAs7nzid33reDNwTluDsYyxmP',
     link: 'https://www.linkedin.com/in/growthxkanchan/',
     headline: 'GTM & LinkedIn Expert',

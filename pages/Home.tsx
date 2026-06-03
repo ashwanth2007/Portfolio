@@ -230,7 +230,7 @@ const Home = () => {
             </div>
             <Link
               to="/discovery"
-              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl w-full sm:w-auto"
             >
               <Calendar size={16} />
               Schedule a Call
@@ -328,7 +328,7 @@ const Home = () => {
             </div>
             <Link
               to="/discovery"
-              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl w-full sm:w-auto"
             >
               <Calendar size={16} />
               Schedule a Call
@@ -381,7 +381,17 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="relative flex justify-center items-center aspect-square w-full max-w-[550px] mx-auto">
+                {/* Mobile: flat logo grid (orbit overflows at < lg) */}
+                <div className="lg:hidden grid grid-cols-4 gap-3 mt-2">
+                    {ARSENAL_LOGOS.map((item) => (
+                        <div key={item.name} className="bg-white/[0.04] border border-white/10 rounded-2xl p-3 flex items-center justify-center aspect-square">
+                            <img src={item.logo} alt={item.name} className="w-full h-full object-contain" />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Desktop: orbit animation */}
+                <div className="hidden lg:flex relative justify-center items-center aspect-square w-full max-w-[550px] mx-auto">
                     {/* Rotating Logos Container */}
                     <div className="relative w-full h-full flex items-center justify-center">
                         {/* Center Logo (Claude) */}
@@ -392,7 +402,7 @@ const Home = () => {
 
                         {/* Orbiting Logos */}
                         {ARSENAL_LOGOS.map((item, index) => {
-                            if (index === 1) return null; // Skip Claude as it's in center
+                            if (index === 1) return null;
                             const adjustedIndex = index < 1 ? index : index - 1;
                             const totalOrbiting = ARSENAL_LOGOS.length - 1;
                             const angleDeg = adjustedIndex * (360 / totalOrbiting);
@@ -422,11 +432,11 @@ const Home = () => {
                         {/* Orbit Rings with Glow */}
                         <div className="absolute w-[360px] h-[360px] border border-white/[0.03] rounded-full shadow-[inset_0_0_50px_rgba(255,255,255,0.01)]"></div>
                         <div className="absolute w-[500px] h-[500px] border border-white/[0.02] rounded-full"></div>
-                        
+
                         {/* Floating Particles */}
                         <div className="absolute inset-0 pointer-events-none">
                             {[...Array(6)].map((_, i) => (
-                                <div 
+                                <div
                                     key={i}
                                     className="absolute w-1 h-1 bg-brand-red/40 rounded-full animate-ping"
                                     style={{
@@ -466,7 +476,7 @@ const Home = () => {
                 className="group flex flex-col bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-brand-red/50 hover:shadow-[0_0_60px_-10px_rgba(235,54,54,0.35)] transition-colors duration-300"
               >
                 {/* Video */}
-                <div className="relative aspect-video bg-black overflow-hidden">
+                <div className="relative aspect-[4/3] sm:aspect-video bg-black overflow-hidden">
                   <video
                     className="w-full h-full object-contain"
                     controls
@@ -495,7 +505,7 @@ const Home = () => {
                       {deployment.title}
                     </h3>
 
-                    <p className="text-gray-300 text-sm leading-relaxed font-medium line-clamp-5">
+                    <p className="text-gray-300 text-sm leading-relaxed font-medium">
                       {deployment.description}
                     </p>
                   </div>
@@ -534,7 +544,7 @@ const Home = () => {
             </div>
             <Link
               to="/discovery"
-              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+              className="group inline-flex items-center justify-center gap-3 bg-brand-red text-white px-7 py-4 sm:px-9 sm:py-5 font-black uppercase tracking-[0.2em] text-xs sm:text-sm rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl w-full sm:w-auto"
             >
               <Calendar size={16} />
               Schedule a Call

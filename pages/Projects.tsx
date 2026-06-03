@@ -218,10 +218,10 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
         </div>
         <Link
           to="/discovery"
-          className="inline-flex items-center gap-2 bg-brand-red text-white px-5 lg:px-6 py-3 text-xs font-black uppercase tracking-widest hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors whitespace-nowrap rounded-full shadow-lg shadow-brand-red/20 self-start md:self-end"
+          className="inline-flex items-center justify-center gap-2 bg-brand-red text-white px-5 lg:px-6 py-3 text-xs font-black uppercase tracking-wider hover:bg-black dark:hover:bg-white dark:hover:text-black transition-colors rounded-full shadow-lg shadow-brand-red/20 self-start md:self-end w-full md:w-auto"
         >
           <Calendar size={14} />
-          Book a Call Right Now
+          Book a Call
           <ArrowRight size={14} />
         </Link>
       </div>
@@ -506,7 +506,7 @@ const CaseStudyList: React.FC = () => (
         </div>
         <Link
           to="/discovery"
-          className="group inline-flex items-center justify-center gap-2.5 bg-brand-red text-white px-6 py-3.5 sm:px-8 sm:py-4 font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl whitespace-nowrap shrink-0"
+          className="group inline-flex items-center justify-center gap-2.5 bg-brand-red text-white px-6 py-3.5 sm:px-8 sm:py-4 font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-2xl w-full sm:w-auto"
         >
           <Calendar size={14} />
           Schedule a Call
