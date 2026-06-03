@@ -22,18 +22,13 @@ const DEFAULT_SLIDES: ShowcaseSlide[] = [
     src: '/showcase/AI SDR - Dashboard.png',
     title: 'Self-improving AI SDR',
     caseStudyId: 'zoro-bcg',
-    metric: '$480K SDR Team Replaced',
+    metric: "~$480K SDR Team's Workload Replaced",
   },
   {
-    src: '/showcase/Linkedin Content System - Dashboard.png',
+    src: '/showcase/LinkedIn Command Center.png',
     title: 'LinkedIn Content AI agent',
     caseStudyId: 'calcuquote-linkedin',
     metric: 'Hyper-Personalized End-to-End Pipeline',
-  },
-  {
-    src: '/showcase/AI SDR - Lead Portfolio.png',
-    title: 'Bulk outreach AI SDR',
-    caseStudyId: 'b2b-lead-intel',
   },
 ];
 
@@ -262,26 +257,96 @@ interface ScreenshotShowcaseProps {
   slides?: ShowcaseSlide[];
   intervalMs?: number;
   compact?: boolean;
+  /** Render every snapshot full-width and un-cropped in a vertical stack instead of the rotating carousel. */
+  stack?: boolean;
 }
 
-const ScreenshotShowcase: React.FC<ScreenshotShowcaseProps> = ({ slides, intervalMs, compact }) => {
+const ScreenshotShowcase: React.FC<ScreenshotShowcaseProps> = ({ slides, intervalMs, compact, stack }) => {
   const deck = slides && slides.length > 0 ? slides : DEFAULT_SLIDES;
   const tick = intervalMs ?? INTERVAL_MS;
   const [active, setActive] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxStart, setLightboxStart] = useState(0);
 
   useEffect(() => {
-    if (deck.length <= 1) return;
+    if (stack || deck.length <= 1) return;
     const id = window.setInterval(() => {
       setActive((prev) => (prev + 1) % deck.length);
     }, tick);
     return () => window.clearInterval(id);
-  }, [deck.length, tick]);
+  }, [deck.length, tick, stack]);
 
   const openLightbox = useCallback(() => setLightboxOpen(true), []);
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+  const openLightboxAt = useCallback((i: number) => { setLightboxStart(i); setLightboxOpen(true); }, []);
 
   const aspectClass = compact ? 'aspect-[16/10] sm:aspect-[16/7.5]' : 'aspect-[16/11] sm:aspect-[16/10]';
+
+  // ── Stack: full-width, un-cropped, readable — one card per snapshot ──
+  if (stack) {
+    return (
+      <>
+        <div className="space-y-6 md:space-y-8">
+          {deck.map((slide, i) => (
+            <div
+              key={i}
+              className="w-full rounded-3xl bg-white dark:bg-[#0d0d0d] border border-black/5 dark:border-white/10 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col"
+            >
+              {/* Title row */}
+              <div className="flex items-center justify-between gap-3 px-5 md:px-7 pt-4 md:pt-5 pb-1.5">
+                <h3 className="min-w-0 flex-1 text-base md:text-lg lg:text-xl font-black tracking-tight text-black dark:text-white leading-tight">
+                  {slide.title}
+                </h3>
+                <button
+                  onClick={() => openLightboxAt(i)}
+                  className="p-1.5 rounded-lg border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors shrink-0"
+                  title="Expand"
+                  aria-label="Expand image"
+                >
+                  <Maximize2 size={14} />
+                </button>
+              </div>
+
+              {/* Caption */}
+              {slide.caption && (
+                <p className="px-5 md:px-7 pb-3 text-[11px] md:text-xs font-medium text-gray-500 dark:text-gray-400 leading-snug">
+                  {slide.caption}
+                </p>
+              )}
+
+              {/* Divider */}
+              <div className="h-px bg-gray-200 dark:bg-white/10 shrink-0" />
+
+              {/* Media — full image, un-cropped, click to zoom */}
+              <div
+                className="w-full overflow-hidden bg-gray-50 dark:bg-[#0a0a0a] cursor-zoom-in"
+                onClick={() => openLightboxAt(i)}
+              >
+                {isVideoSrc(slide.src) ? (
+                  <video
+                    src={slide.src}
+                    autoPlay loop muted playsInline preload="metadata"
+                    className="w-full h-auto block"
+                  />
+                ) : (
+                  <img
+                    src={slide.src}
+                    alt={slide.title}
+                    loading="lazy"
+                    className="w-full h-auto block"
+                  />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {lightboxOpen && (
+          <Lightbox slides={deck} startIndex={lightboxStart} onClose={closeLightbox} />
+        )}
+      </>
+    );
+  }
 
   return (
     <>

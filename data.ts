@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'Full-stack business development intelligence system for a top-3 global consulting firm.',
     client: 'Top-3 Global Management Consulting Firm (Fortune 500)',
     role: 'System Architect',
-    impact_summary: '3,000+ enterprise leads per month. $480K SDR team replaced. Deployed live on $2M+ consulting pitches.',
+    impact_summary: "3,000+ enterprise leads per month. ~$480K SDR team's workload replaced. Deployed live on $2M+ consulting pitches.",
     tags: ['N8N', 'Explorium', 'GPT 4.2', 'Apify'],
     context: 'A top-3 global management consulting firm needed to scale its business development efforts targeting large manufacturing and distribution companies without increasing headcount.',
     problem: 'No scalable system to identify, research, and engage $500M to $2.5B manufacturing and distribution companies at executive level. Manual research took 20 to 30 minutes per prospect. Generic outbound tools produced template emails executives ignored. Hiring more SDRs was not viable at enterprise scale.',

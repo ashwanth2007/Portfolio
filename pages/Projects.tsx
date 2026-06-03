@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { PROJECTS } from '../data';
 import { techLogo } from '../techLogos';
@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Calendar,
   ArrowRight,
   Image as ImageIcon,
@@ -175,6 +176,7 @@ interface DetailProps {
 
 const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, position }) => {
   const steps = deriveSteps(project);
+  const [showArchitecture, setShowArchitecture] = useState(false);
 
   const stats = project.impact_summary
     .split(/(?<=[.!])\s+/)
@@ -288,9 +290,9 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
         </div>
       </div>
 
-      {/* Snapshots - narrowed so it doesn't eat vertical space */}
+      {/* Snapshots - full-width stack so every screenshot is readable */}
       {project.gallery && project.gallery.length > 0 && (
-        <div className="space-y-4">
+        <div className="space-y-4 md:space-y-6">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-brand-red/10 rounded-lg">
               <ImageIcon className="text-brand-red" size={18} />
@@ -299,9 +301,7 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
               System Snapshots
             </h3>
           </div>
-          <div className="max-w-5xl">
-            <ScreenshotShowcase slides={project.gallery} compact />
-          </div>
+          <ScreenshotShowcase slides={project.gallery} stack />
         </div>
       )}
 
@@ -357,13 +357,18 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
         );
       })()}
 
-      {/* System Architecture - compact vertical step rail */}
+      {/* System Architecture - collapsed by default, expand on Show more */}
       <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-4 md:p-6 rounded-3xl">
-        <div className="flex items-center gap-2.5 mb-3 md:mb-4">
-          <div className="p-1.5 bg-brand-red/10 rounded-lg">
+        <button
+          type="button"
+          onClick={() => setShowArchitecture((v) => !v)}
+          aria-expanded={showArchitecture}
+          className={`w-full flex items-center gap-2.5 text-left ${showArchitecture ? 'mb-3 md:mb-4' : ''}`}
+        >
+          <div className="p-1.5 bg-brand-red/10 rounded-lg shrink-0">
             <Workflow className="text-brand-red" size={16} />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <h3 className="text-base md:text-lg font-black uppercase tracking-tighter text-black dark:text-white leading-tight">
               System Architecture
             </h3>
@@ -371,8 +376,16 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
               {steps.length} Layers · Modular Workflow Infrastructure
             </p>
           </div>
-        </div>
+          <span className="flex items-center gap-1.5 shrink-0 text-[10px] md:text-xs font-black uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+            <span className="hidden sm:inline">{showArchitecture ? 'Show less' : 'Show more'}</span>
+            <ChevronDown
+              size={18}
+              className={`transition-transform duration-300 ${showArchitecture ? 'rotate-180' : ''}`}
+            />
+          </span>
+        </button>
 
+        {showArchitecture && (
         <div className="divide-y divide-gray-200 dark:divide-white/10 border-t border-gray-200 dark:border-white/10">
           {steps.map((step, idx) => {
             const stepNum = String(idx + 1).padStart(2, '0');
@@ -444,6 +457,7 @@ const CaseStudyDetail: React.FC<DetailProps> = ({ project, onPrev, onNext, posit
             );
           })}
         </div>
+        )}
       </div>
 
       {/* Inline prev/next at the bottom (mobile + desktop) */}

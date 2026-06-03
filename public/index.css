@@ -7,6 +7,13 @@
   }
 }
 
+/* Stop the full-bleed marquee + reveal transforms from creating a horizontal
+   scrollbar that shifts content off-screen on phones. */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Scroll reveal: slide in from right */
 .reveal {
   opacity: 0;
@@ -17,6 +24,17 @@
 .reveal-in {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* On phones a horizontal slide-in pushes sections past the viewport edge and
+   they read as "missing" until scrolled into view. Slide up instead. */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(36px);
+  }
+  .reveal-in {
+    transform: translateY(0);
+  }
 }
 
 @keyframes glow {
