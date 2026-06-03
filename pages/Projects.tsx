@@ -556,7 +556,7 @@ const CaseStudyList: React.FC = () => (
             <div className="w-full h-px bg-gray-100 dark:bg-white/10 group-hover:bg-brand-red transition-colors"></div>
             <div className="p-10 pt-8 flex-1 flex flex-col justify-between relative z-10 bg-gray-50/50 dark:bg-white/5 transition-colors">
               <div className="mb-8">
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed line-clamp-3 font-medium h-[60px]">
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-snug line-clamp-3 font-medium h-[60px]">
                   {project.subtitle}
                 </p>
               </div>
@@ -566,8 +566,8 @@ const CaseStudyList: React.FC = () => (
                     Impact
                   </span>
                   <div className="h-[40px] flex items-center">
-                    <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-1 transition-colors block leading-tight line-clamp-2">
-                      {project.impact_summary}
+                    <span className="text-xs font-bold text-black dark:text-white border-b-2 border-brand-red pb-1 transition-colors leading-tight line-clamp-2">
+                      {project.impact_summary.split(/(?<=[.!])\s+/)[0].replace(/\s+/g, ' ').trim()}
                     </span>
                   </div>
                 </div>
