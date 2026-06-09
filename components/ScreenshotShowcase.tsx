@@ -25,7 +25,7 @@ const DEFAULT_SLIDES: ShowcaseSlide[] = [
     metric: "~$480K SDR Team's Workload Replaced",
   },
   {
-    src: '/showcase/LinkedIn Command Center.png',
+    src: '/showcase/LinkedIn Content Agent - 2026-06-09.png',
     title: 'LinkedIn Content AI agent',
     caseStudyId: 'calcuquote-linkedin',
     metric: 'Hyper-Personalized End-to-End Pipeline',
