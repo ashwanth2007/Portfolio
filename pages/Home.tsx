@@ -104,7 +104,7 @@ const Home = () => {
     "name": "Ashwanth S",
     "jobTitle": "AI Systems Architect",
     "url": "https://ashwanth.in",
-    "email": "me@ashwanth.dev",
+    "email": "work@ashwanth.dev",
     "sameAs": [
       "https://linkedin.com/in/ashwanth-s"
     ],

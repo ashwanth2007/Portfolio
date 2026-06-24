@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Twitter, Instagram } from 'lucide-react';
+import { Linkedin, Mail, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const SOCIALS = [
   { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/ashwanthxs/', label: 'LinkedIn' },
   { icon: <Twitter size={18} />, href: 'https://x.com/ashwanthXs', label: 'X (Twitter)' },
   { icon: <Instagram size={18} />, href: 'https://www.instagram.com/ashwanthXs', label: 'Instagram' },
+  { icon: <Youtube size={18} />, href: 'https://www.youtube.com/@ashwanthxs', label: 'YouTube' },
 ];
 
 const Footer = () => {
@@ -59,10 +60,10 @@ const Footer = () => {
             <p className="text-xs md:text-sm font-medium text-gray-400">
               Email:{' '}
               <a
-                href="mailto:me@ashwanth.dev"
+                href="mailto:work@ashwanth.dev"
                 className="text-white hover:text-brand-red underline underline-offset-4 decoration-white/30 hover:decoration-brand-red transition-colors"
               >
-                me@ashwanth.dev
+                work@ashwanth.dev
               </a>
             </p>
           </div>

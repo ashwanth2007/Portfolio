@@ -181,7 +181,7 @@ const Privacy = () => {
               <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
               <p className="mt-4">
                 <strong>Privacy Officer</strong><br/>
-                <strong>Email:</strong> me@ashwanth.dev<br/>
+                <strong>Email:</strong> work@ashwanth.dev<br/>
                 <strong>Address:</strong> Vellore, Tamil Nadu, India - 632014
               </p>
             </section>
