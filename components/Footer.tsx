@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Twitter, Instagram } from 'lucide-react';
 
 const SOCIALS = [
-  { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/ashwanthofficial/', label: 'LinkedIn' },
-  { icon: <Twitter size={18} />, href: 'https://x.com/ashwanth_ai', label: 'X (Twitter)' },
-  { icon: <Instagram size={18} />, href: 'https://www.instagram.com/itsashwanths/', label: 'Instagram' },
+  { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/ashwanthxs/', label: 'LinkedIn' },
+  { icon: <Twitter size={18} />, href: 'https://x.com/ashwanthXs', label: 'X (Twitter)' },
+  { icon: <Instagram size={18} />, href: 'https://www.instagram.com/ashwanthXs', label: 'Instagram' },
 ];
 
 const Footer = () => {
