@@ -577,7 +577,7 @@ const Home = () => {
 
         <div className="w-full h-[700px] bg-black border border-white/10 shadow-2xl rounded-xl overflow-hidden relative z-10">
             <iframe
-              src="https://cal.com/ashwanthofficial/custom-ai-agent-consultation?embed=true&theme=dark&layout=month_view"
+              src="https://cal.com/ashwanthxs/custom-ai-agent-consultation?embed=true&theme=dark&layout=month_view"
               title="Schedule a Discovery Call"
               loading="lazy"
               width="100%"

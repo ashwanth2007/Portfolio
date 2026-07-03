@@ -39,7 +39,7 @@ const Discovery = () => {
       Cal.ns["custom-ai-agent-consultation"]("inline", {
         elementOrSelector:"#my-cal-inline-custom-ai-agent-consultation",
         config: {"layout":"month_view"},
-        calLink: "ashwanthofficial/custom-ai-agent-consultation",
+        calLink: "ashwanthxs/custom-ai-agent-consultation",
       });
 
       Cal.ns["custom-ai-agent-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
